@@ -1,0 +1,37 @@
+?:[AND [OR [EQU $QUEST57 Taken InProgress] [EQU $QUEST81 Taken InProgress] ] [EQU $DUNGEON24 Active] ]
+D:You have shown you can hold your ground. Now go to the Giant's
+D:Hall and defeat ten lesser titans on the quest floor. Your
+D:journal gives the level and count. Return when the hunt is done.
+?:1
+
+?:[AND [OR [EQU $QUEST57 Taken InProgress] [EQU $QUEST81 Taken InProgress] ] [EQU $DUNGEON24 Suppressed] ]
+D:You have shown you can hold your ground. Now go to the Snow
+D:castle and defeat ten lesser titans on the quest floor. Your
+D:journal gives the level and count. Return when the hunt is done.
+?:1
+
+?:[OR [EQU $QUEST57 Completed] [EQU $QUEST81 Completed] ]
+D:Ten lesser titans. That took more than a strong arm. The
+D:armourers have made another trophy to mark your victory.
+?:1
+
+?:[OR [EQU $QUEST57 Failed] [EQU $QUEST81 Failed] ]
+D:The titans held their ground. This hunt is closed. Learn from
+D:what stopped you; the Hall has no use for empty boasts.
+?:1
+
+R:OBJ(spiked gauntlets):EGO(giant)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(long sword)
+
+?:[EQU $RACE Dragon Hound Spider Ring Gazer Vortex]
+R:OBJ(^ring$):EGO(combat)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+?:[EQU $RACE Hydra Quylthulg]
+R:OBJ(^cloak$)
+
+# vim: filetype=q :

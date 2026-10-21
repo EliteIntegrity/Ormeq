@@ -1,0 +1,81 @@
+# New quest for FrogComposband 7.1.chocolate
+
+?:[EQU $QUEST54 Taken InProgress]
+D:Explorers found an ancient temple beneath the old Elven Embassy. It is
+D:still in use: descendants of its builders maintain a spider cult there.
+D:I fear they may try to summon their god against us for disturbing it.
+D:Enter the temple and defeat the cult and its creatures. The whole site
+D:must be cleared before we can consider the threat ended.
+?:1
+
+?:[EQU $QUEST54 Completed]
+D:The temple is cleared. Keep what you recovered there as payment; I
+D:will take no tax on it. There is no separate reward for this job.
+?:1
+
+?:[EQU $QUEST54 Failed]
+D:The temple remains a threat. I will warn people to keep clear of the
+D:old embassy. We must live with the danger your commission was meant to end.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:W:DEEP_WATER
+L:s:OBJ(ivory statue, TYPE=809)
+L:.:FLOOR
+L:<:UP_STAIR
+L:+:CLOSED_DOOR
+L:P:MON(seam spider)
+L:N:MON(nexus spider)
+L:V:MON(venom spider)
+L:I:MON(ice spider)
+L:F:MON(flame spider)
+L:L:MON(leng spider)
+L:M:MON(seam spider)
+L:U:MON(undead spider)
+L:e:MON(ebony monk)
+L:p:MON(^master mystic$)
+L:f:MON(^mystic$)
+L:a:MON(^mystic$)
+L:b:FLOOR
+L:k:OBJ(undying lamp):EGO(darkness)
+L:l:OBJ(elven cloak, DEPTH+12):EGO(shadows)
+L:m:OBJ(RING, DEPTH+12):EGO(defender)
+L:n:OBJ(elven cloak, DEPTH+12):EGO(elemental protection)
+L:o:OBJ(hard leather cap, DEPTH+7):EGO(vampire)
+L:O:OBJ(*, DEPTH+7)
+L:~:OBJ(small steel chest, DEPTH+7)
+!:SCRAMBLE(k,l,m,n,o)
+!:SCRAMBLE(P,N,V,I,F,L,M,U)
+!:SCRAMBLE(a,b)
+
+M:#########################################################
+M:#########....+...+......#########......+...+....#########
+M:########.....##.##.......#######.......##.##.....########
+M:#..+...+.....##..#.......#######.......#..#......+...+..#
+M:#..##.##......##.##..P...#<###.#...N..##.##......##.##..#
+M:#...#..#.......#..#.....##.###.##.....#..#.......#..#...#
+M:#...##.##..I...##.##....#.......#....##.##...V..##.##...#
+M:#....#..###.....#..#....#.......#....#..#.....###..#....#
+M:#....##...##....##.##..b#.......#a..##.##....##...##....#
+M:#.....###..####ak#..########+########..#lb####..###.....#
+M:#......b##....#####...+...........+...#####....##a......#
+M:#........####.....#####...........#####.....####........#
+M:#...........#####.....+...........+.....#####...........#
+M:#....F......+.fO#######.....f.....#######Of.+......L....#
+M:#...........#####.....+...........+.....#####...........#
+M:##......#####.....#####...........#####.....#####......##
+M:##+######.....#######.+...........+.#######.....######+##
+M:##.##.....#####.n###..######+######..###m.#####.....##.##
+M:##....#####.....##...##...........##...##.....#####....##
+M:##.####a.......##...##.............##...##.......b####.##
+M:##+#..........##..####.............####..##..........#+##
+M:##...........##..#####.....###.....#####..##...........##
+M:#......U.....#..######....#WWW#....######..#.....M......#
+M:#...........##.#######...#WWsWW#...#######.##...........#
+M:#..........##..#######....#WWW#....#######..##..........#
+M:#.........##..##.....##p...###...p##.....##..##.........#
+M:#........##..##..eee.~####..o..####~.eee..##..##........#
+M:#f.......+....+......~#############~......+....+.......f#
+M:#########################################################

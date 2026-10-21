@@ -1,0 +1,56 @@
+?:[GEQ [MOD $RANDOM0 44] 22]
+K:84
+?:1
+
+?:[EQU $QUEST62 Taken InProgress]
+D:Travellers arrive here bleeding and missing their purses. Birds have been
+D:attacking them on the road, then carrying the spoils into the hills to the
+D:south. Find their nest and clear it out. The road is difficult enough
+D:without being robbed from above.
+?:1
+
+?:[EQU $QUEST62 Completed]
+D:Two caravans came through today without a single attack. That is the sort
+D:of news I like over breakfast. Take this for your trouble.
+?:1
+
+?:[EQU $QUEST62 Failed]
+D:The birds are still taking their toll. I will ask the next company
+D:through; people cannot keep losing their belongings on the road.
+?:1
+
+T:QUEST:NORMAL
+L:X:PERMANENT
+L:,:DIRT
+L:;:RUBBLE
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:a:MON(^crow$)
+L:b:MON(^carrion$)
+L:c:MON(crow of the yoke)
+L:k:OBJ(human skeleton)
+L:l:OBJ(human skeleton)
+L:*:OBJ(*, DEPTH+1)
+!:SCRAMBLE(k,*)
+L:<:UP_STAIR
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+M:XXXXX,,,,,,k..c...........XXXXXXXXXXXX
+M:XXX,,l,l,*,,...............XXXXXXXXXXX
+M:XX.,,,*k,,k,,..........a...XXXXXXXXXXX
+M:XX..,k,,ck,*,.............XXXXXXXXXXXX
+M:XX..,,k*,,*,,.......a..XXXXXXXXXXXXXXX
+M:XX..*,,,ll,,,....a.....XXXXXXXXXXXXXXX
+M:XXX...,,,,,,.......XX...XXXXX...XXXXXX
+M:XXXXX............XXXXXX..XXX.....XXXXX
+M:XXXXXXXXXXXXXXXXXXXXXXXX..X..XXX..XXXX
+M:XXXXXXXXXXXXXXXXXXXXXXXXX...XXXXX..XXX
+M:XXXXXXXXXXXXXXXXXXXXXXXXXX..XXXX..XXXX
+M:XXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXX..XXX
+M:X.....XXXXXa.XX.X..XXXa....XXX.k..*.lX
+M:X.<....................XXXXXXX*.kb.*.X
+M:X.....XXXXXXX..XXXXa..XXXXXXXX.*.k.k.X
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+R:OBJ(STAFF_ENLIGHTENMENT)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of enlightenment, NUMBER=1)

@@ -1,0 +1,37 @@
+?:[EQU $QUEST79 Taken InProgress]
+D:For this hunt, go to the Dragon's lair. Defeat ten great wyrms
+D:of many colours on the quest floor; your journal gives the
+D:level and keeps the count. Return to the Hall when it is done.
+?:1
+
+?:[EQU $QUEST79 Completed]
+D:Ten great wyrms of many colours. That is a deed the Hall will
+D:remember. Take this trophy; you have earned it.
+?:1
+
+?:[EQU $QUEST79 Failed]
+D:The wyrms proved too much for this hunt. It is closed now.
+D:Bring what you learned into the next fight.
+?:1
+
+R:OBJ(dragon shield):ART(*)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(dragon fang, DEPTH+20)
+
+?:[EQU $CLASS Ninja Ninja-Lawyer]
+R:OBJ(dragon fang, DEPTH+20)
+
+?:[EQU $RACE Dragon Hound Spider Ring Gazer Vortex]
+R:OBJ(^ring$, DEPTH+20):EGO(defender)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(dragon helm):ART(*)
+
+?:[EQU $RACE Centipede]
+R:OBJ(dragon boots, DEPTH+11):EGO(golem)
+
+?:[AND [EQU $CLASS Disciple] [EQU $SUBCLASS Troika] ]
+R:OBJ(multi-hued dragon scale mail, DEPTH+10)
+
+# vim: filetype=q :

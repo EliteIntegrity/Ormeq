@@ -1,0 +1,8 @@
+# vim: filetype=q :
+
+?:[EQU $QUEST8 Taken InProgress]
+D:It is time to go down to the last place. You cannot, yet: Wender
+D:is on the stairs. He was the first to say it whole and he has
+D:spent everything since making sure nobody else gets the chance.
+D:The way down does not open while he is standing on it.
+?:1

@@ -1,0 +1,20 @@
+N:*:Default
+'Heartstone of Pain'
+'Blacklight'
+'Blue Light Special'
+'Barley Light'
+'Corvus'
+'Dimmerhand'
+'Indecent Light of Yeduson'
+'Jewel of Fudgement'
+'Plastic Farseeing Stone'
+'Prism of Suffering'
+'Seizure Strobe'
+'Shadower'
+'Vile of Eluned'
+'Will-o-Wisp'
+of Echolocation
+of Extra Blight
+of False Guidance
+of Immoral Eye
+of Unlight

@@ -1,0 +1,87 @@
+N:19:Hask the Butcher
+sighs, 'Was that really worth it, for the sake of a cheap item?'
+
+N:53:Bristle, Farmer Bulley's dog
+N:54:Nip, Farmer Bulley's dog
+N:55:Snap, Farmer Bulley's dog
+
+N:63:Grubb, the Sneak
+says, 'We had it firssst... we had it...'
+
+N:393:It
+says, 'It's appalling.'
+
+N:573:Lord Sirocco
+says, 'Not properly. You did not do it properly...'
+
+N:670:The Darkling Thief
+says, 'I'll get even! Next time I see you, Death is yours!'
+
+N:732:The Chairman
+says, 'The Concern outlives me. That was always the arrangement.'
+
+N:743:The Phoenix
+eeps sadly.
+bursts into flames.
+squawks, 'You know perfectly well that I do not stay dead! Eep!'
+squawks, 'EEP! Watch out for the afterburners!'
+
+N:764:Uriel, Angel of Fire
+N:765:Azriel, Angel of Death
+N:769:Raphael, the Messenger
+says, 'My God, Please visit a punishment upon this unrighteous sinner!'
+
+N:780:Vlad Dracula, Prince of Darkness
+says, 'Faugh, I'll be back...so long as human psyche has a blackness. Ho-ho.'
+
+N:873:The Combat Accountant
+says shiftlessly, 'Oh. No.'
+
+N:878:Lord Vantage
+shouts, 'This CAN'T be happening! I am Dying....!!!!!'
+
+N:880:Wong, Master of Time
+shouts, 'This CAN'T be happening!'
+
+N:883:Ormeq, Named Again
+says, 'Is this the end of Ormeq, then?'
+
+N:921:The Stalling Daemon
+was finally allowed to stop.
+
+N:931:Caldarm the third
+says, 'I desire peace ... for all people... '
+
+N:936:The Seven-Scarred Man
+shouts, 'She will never know! She will never know!'
+
+N:1004:Pip, the Braver from Another World
+was killed by a cruel venturer. Go to 14.
+
+N:1018:The Conqueror
+points at himself and shouts, 'I finished my life with no regrets!'
+
+N:1063:the louse king, the King of louses
+says, 'Ah, this place is too difficult!  I am going back to the shallow water!!'
+
+N:1094:The Tinkerer
+says, 'I suppose I made it too easy after all!'
+says, 'Wait until you see what I do next!'
+says, 'Too hard. Far too hard. I am going back to the shallow water!'
+says, 'Now what becomes of all my improvements?'
+says, 'I died. That means there will be changes.'
+
+N:1231:Implorington III
+says, 'I'll be back!'
+
+N:1236:Moe, the Cyclops
+shouts, 'I don't deserve this kind of shabby treatment!'
+
+N:1255:Gazhak, the Ogre Tyrant
+shouts, 'Betrayed by my own folk!'
+
+N:1304:Spulga, the Troll Priestess
+screams, 'You can't do this to me!'
+
+N:*:Default
+shouts, 'AAAARRRGGGHHH!!!'

@@ -1,0 +1,44 @@
+?:[EQU $QUEST51 Taken InProgress]
+D:A local adventurer lost his prized leather whip in a ruined building
+D:overrun with snakes. I want you to recover it. Recovering the whip is the
+D:task; you need not kill every snake. Keep your eyes on the ground and
+D:leave yourself a way out. Once you have the whip, report back to me.
+?:1
+
+?:[EQU $QUEST51 Completed]
+D:You recovered the whip. Good. It is yours to keep; there is no further
+D:payment for this job. A useful tool deserves someone who can hold on to it.
+?:1
+
+?:[EQU $QUEST51 Failed]
+D:The whip was the task, and it remains unfinished. We will leave that
+D:building alone for now. Think carefully before taking the next job.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:;:RUBBLE
+L:-:GRASS
+L:,:DIRT
+L:.:FLOOR
+L:<:UP_STAIR
+L:a:MON(copperhead snake)
+L:b:MON(rattlesnake)
+L:c:MON(king cobra)
+L:d:MON(black mamba)
+L:k:ART(of the field archaeologist)
+
+# Dungeon layout
+M:################################
+M:####-,,,,------,,,,-----------##
+M:##-,,,,c----####;;;##;;;;##-;-##
+M:#---;;------#acadacdcadaca#--b-#
+M:#------;;;--;babcbdkdbcbab;--;-#
+M:#-,,--------#acabacdcabaca#--;-#
+M:#---;;;;----;##;;;#+#;;##;#-;;-#
+M:#--b,,------,,,,,--c--,,,---a--#
+M:#-------:::::-:::---;-----;;---#
+M:#----------,,,--------;;d-----##
+M:#<-----;;;;-------------;;;;-###
+M:################################
+

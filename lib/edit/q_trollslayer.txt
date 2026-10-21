@@ -1,0 +1,37 @@
+?:[AND [EQU $QUEST56 Taken InProgress] [EQU $DUNGEON3 Active] ]
+D:The Hall respects deeds. Start in the Orc cave: defeat ten
+D:day-trolls on the quest floor. Your journal lists the level and
+D:keeps the count. Finish the hunt, then return here for your trophy.
+?:1
+
+?:[AND [EQU $QUEST56 Taken InProgress] [EQU $DUNGEON3 Suppressed] ]
+D:The Hall respects deeds. Start in the Troll cave: defeat ten
+D:day-trolls on the quest floor. Your journal lists the level and
+D:keeps the count. Finish the hunt, then return here for your trophy.
+?:1
+
+?:[EQU $QUEST56 Completed]
+D:Ten day-trolls accounted for. A good beginning. Our armourers
+D:have prepared your trophy; you have earned a place at the Hall.
+?:1
+
+?:[EQU $QUEST56 Failed]
+D:The hunt is over, unfinished. Keep the lesson: strength is
+D:knowing what you can face, as well as standing your ground.
+?:1
+
+R:OBJ(steel helm):EGO(troll)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(long sword)
+
+?:[EQU $RACE Hound Spider Ring Gazer Vortex]
+R:OBJ(^ring$):EGO(combat)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+?:[EQU $RACE Filthy-Rag]
+R:OBJ(partial plate armour):EGO(day-trolls)
+
+# vim: filetype=q :

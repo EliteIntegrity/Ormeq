@@ -1,0 +1,63 @@
+# Adapted from Kangband by Gwarl
+# Modified for FrogComposband 7.0.peppermint
+
+?:[GEQ [MOD $RANDOM0 88] 44]
+K:96
+?:1
+
+?:[EQU $QUEST78 Taken InProgress]
+D:The volcano in the eastern part of our territory is rumbling again. We
+D:believe the creatures making their homes there are involved. Eliminate
+D:them all before the lava ruins our crops. The danger is considerable.
+?:1
+
+?:[EQU $QUEST78 Completed]
+D:The volcano's inhabitants have been cleared out. Our farms have some
+D:breathing room. Accept this reward for your work.
+?:1
+
+?:[EQU $QUEST78 Failed]
+D:The volcano remains occupied, and our crops are still in danger. We cannot
+D:count this task as finished.
+?:1
+
+T:QUEST:NORMAL
+L:<:UP_STAIR
+L:#:PERMANENT
+L:.:FLOOR
+L:L:DEEP_LAVA
+L:K:SHALLOW_LAVA
+L:a:MON(efreeti)
+L:b:MON(fire vortex)
+L:c:MON(magma elemental)
+L:d:MON(plasma vortex)
+L:e:MON(elder fire giant)
+L:f:MON(fire elemental)
+L:g:MON(ancient red dragon)
+L:h:MON(11-headed hydra)
+L:i:MON(plasma hound)
+L:j:MON(lava golem)
+L:k:MON(fire angel)
+L:l:MON(bloatgazer)
+
+M:####################################################################
+M:#####..#..#####<.##..a.###########........gKKKKKKKLLKKKKKKKf.....###
+M:##..b.......#.j...j.......#####...b...KKLLLLLKKKKLLLKKKKKKKK..k...##
+M:##.........................#.......KKKKKKKKLLLKKKLLLKKKKKKKKKK....##
+M:###......a............c...........KKKKKKKKKKLLLKLLLLKKKKKKKKKKKK...#
+M:##..............................KKKKKKKKKKKLLLLLLLLLLKKKKKKKKKKK...#
+M:##..d.........d..............b....bKKKKLLLLLLLLLLLLLKKKKKKKKKKK....#
+M:##........b.......................KKKKKKKKKKLLLLLLLLKKKKKKKKKK..a..#
+M:#.....c.................b.......l.KKKKKKKKKLLLKKKLLLKKKKKKKKK.....##
+M:#f............a.....................KKKKKKLLLKKKKLLLKKKKKKKKKKl....#
+M:##.k..............................d.KKKKKLKKKKKKKLLLKKKKKKK....l..h#
+M:##......................a.............KKKKKKKKKKLLLKKKKKKK........##
+M:##...........................k...........KKKKKKKLLLKKKKKK...e.....##
+M:###..b..........c............................KKLLKKKKKKK....k......#
+M:##................#..j..............e....i......KKKKKKK...........g#
+M:#....g..l..f...#####....###.....b..................h..............##
+M:#############################...####...####....##########......f####
+M:####################################################################
+R:OBJ(phial):ART(lava)
+
+

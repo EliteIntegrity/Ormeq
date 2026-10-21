@@ -1,0 +1,28 @@
+?:[EQU $QUEST58 Taken InProgress]
+D:The next hunt is in the Sleeping Mountain. Defeat ten ancient
+D:gold dragons on the quest floor; your journal gives the level
+D:and keeps the count. Return to the Hall when the task is done.
+?:1
+
+?:[EQU $QUEST58 Completed]
+D:Ten ancient gold dragons defeated. You have earned the Hall's
+D:respect, and this trophy to carry with you.
+?:1
+
+?:[EQU $QUEST58 Failed]
+D:The dragon hunt ended before the task was done. There is no
+D:trophy for it, but a hard lesson can still be worth bringing home.
+?:1
+
+R:OBJ(gold dragon scale mail):EGO(87)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(long sword)
+
+?:[EQU $RACE Dragon Hound Spider Ring Gazer Vortex]
+R:OBJ(^ring$):EGO(elemental)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+# vim: filetype=q :

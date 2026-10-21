@@ -1,0 +1,44 @@
+# Adapted from Frogspawn with new map
+
+?:[EQU $QUEST72 Taken InProgress]
+D:A resident was killed in a cellar, and the officer we sent to
+D:investigate was thrown out by an unseen force. We do not know what is
+D:down there. Enter the cellar and destroy every enemy within, then report
+D:to me. This may be your most dangerous commission yet; do not mistake
+D:the size of the place for safety.
+
+?:[EQU $QUEST72 Completed]
+D:You came back, and the cellar is clear. You did what our officers could
+D:not. Please accept this reward.
+?:1
+
+?:[EQU $QUEST72 Failed]
+D:The cellar is still unsafe. I will keep people away while we find
+D:another way to deal with it.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:<:UP_STAIR
+L:.:FLOOR
+L:f:MON(the cellar cat)
+L:o:OBJ(*)
+L:!:OBJ(pint of fine wine)
+L:k:OBJ(rodent skeleton)
+L:s:OBJ(human skeleton)
+L:c:OBJ(large steel chest)
+
+M:###########
+M:#!!....ooc#
+M:#####.#####
+M:#k.......k#
+M:#....s....#
+M:#.........#
+M:#........f#
+M:#........##
+M:#........<#
+M:###########
+R:OBJ(STAFF_DESTRUCTION, TYPE=*)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of life, NUMBER=1)

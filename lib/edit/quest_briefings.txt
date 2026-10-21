@@ -1,0 +1,336 @@
+# Journal summaries of information already supplied in the town briefings.
+# F: selects the actual quest file, including substitutes; O: objective;
+# D: directions. No map coordinates, hidden contents or reward previews.
+# Used for known quests only. Conditional directions follow the current town mode.
+
+F:q_thieves.txt
+O:Kill the band occupying the thieves' hideout.
+D:The hideout is in the northeastern quarter of town.
+
+F:q_sewer.txt
+O:Clear the creatures from the sewer beneath Outpost.
+D:Enter the town sewer. The briefing gives no more precise entrance directions.
+
+F:q_cheap.txt
+O:Clear the rat infestation from the town's compost heap.
+D:Look for the rats' nest at the compost heap on the other side of town.
+
+F:q_wolves.txt
+O:Kill the Great wolves blocking the supply route.
+D:The supply route is at 250 feet (dungeon level 5).
+
+F:q_inntrouble.txt
+O:Kill the mercenaries occupying the questgiver's other house.
+D:Find the occupied house. The briefing gives no more precise directions.
+
+F:q_birds.txt
+O:Clear the birds' nest to make the road safe again.
+D:The birds carry their spoils to a nest in the hills south of town.
+
+F:q_bears.txt
+O:Clear the bears' den to make the forest road safe again.
+D:Search the eastern woods, at the foot of the hill on the forest's southern edge.
+
+F:q_old_willow.txt
+O:Kill the Old Willow before his influence spreads.
+D:Find the clearing east of town; the Old Willow is at its centre.
+
+F:q_vapor2.txt
+O:Destroy the creatures causing the dangerous vapours in the cellar.
+D:Enter the basement of the White Horse Inn.
+
+F:q_haunted_house.txt
+O:Destroy the creatures haunting the old house.
+D:Find the old thatched house near the southeastern town wall.
+
+F:q_old_castle.txt
+O:Clear every enemy from the old castle.
+D:The old castle lies northwest of town.
+
+F:q_crypt.txt
+O:Destroy the Archliches directing the occupation of the royal crypt.
+D:Enter the royal crypt. The briefing gives no more precise directions.
+
+# Telmora, including its substitutes and quests reassigned in small town modes.
+F:q_antipaladin.txt
+O:Kill the stranger blamed for the town's afflictions.
+D:Find the stranger's house in the northwestern corner of town.
+
+F:q_vault.txt
+O:Find the small sword Nettle. Recovering it completes the objective.
+D:Search the vault outside town, one chamber at a time; beware the old traps.
+
+F:q_howes.txt
+O:Clear the creatures attacking villagers from the Howes.
+D:Enter the ancient burial ground. The briefing gives no more precise directions.
+
+F:q_volc_old.txt
+O:Clear every creature from the volcano to protect the crops.
+D:The volcano is in the eastern part of the territory.
+
+F:q_cinder.txt
+O:Kill Cinder before his claim to the Hidden Court's throne is accepted.
+D:Cinder awaits his coronation in a stronghold. The briefing gives no more precise directions.
+
+F:q_montsalvat.txt
+O:Storm Castle Montsalvat and defeat its defenders.
+D:Enter Castle Montsalvat. The briefing gives no more precise directions.
+
+F:q_shrine.txt
+O:Clear the monsters from the forgotten shrine.
+D:The shrine is in a nearby mountain. The briefing gives no more precise directions.
+
+F:q_volc.txt
+O:Clear every creature from the volcano to protect the crops.
+D:The volcano is in the eastern part of the territory.
+
+F:q_lights.txt
+O:Clear the creatures endangering travellers in the marshes.
+D:Investigate the marshes to the northeast, where strange lights lure travellers off the paths.
+
+F:q_troll2.txt
+O:Defeat the troll army threatening the town.
+D:The army is hiding in the eastern hills; its scouts were seen on the road to Angwil.
+
+F:q_emberlord.txt
+O:Kill the creature beneath the abandoned mine before it reaches the open.
+D:Find the former dwarven mine in the mountains of the eastern territory.
+
+# Morivant castle, including its substitutes and the small-town reassignment.
+F:q_snakes.txt
+O:Recover the lost leather whip. Picking it up completes the objective.
+D:Search the snake-infested ruined building. The briefing gives no more precise directions.
+
+F:q_barracks.txt
+O:Clear every enemy from the old barracks.
+D:Find the old barracks among the ruined buildings. No more precise directions are given.
+
+F:q_shopkeeper.txt
+O:Clear every enemy from the old shop.
+D:Search the old shop among the ancient city's ruins. No more precise directions are given.
+
+F:q_embassy.txt
+O:Clear every enemy from the old Elven Embassy.
+D:Find the old Elven Embassy among the ruins. No more precise directions are given.
+
+F:q_underground.txt
+O:Clear every enemy from the ancient underground city so the archaeologists can work.
+D:Enter the underground city found by the archaeologists. No more precise directions are given.
+
+F:q_ghosts.txt
+O:Clear every enemy from the collapsed barracks.
+D:Search the old barracks ruined by the great earthquake. No more precise directions are given.
+
+F:q_dwarf.txt
+O:Clear every enemy from the old Dwarven Embassy.
+D:Find the old Dwarven Embassy among the ruins. No more precise directions are given.
+
+F:q_spider.txt
+O:Clear the spider cult and every other enemy from the temple.
+D:The temple lies beneath the ruins of the old Elven Embassy.
+
+# Fighters' Hall hunts, including the identities retained for existing saves.
+# Targets and counts come from quest state, not a duplicated objective string.
+F:q_trollslayer.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+F:q_giantslayer.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+F:q_drag_old.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+F:q_dem_old.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+F:q_dragonslayer.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+F:q_demonslayer.txt
+D:Travel to the dungeon and level listed above. Only target kills on the active quest floor count. Return to the Fighters' Hall when the hunt is complete.
+
+# Thieves' Guild, including Lardbottom's existing small-town assignments.
+F:q_tengu_death_swords.txt
+O:Clear every enemy from the Magic Shop's back treasure room.
+D:The treasure room is at the back of the Magic Shop. Return to the Thieves' Guild after clearing it.
+
+F:q_mimics_treasure.txt
+O:Clear every enemy from the Black Market's treasure room.
+D:Enter the Black Market's treasure room. Return to the Thieves' Guild after clearing it.
+
+F:q_dusk_elves.txt
+O:Clear every enemy from the Dusk elf Lords' shop.
+D:Their shop is inside the Magic Shop building. Expect guards, and return to the Thieves' Guild when the job is done.
+
+# Angwil's Manor, including alternate quests and small-town assignments.
+F:q_doom1.txt
+O:Clear every enemy from the site beyond the first breach.
+D:The breach is northwest of town. Return to the questgiver when the site is clear.
+
+F:q_doom2.txt
+O:Clear every enemy from the site beyond the second breach.
+D:The second breach is at the edge of town. No more precise directions are given.
+
+F:q_doom2c.txt
+O:Clear every enemy from the site beyond the second breach.
+D:The second breach is at the edge of town. No more precise directions are given.
+
+F:q_spawning_pits.txt
+O:Clear every enemy from the spawning pits.
+D:The pits lie in a nearby valley. The briefing gives no more precise directions.
+
+F:q_concern.txt
+O:Destroy the source of the Concern's influence. Clearing the whole building is not required.
+D:Find the nearby building marked '& CO.'. Return to the questgiver after destroying the presence within.
+
+F:q_mug.txt
+O:Destroy the source of the warehouse's evil presence. Clearing the whole warehouse is not required.
+D:Vanerion's book warehouse is at the northern edge of town. The briefing advises preparing to fight from a distance.
+
+F:q_dragons.txt
+O:Clear every enemy from the dragons' dungeon.
+D:Enter the small dungeon occupied by dragons. No more precise directions are given. Return for the separate reward after clearing it.
+
+F:q_worms.txt
+O:Clear every enemy from the worms' sand pit.
+D:The sand pit is nearby. The briefing gives no more precise directions.
+
+F:q_pit2.txt
+O:Clear every enemy from the old quarry.
+?:[EQU $WILDERNESS NORMAL]
+D:The old quarry is south of Angwil. Return to the questgiver after clearing it.
+?:[EQU $WILDERNESS NONE]
+D:The old quarry is in the forest northwest of Outpost. Return to the questgiver after clearing it.
+?:1
+
+# Anambar: the Mayor and police commissions, including both alternatives.
+F:q_orcs.txt
+O:Clear every enemy from the orc camp.
+D:The raiders' valley lies southeast of town.
+
+F:q_orcs2.txt
+O:Clear every enemy from the tunnels.
+D:The tunnel was found in a hill near the orc camp. No more precise directions are given.
+
+F:q_crystal.txt
+O:Kill five great crystal drakes on the assigned dungeon level. No heart items are required.
+D:The crystal castle lies east of Anambar. Use the dungeon and level listed above.
+
+F:q_dino.txt
+O:Clear every enemy from the wizard's dinosaur experiment.
+D:The wizard's house is west of the Mayor, north of the police station.
+
+F:q_apina.txt
+O:Clear every enemy from Apina Island.
+D:Travel to Apina Island. The briefing gives no more precise directions.
+
+F:q_htower.txt
+O:Clear every enemy from the High Tower; defeating Bovin alone is not enough.
+D:Enter the High Tower. The briefing gives no more precise directions.
+
+F:q_scary.txt
+O:Clear every enemy from Scary Rock. Finding treasure alone does not complete the commission.
+D:Visit the islet called Scary Rock. The briefing gives no more precise directions.
+
+F:q_cellar.txt
+O:Destroy every enemy in the cellar.
+D:Enter the cellar where the resident was killed. No more precise directions are given.
+
+F:q_smug.txt
+O:Clear every enemy from the smugglers' den.
+?:[EQU $WILDERNESS NORMAL]
+D:The smugglers use a small house just north of the police station.
+?:[EQU $WILDERNESS NONE]
+D:The smugglers use a small house south of the Arena.
+?:1
+
+F:q_cq1.txt
+O:Clear every enemy from the violent adventurers' house.
+D:The secluded house is southeast of the police station, near the south wall.
+
+# Thalos: Sultan Idris and Lord Itsukama.
+F:q_cloning_pits.txt
+O:Clear every enemy from the Cloning Pits, including the rogue security cleaners.
+D:Enter the Cloning Pits. The briefing recommends levitation and a distance weapon.
+
+F:q_shipwreck.txt
+O:Clear every enemy from the wreckage. No document item is required.
+D:The wreck lies near the shore. No more precise directions are given.
+
+F:q_wtower.txt
+O:Clear every enemy from the old watchtower.
+?:[EQU $WILDERNESS NORMAL]
+D:The old watchtower is near the shore.
+?:[EQU $WILDERNESS NONE]
+D:The old watchtower is in the forest west of Outpost, near the river.
+?:1
+
+F:q_djinni.txt
+O:Clear the hostile creatures from the cavern; dealing with the djinni alone may not finish the quest.
+D:The cavern lies northeast of the city.
+
+F:q_fairy.txt
+O:Clear every enemy from the shadow fairies' thicket.
+D:The deep thicket lies northeast of the main gate.
+
+F:q_cyclo.txt
+O:Kill the man-eating cyclops. Clearing every other creature is not required.
+D:The cave lies east of the city, near the shore.
+
+F:q_mushrooms.txt
+O:Defeat five fieldcap patches on the assigned dungeon level. No mushroom items are required.
+D:Enter the icky cave at the dungeon level listed above, then return to the questgiver.
+
+F:q_sorcerer.txt
+O:Kill the renegade old sorcerer. Clearing every other creature is not required.
+D:The sorcerer has built a tower nearby. No more precise directions are given.
+
+F:q_tidy.txt
+O:Clear every enemy from the laboratory. Loose equipment does not need to be collected or destroyed.
+D:Enter the students' laboratory. No more precise directions are given.
+
+F:q_basilisk.txt
+O:Clear every enemy from the basilisk cave. No drawing or specimen item is required.
+D:The cave lies to the north.
+
+F:q_staff.txt
+O:Recover the former student's wizard's staff. Picking it up completes the objective.
+D:Search the site where the student confronted the undead. No more precise directions are given.
+
+F:q_acadmy.txt
+O:Clear every enemy from the academy occupying the museum.
+D:Enter the former local museum. No more precise directions are given.
+
+# Zul, including the existing tower assignments in small-town mode.
+F:q_sorcery.txt
+O:Clear every guardian from the Node of Sorcery.
+D:The node lies in a damp area nearby. No more precise directions are given.
+
+F:q_chaos.txt
+O:Clear every guardian from the Node of Chaos.
+D:The node lies in a nearby volcano.
+
+F:q_nature.txt
+O:Clear every guardian from the Node of Nature.
+D:The node lies in a nearby forest.
+
+F:q_eddies.txt
+O:Clear every enemy from the time mages' site, then return to Tanistil.
+D:The time mages have settled near Zul. No more precise directions are given.
+
+F:q_stable.txt
+O:Clear every enemy from the old Angwilian stables.
+D:Enter the abandoned stables in town. No more precise directions are given.
+
+# Existing legacy/main-story entries, never advertised as new commissions.
+F:q_killing_fields.txt
+O:Kill the horned general. Clearing the entire army is not required.
+D:Legacy commission: its former town entrance and quest service are no longer offered in current town layouts.
+
+F:q_wender.txt
+O:Defeat Wender to open the way to the final level.
+D:Descend to the dungeon and level listed above.
+
+F:q_ormeq.txt
+O:Finish the last errand at the bottom of the Sink. Defeat the presence described in the briefing.
+D:Descend to the final level after opening the way past Wender.

@@ -1,0 +1,62 @@
+#new version by st_
+
+?:[EQU $QUEST20 Taken InProgress]
+D:Something in the White Horse Inn's basement has driven everyone out. The
+D:air turns foul, clears, and then strikes as if it were alive. A canary
+D:taken down to test it died within minutes. Find and destroy the source of
+D:those vapours. Nobody can safely use the cellar until it is gone.
+?:1
+
+?:[EQU $QUEST20 Completed]
+D:The cellar is usable again. We live among pieces of stranger worlds;
+D:perhaps we should expect strange things in their corners. Expecting them
+D:does not make them welcome. Take this with our thanks.
+?:1
+
+?:[EQU $QUEST20 Failed]
+D:The cellar will stay closed. I have sent for another adventurer; nobody
+D:else is to go down there in the meantime.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:FLOOR
+L:<:UP_STAIR
+L:e:MON(radiation eye)
+L:g:MON(gas spore)
+L:E:MON(air elemental)
+L:v:MON(shimmering vortex)
+L:j:MON(weird fume)
+L:b:OBJ(RING)
+L:c:OBJ(AMULET)
+M:#########################
+M:############v############
+M:###########...###########
+M:#########E.....E#########
+M:###########...###########
+M:############.############
+M:###########.g.###########
+M:########.........########
+M:#######...........#######
+M:######e...........e######
+M:#######...........#######
+M:##ccE#e...........e#Ebb##
+M:#c...##...........##...b#
+M:#j.....................j#
+M:#c...##...........##...b#
+M:##ccE#e...........e#Ebb##
+M:#######...........#######
+M:######e...........e######
+M:#######...........#######
+M:########.........########
+M:###########.<.###########
+M:#########################
+R:OBJ(ROD_DETECT_ALL)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(sling, DEPTH+15):EGO(hunter)
+
+?:[AND [EQU $CLASS Disciple] [EQU $SUBCLASS Troika] ]
+R:OBJ(STAFF_SLEEP_MONSTERS, DEPTH+10)
+
+# vim: filetype=q :

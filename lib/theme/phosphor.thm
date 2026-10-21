@@ -1,0 +1,54 @@
+# Phosphor -- a monochrome terminal, and nothing else
+#
+# A P1 phosphor tube had one gun and one colour, and everything on it was
+# told apart by brightness. So this collapses every hue almost entirely
+# onto green -- but only almost, and it keeps each family's brightness
+# exactly where it was. A red dragon still reads differently from a blue
+# one; it just reads by weight rather than by hue, the way it did in 1974.
+
+name    Phosphor
+blurb   One green gun, and a bit of glow. 1974.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      030A04
+ui      panel       07160A
+ui      border      1F4A26
+ui      title       9CFF7A
+ui      text        6BE05A
+ui      muted       2F7A38
+ui      accent      C6FF9E
+ui      selection   164A1E  D0
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        030A04
+map     WHITE       E9EEE7
+map     SLATE       74A673
+map     ORANGE      6DD048
+map     RED         61C035
+map     GREEN       439735
+map     BLUE        4CC04A
+map     UMBER       487F33
+map     L_DARK      385837
+map     L_WHITE     BBCBB4
+map     VIOLET      6DC573
+map     YELLOW      81D865
+map     L_RED       8FE06C
+map     L_GREEN     7FCD6F
+map     L_BLUE      89D586
+map     L_UMBER     7FC266
+map     I_GREEN     5BBD42
+map     PINK        A1D586
+map     I_BLUE      5DC058
+map     PURPLE      50AF56
+map     TEAL        4AA442
+map     SKY_BLUE    80D17B
+map     MUD         598D49
+map     D_YELLOW    68BC4D
+map     TURQUOISE   7ACA72
+map     L_ORANGE    82DA62
+map     LILAC       B2DCB4
+map     D_PURPLE    438948
+map     SKY_DARK    54AF50
+map     PALE_BLUE   BDDCBC
+map     D_PINK      76B257
+map     CHESTNUT    85B96F

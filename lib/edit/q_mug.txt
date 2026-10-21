@@ -1,0 +1,79 @@
+# New quest for FrogComposband 7.1.chocolate
+
+?:[EQU $QUEST24 Taken InProgress]
+D:Vanerion's book warehouse stands at the northern edge of
+D:town. He returned to find thieves inside, books coming to
+D:life and demonic signs on the floor. A watchful, malevolent
+D:presence hangs over the place. Find and destroy its source,
+D:then return to me; clearing the whole warehouse is not
+D:required. The reports suggest you should be able to fight
+D:from a distance. Prepare for that before you enter.
+?:1
+
+?:[EQU $QUEST24 Completed]
+D:The presence in the warehouse has been destroyed. Vanerion
+D:can begin to reckon with what happened to his collection.
+D:Take this reward for removing the source of the danger.
+?:1
+
+?:[EQU $QUEST24 Failed]
+D:The presence still haunts the warehouse. This commission
+D:is closed, without a reward. I will have to look elsewhere
+D:for a way to end it.
+?:1
+
+T:QUEST:NORMAL:NO_ROTATE
+L:#:PERMANENT
+L:%:GRANITE
+L:<:UP_STAIR
+L:M:MON(gospel of mug, NO_SLEEP)
+L:?:MON(raal's tome)
+L:!:OBJ(BOOK)
+L:x:MON(tracking pixel, NO_SLEEP)
+L:p:MON(master thief)
+L:P:MON(master rogue)
+L:~:DEEP_LAVA(ICKY)
+L:^:TRAP(TRAP_ALARM)
+L:j:FLOOR(ICKY):OBJ(GOLD):MON(master thief)
+L:.:FLOOR
+L:,:FLOOR(ICKY)
+L:$:FLOOR(ICKY):OBJ(GOLD)
+L:u:OBJ(BOOK)
+L:v:OBJ(HI_BOOK)
+L:w:MON(raal's tome)
+L:+:LOCKED_DOOR_4
+L:/:OBJ(sickle, DEPTH+10)
+!:SCRAMBLE(u,v,w)
+M:#################################################
+M:#x%%%%%....#.....................%%%..%%%%%%%%%%#
+M:#%%%%%.....###..,,,,,,,,,,,..###.%%..%%%/%%%%%%%#
+M:#%%%%...%#.#%x.,,,,,,,,,,,,,..%#.%...%%%+%%%%%%%#
+M:#%%%...%%#.#%.,,,,,,,,,,,,,,,.%#...%..%%..%%%%%%#
+M:#%%%..%%%#.#%.,,,~~,,,,,~~,,,.%#..%%%..%%..%%%%%#
+M:#%%%..%%%#.#%.,,,,~~,,,~~,,,,.%#.%%%%%..%%.%%%%%#
+M:#%%%..%%%#.#%.,,,,~~~~~~~,,,,.%#.%%%%%%..%.%%%%%#
+M:#pPP..PPp#.#%.,,?,~~~~~~~,?,,.%#.%%%%%%%P..%%%%%#
+M:#pPP..PPp#.#%.,,,,,~~~~~,,,,,.%#.%%...%%...%%%%%#
+M:#%%%..%%%#.#%.,,,,~~~M~~~,,,,.%#.%..%....%..%%%%#
+M:#%x%..%x%#.#%.,,,~~~~~~~~~,,,.%#.%.%%%%%%%%..%%%#
+M:#%%%..%%%#.#%.,~~~~~~~~~~~~~,.%#.%+%%%%%%%%%..%%#
+M:#%%%..%%%#.#%.~~~~~~~~~~~~~~~.%#.%$$$$%%%%%%%+%%#
+M:#%%%..%%%#.#%.,,,,,,~~~,,,,,,.%#.%$$$$%%%%%%#$#%#
+M:#%%%..%%%#.#%..,,,,,~~~,,,,,..%#.%$$j$%%%%%%#$#%#
+M:#%%%..%%%#.#%%..u!,,~~~,,!v..%%#.%$$$j%%%%%%#$#%#
+M:#%%%..%%%#.##%%..!!,,~,,!!..%%##.%%%%%%%%%%%#$#%#
+M:#%%%..%%%#.p##%%..!!,~,!!..%%###.%%%%%%%%%###$###
+M:#%%%..%%%#%..##%%..!!w!!..%%###..%%%%%%%%%#$$$$$#
+M:#%%%..%%%#%%..##%%..,x,..%%###..%%%%%%%%%%#$$$$$#
+M:#%x%..%x%#%%%..##############..%%%%%%%%%%%#$$j$$#
+M:#%%%<.%%%#x%%%.....P..^.......%%x%%%%%%%%%#$$$$$#
+M:#################################################
+R:OBJ(^ring$, DEPTH+10):EGO(defender)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^amulet$, DEPTH+10):EGO(defender)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(potion of *healing*)
+
+# vim: filetype=q :

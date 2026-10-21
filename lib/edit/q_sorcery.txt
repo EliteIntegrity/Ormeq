@@ -1,0 +1,57 @@
+# Created by Topi Ylinen
+?:[EQU $QUEST10 Taken InProgress]
+D:We have found a Node of Sorcery in a damp area nearby. Clear every
+D:guardian from the site so our tower can draw upon its energies, then
+D:return to me. Be ready before you enter; this opportunity will not wait
+D:for a second expedition.
+?:1
+
+?:[EQU $QUEST10 Completed]
+D:The Node of Sorcery is secure. You have earned this spellbook as your
+D:reward.
+?:1
+
+?:[EQU $QUEST10 Failed]
+D:The node's energies have faded. The opportunity is lost and your
+D:commission is over.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:~:SHALLOW_WATER
+L:.:FLOOR
+L:<:UP_STAIR
+L:a:SHALLOW_WATER:MON(coilward sentinel)
+L:b:MON(phantom warrior, NO_GROUP)
+L:c:MON(phantom beast)
+L:d:SHALLOW_WATER:MON(air elemental)
+L:e:DEEP_WATER:MON(great wyrm of many colours)
+M:###############################
+M:##~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+M:#~~~~~~~~~~~~~aaa~~~~~~~~~~~~~#
+M:#~~a~~~~~~~~~~~~~~~~~~~~~~~a~~#
+M:#.~aa%%%%%%%%%~a~%%%%%%%%%aa~.#
+M:#..~%%%%%%%%%~aaa~%%%%%%%%%~..#
+M:#..~%%%ccbbbbb~a~bbbbbcc%%%~..#
+M:#..~%%ccb.............bcc%%~..#
+M:#..~%%...%%%%%%%%%%%%%...%%~..#
+M:#..~%%..%%...........%%..%%~..#
+M:#..~%%..%.....~d~.....%..%%~..#
+M:#..~%%..%....~ded~....%..%%~..#
+M:#..~%%......~deeed~......%%~..#
+M:#..~%%..%....~ded~....%..%%~..#
+M:#..~%%..%.....~d~.....%..%%~..#
+M:#..~%%b.%%...........%%bb%%~..#
+M:#..~%%%b.%%%.......%%%bb%%%~..#
+M:#..~%%%ccbbbbbbbbbbbbbcc%%%~..#
+M:#..~%%%%cbbbbbbbbbbbbbc%%%%~..#
+M:#..~%%%%%%%%%%%%%%%%%%%%%%%~..#
+M:#..~~%%%%%%%%%%%%%%%%%%%%%~~..#
+M:#...~~~~~~~~~~~~~~~~~~~~~~~...#
+M:#.....~~~~~~~~~~~~~~~~~~~.....#
+M:#<...........................##
+M:###############################
+R:OBJ(grimoire of power)
+
+# vim: filetype=q :

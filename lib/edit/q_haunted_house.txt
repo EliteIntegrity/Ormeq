@@ -1,0 +1,55 @@
+# Haunted House, (C) Topi Ylinen 1999
+
+?:[EQU $QUEST25 Taken InProgress]
+D:Nobody will pass the old thatched house near the southeastern wall after
+D:dusk. Lights move inside, though the house has stood empty for years.
+D:Enter it and destroy the creatures haunting it. We cannot afford a street
+D:that people are afraid to use.
+?:[EQU $QUEST25 Completed]
+D:People are using the street again. The house will need work, but that is
+D:work we can do ourselves. You have dealt with the danger; take your
+D:reward.
+?:[EQU $QUEST25 Failed]
+D:The house is still unsafe. Others must take up the work now. Rest and
+D:prepare more carefully before accepting another commission.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:~:DEEP_WATER
+L:!:TRAP(*, 25%):OBJ(*, DEPTH+10)
+L:^:TRAP(*)
+L:<:UP_STAIR
+L:Z:MON(chronoseam hound)
+L:?:MON(raal's)
+L:I:MON(ipsissimus)
+L:Q:MON(nexus q)
+L:S:MON(gravewall breaker)
+L:>:MON(stairway to hell)
+L:j:MON(grave hand idol)
+L:t:MON(skeletal tyrannosaurus)
+L:T:MON(spectral tyrannosaurus)
+L:m:MON(undead mass):TRAP(*)
+L:C:MON(spectre)
+L:V:MON(^vampire$)
+M:###############################
+M:#..+!..+^^^m^^m^^^+...........#
+M:#..#.t.#^^^^^^^^^^#...........#
+M:#!#################...........#
+M:#+#...............#.!!!!!!!!!.#
+M:#.................#.!#######!.#
+M:#..###..........~~#.!#######!.#
+M:#.##Z#..........~I#.!!!!!!!!!.#
+M:#.#..#.~~~~.~~~.~I#...........#
+M:#+#%##.~?Q~.~Q~.~I#T..........#
+M:#..###+####+###+########+######
+M:#..#^....#SSS#...#j+^^^^^^^^+!#
+M:#..#..!..#SSS#.!.###^......^###
+M:#<.#C...C#SSS#.V.#!+^^^^^^^^+>#
+M:###############################
+R:OBJ(STAFF_BANISH_EVIL)
+
+# vim: filetype=q :

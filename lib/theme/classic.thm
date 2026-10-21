@@ -1,0 +1,21 @@
+# Classic -- the original palette, untouched.
+#
+# There are deliberately no `map` lines here. A theme that lists none leaves
+# the game's own colours exactly as they shipped, which makes this both the
+# reference to compare the others against and the option for anyone who wants
+# precisely what they had.
+
+name    Classic
+blurb   The original palette, exactly as it shipped.
+
+# --- interface roles -------------------------------------------------------
+# Chrome still needs colours even when the map keeps its own, so these are
+# picked from the stock sixteen rather than invented.
+ui      canvas      000000
+ui      panel       0C0C0C
+ui      border      808080
+ui      title       FFFF00
+ui      text        FFFFFF
+ui      muted       A0A0A0
+ui      accent      00FFFF
+ui      selection   484848  DC

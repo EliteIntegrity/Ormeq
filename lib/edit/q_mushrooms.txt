@@ -1,0 +1,20 @@
+?:[EQU $QUEST63 Taken InProgress]
+D:Here to enrol? Begin with the mushrooms in the icky cave. Defeat five
+D:fieldcap patches on the assigned dungeon level, then return to me. You
+D:do not need to carry mushrooms back as items; the five patches are your
+D:examination.
+?:1
+
+?:[EQU $QUEST63 Completed]
+D:Five patches dealt with. Good. Take this signet ring as your reward;
+D:perhaps you will be of use to the order after all.
+?:1
+
+?:[EQU $QUEST63 Failed]
+D:No credit for an unfinished examination. Perhaps you should study the
+D:subject more carefully.
+?:1
+
+R:OBJ(RING):EGO(wizardry)
+
+# vim: filetype=q :

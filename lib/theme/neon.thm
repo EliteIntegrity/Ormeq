@@ -1,0 +1,52 @@
+# Neon -- loud, and unrepentant about it
+#
+# The bold one. Purple-black ground, saturation pushed hard, and the
+# lightness floor raised so nothing sinks into the background. Every
+# family keeps its place -- it is just all turned up.
+
+name    Neon
+blurb   Hot pink, cold cyan, and a purple night.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      120A1E
+ui      panel       1E1030
+ui      border      53306E
+ui      title       FF6FD0
+ui      text        EEE2FA
+ui      muted       9A7CB4
+ui      accent      4FE8E0
+ui      selection   3A1C56  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        120A1E
+map     WHITE       F6F4F4
+map     SLATE       99A2C0
+map     ORANGE      FF895A
+map     RED         FF324D
+map     GREEN       57F50E
+map     BLUE        5060F7
+map     UMBER       CC481A
+map     L_DARK      465279
+map     L_WHITE     E9E2E3
+map     VIOLET      DC86EF
+map     YELLOW      FFC982
+map     L_RED       FF939A
+map     L_GREEN     CBFA87
+map     L_BLUE      A8C1FB
+map     L_UMBER     EE9D7C
+map     I_GREEN     EDF745
+map     PINK        FBA8D0
+map     I_BLUE      679BF2
+map     PURPLE      BC61DB
+map     TEAL        3ABDE6
+map     SKY_BLUE    97C7FB
+map     MUD         C19F4D
+map     D_YELLOW    F1B257
+map     TURQUOISE   8BE7F5
+map     L_ORANGE    FFAB82
+map     LILAC       F2E3F9
+map     D_PURPLE    AE3CC7
+map     SKY_DARK    6186DB
+map     PALE_BLUE   EEF2F9
+map     D_PINK      DD6B9A
+map     CHESTNUT    DE928C

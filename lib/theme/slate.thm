@@ -1,0 +1,52 @@
+# Slate -- cool, low-glare, built for long sessions.
+#
+# Pure white on pure black for four hours is punishing. The white is pulled
+# down, the black lifted, and the hue separation left alone, so it still reads
+# at a glance in a lit room.
+
+name    Slate
+blurb   Cool and low-glare. Built for long sessions.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      0E1116
+ui      panel       161B22
+ui      border      2D3742
+ui      title       E3B341
+ui      text        DDE3EA
+ui      muted       8B98A6
+ui      accent      58A6FF
+ui      selection   38526E  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        0E1116
+map     WHITE       E6EDF3
+map     SLATE       8B98A6
+map     ORANGE      E89A4A
+map     RED         C9424D
+map     GREEN       3FA96B
+map     BLUE        5B7FD4
+map     UMBER       9B6B3E
+map     L_DARK      454F5B
+map     L_WHITE     B8C2CC
+map     VIOLET      C77BE0
+map     YELLOW      E6C86E
+map     L_RED       FF6B77
+map     L_GREEN     6FD6A0
+map     L_BLUE      79B8FF
+map     L_UMBER     D4A76A
+map     I_GREEN     7FBF4A
+map     PINK        E77AAF
+map     I_BLUE      4F9BE0
+map     PURPLE      9D6CBD
+map     TEAL        4FB3B8
+map     SKY_BLUE    69C5FF
+map     MUD         87845C
+map     D_YELLOW    C9B458
+map     TURQUOISE   7EDDD7
+map     L_ORANGE    F0B24A
+map     LILAC       D0B4FF
+map     D_PURPLE    7A4E8C
+map     SKY_DARK    5A8CB8
+map     PALE_BLUE   B9C7F0
+map     D_PINK      B85A85
+map     CHESTNUT    C08A8A

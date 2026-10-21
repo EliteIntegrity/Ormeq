@@ -1,0 +1,99 @@
+<style:title>How the Dungeons Got Here</style>
+
+Nobody built this place. It was collected.
+
+<topic:Collection><style:heading>The Collection</style>
+
+Look at the country you are standing in: roads, weather, seven towns, farmland going quietly to seed. Ordinary ground. None of it is the point.
+
+The point is the holes in it. Nobody has ever agreed how many.
+
+In this country, each of the great holes is a place that was taken from somewhere else and set down here. A court. A drowned city. A mountain with something asleep beneath it. A heaven, and separately a hell. These places are not piled up and they are not related to one another. They are <color:keyword>laid out</color>, the way a collection is laid out, in whatever order suited whoever put them there.
+
+And each is far larger inside than the ground it covers. That is why they are holes and not counties: there is no room on the surface for a country, so the country goes downwards.
+
+<topic:Depth><style:heading>Deeper Means Further In</style>
+
+Depth here is not distance below your feet. It is <color:G>distance into the thing you have entered</color>.
+
+The first floors of anywhere are its edges: outskirts, doorways, whatever happened to be nearest the walls when it was lifted. Go further and you come towards whatever that place kept at its heart, which is usually whatever its people were most afraid of. That is why deeper is worse. It has nothing to do with rock.
+
+It is also why the numbers refuse to compare. Being ninety floors into a hell tells you nothing whatever about how far ninety floors would take you into a mine. They are separate objects, and they do not even mean the same thing by depth.
+
+<topic:Edge><style:heading>Where It Stops</style>
+
+At the outer edges of this country you come to ground you cannot cross. Not mountains. Not sea. It simply stops being ground.
+
+This is what people find hardest to accept, and there is no comfort in the explanation: things were <color:keyword>set down</color> here. Nobody laid a road between them, because a road is something you build between places you meant to connect.
+
+There were lands beyond it. That much is not in doubt -- there are roads on this side that were built to go somewhere, and they end in the middle of a field, and there are people still alive whose grandparents walked them. Whether those countries were taken, or are simply standing there on the other side of a gap that cannot be crossed, nobody knows. Nobody has ever come back across, in either direction.
+
+So there is no reason to think this is the only such patch of ground. There is only no way to find out.
+
+A washed-out road is a different sort of trouble. People still mend local bridges and find paths around floods. Losing a supply route this winter is not the same as losing contact with the lands beyond. One can happen long after the other, and putting the bridge back does not put the world back.
+
+<topic:First><style:heading>Who Was Here First</style>
+
+Somebody farmed this. You can see it: the field boundaries are older than any of the towns, and they were laid out by people who expected to stay.
+
+They are still here. They are the <color:keyword>yeeks</color>, and this is their country.
+
+Everybody finds this funny. Yeeks are small, weak, poor at nearly everything, and prone to screaming; the incomers use the word as an insult and have done for so long that most of them have forgotten it is a people. They are also the only people in this country whose history began <color:G>here</color>. Everyone else's history is somewhere underneath you.
+
+And they have kept at it. They have had a king, and after the king a president, which is more constitutional argument than the rest of the towns have managed between them. It is treated as a joke. It is not obvious why.
+
+If you want to know anything true about what takes the worlds, they are the only ones who were here before it started. They will not tell you much. Given the last thousand years, that seems fair.
+
+<topic:Country><style:heading>The Name of the Country</style>
+
+Everyone calls this place <color:keyword>Ammerow</color>. Every town, every road sign, every drunk who cannot remember the way home.
+
+Nobody can tell you what it means, and almost nobody has ever asked.
+
+It is the yeeks' word for themselves. Not "yeek" -- that is what incomers named them, after the noise. Ammerow is what they have always called their own people, and the newcomers took it for the name of the ground, wore the edges off it, and have been saying it every day since without once noticing whose word it is.
+
+<topic:Towns><style:heading>The Towns</style>
+
+Almost nobody in the towns is from here.
+
+Every so often a taken place comes to rest shallow enough that some of its people climb out. Most keep walking. The ones who stay build on whatever ground is going, sell what they carried, and learn the local words for things. It is why the smith stocks weapons nobody can name, why the shelves hold prayer books from four religions that never met, and why the queue outside the general store is a dozen kinds of person who all agree, more or less, on the price of rope.
+
+Their children are from here, and from nowhere, which is a different thing and takes about a generation to sting.
+
+<topic:Treasure><style:heading>Why the Great Things Are One of a Kind</style>
+
+When a place is taken, everything in it comes too, and nothing more is ever made. So the extraordinary sword you drag out of the sixtieth floor is not rare. It is <color:keyword>the last one</color>. The hands that forged it, the ore it was cut from and the country that needed it are all somewhere underneath you, and there will not be another.
+
+<topic:Name><style:heading>Why He Comes</style>
+
+He does not search. He has never needed to.
+
+<color:G>Every place in this collection is a place where somebody said his name.</color>
+
+That is the whole of it. Not a curse, not a bargain, nothing you could sign. A name said aloud is an address, and he is very good at addresses. Somewhere in each of these holes is the room where it happened, and usually you can tell which one it was.
+
+So it is not said here. Not in the towns, not on the roads, not as a joke, and not in this document either.
+
+What people say instead is <color:keyword>Ormel</color>.
+
+That is not another word for him. It is his name with the last sound taken off, and everyone knows it. The rule children are taught is simple enough to keep under pressure: <color:G>you may say the name as far as the end, and the end is the address.</color> Start it and turn aside, and you are safe. Finish it and you have written to him.
+
+So the towns say Ormel a dozen times a day, with no more weight than any other name, and every one of them is a flinch. You will get used to it faster than you expect. Everyone does.
+
+That is not superstition. Superstition is when the ritual has outlived the reason.
+
+<topic:Custom><style:heading>What People Do About It</style>
+
+If somebody says it indoors -- a drunk, a child, a newcomer nobody thought to warn -- everyone goes outside. The one who said it stays in and puts out the fire, and is not spoken to until morning. Then the door is opened from the outside and somebody asks them, by name, to come out.
+
+Nobody can tell you whether it works. It has not stopped working yet, which is the only test anyone has.
+
+<topic:Bottom><style:heading>The One With No Bottom</style>
+
+All but one of the holes are places. One is not.
+
+It has no theme, no floor anybody has found, and nothing in it that came from anywhere in particular. It is the only one that was never taken from somebody, because it is not part of the collection.
+
+It is where the collector lives.
+
+The way in is known and unguarded, which tells you what he thinks of the risk. Go down far enough and you will meet him, and at the very end you will find out what he is actually called -- a thing worth knowing once and no earlier, because up here it is the only word that has ever cost a world.

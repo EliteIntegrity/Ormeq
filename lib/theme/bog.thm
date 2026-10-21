@@ -1,0 +1,53 @@
+# Bog -- FrogComposBand's own palette.
+#
+# Green-black canvas, moss and amber, warm where Slate is cool. The colour
+# families are exactly where the game put them: retinting is allowed, moving a
+# colour is not, because a red 'D' has to stay a different dragon from a blue
+# one no matter what theme you are wearing.
+
+name    Bog
+blurb   Green-black and amber. Frog's own.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      0A0F0C
+ui      panel       17231A
+ui      border      3A5240
+ui      title       D9A441
+ui      text        E4EADF
+ui      muted       8A9A88
+ui      accent      7FC46B
+ui      selection   2E4A30  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        0A0F0C
+map     WHITE       E4EADF
+map     SLATE       8A9A88
+map     ORANGE      DE9A4B
+map     RED         BE4A46
+map     GREEN       4E9E5C
+map     BLUE        5E82B4
+map     UMBER       8E6438
+map     L_DARK      3C4A3E
+map     L_WHITE     BFC9BB
+map     VIOLET      B77FC4
+map     YELLOW      DEC46A
+map     L_RED       F4706A
+map     L_GREEN     8AD07A
+map     L_BLUE      84B6DA
+map     L_UMBER     C79C63
+map     I_GREEN     9CC24E
+map     PINK        DC8AA8
+map     I_BLUE      5E9AC4
+map     PURPLE      8E63A4
+map     TEAL        4FA894
+map     SKY_BLUE    78C0D8
+map     MUD         7E7C50
+map     D_YELLOW    BCA84E
+map     TURQUOISE   79CFB4
+map     L_ORANGE    EBB055
+map     LILAC       C8B6DC
+map     D_PURPLE    6E4A7E
+map     SKY_DARK    5C86A4
+map     PALE_BLUE   B4C4D4
+map     D_PINK      AE5E7E
+map     CHESTNUT    B48478

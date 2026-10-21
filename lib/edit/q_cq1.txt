@@ -1,0 +1,71 @@
+# Adapted from Frogspawn
+
+?:[EQU $QUEST74 Taken InProgress]
+D:A band calling themselves adventurers has been attacking townsfolk for
+D:their money and testing weapons on passers-by. They are based in a
+D:secluded house southeast of here, near the south wall. Clear every enemy
+D:from that house and report back to me. This is about ending their
+D:attacks, not recovering a particular item.
+
+?:[EQU $QUEST74 Completed]
+D:Those adventurers are gone? Good. I do not need the details. There is no
+D:separate item payment for this job, but the vacant house is now
+D:available as your home.
+?:1
+
+?:[EQU $QUEST74 Failed]
+D:The attacks will continue until someone stops them. I will have to find
+D:other help.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:<:UP_STAIR
+L:.:FLOOR
+L:,:FLOOR(ICKY)
+L:+:CLOSED_DOOR
+L:-:LOCKED_DOOR_7
+L:c:MON(novice mindcrafter, NO_GROUP)
+L:p:MON(novice priest, NO_GROUP)
+L:o:MON(^priest$)
+L:w:MON(novice warrior, NO_GROUP)
+L:a:MON(novice archaeologist)
+L:m:MON(novice mage, NO_GROUP)
+L:i:MON(illusionist)
+L:':OBJ(ration of food)
+L:::GRASS
+L:P:GRASS:MON(novice paladin, NO_GROUP)
+L:A:GRASS:MON(novice archer, NO_GROUP)
+L:B:GRASS:MON(raven)
+L:C:GRASS:MON(knight archer)
+L:r:MON(novice ranger, NO_GROUP)
+L:W:MON(swordsman)
+L:!:TREE
+L:?:FLOWER
+L:;:BRAKE
+L:(:FLOOR(ICKY):OBJ(small leather shield, DEPTH+10)
+M:#########################
+M:#.......#<###############
+M:#.......#..##.........p.#
+M:#..cc...#+###...........#
+M:#..c....'......,,,,.....#
+M:#..c....#....ww#,,,.....#
+M:#.......#....ww#-#,..####
+M:#########.....W#(#,.....#
+M:#..............###,.....#
+M:##+###+##...............#
+M:#.pp#op.#...............#
+M:############...##########
+M:#.....immm.#............#
+M:#......m#m.#......rr....#
+M:##+##......#......''....#
+M:#...#.............''....#
+M:#.a.#.............rr....#
+M:#...#...................#
+M:###########+#############
+M:#####!??:::::::??!#######
+M:#####!:P:::::::P:!#######
+M:#####!AA::!!!B:CA!#######
+M:#####!!!!!!!!!!!!!#######
+M:#########################
+

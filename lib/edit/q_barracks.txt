@@ -1,0 +1,55 @@
+?:[GEQ [MOD $RANDOM0 56] 28]
+K:92
+?:1
+
+?:[EQU $QUEST52 Taken InProgress]
+D:The old barracks stand among the ruined buildings. Lost souls wander
+D:those rooms, and many soldiers were quartered there. Clear the place
+D:of its enemies. Do not mistake an abandoned building for an empty one.
+?:1
+
+?:[EQU $QUEST52 Completed]
+D:The barracks are cleared. Keep whatever you recovered there; that is
+D:your payment. I have no separate reward to hand over for this job.
+?:1
+
+?:[EQU $QUEST52 Failed]
+D:The barracks remain unsafe. I will not send anyone in on the strength
+D:of an unfinished job. We must turn our attention elsewhere.
+?:1
+
+T:QUEST:NORMAL
+L:X:PERMANENT
+L:#:GRANITE
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:<:UP_STAIR
+L:M:MON(moaning spirit)
+L:G:MON(^ghost$)
+L:S:MON(spectre)
+L:a:MON(mummified orc)
+L:b:MON(banshee)
+L:c:MON(lost soul)
+L:d:MON(ghast)
+L:e:MON(ghoul)
+L:f:MON(ghoulking)
+L:k:OBJ(SHIELD, DEPTH+5):EGO(elemental)
+L:l:OBJ(HARD_ARMOR, DEPTH+15)
+L:$:OBJ(*, DEPTH+15)
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+M:X.................#..e....#l..b...kXXX
+M:X.#######+#########...d...#......S..XX
+M:X.#..M......a#....+...d...#..........X
+M:X.#....c.....#....#.M.....#...M...G..X
+M:X.##+#########....##############+####X
+M:X.#..........#..d.#b......a..........X
+M:X.#...a..G...+....#....a.............X
+M:X.#..........#....#.........e...c....X
+M:X.############....#..................X
+M:X............#.G..#.....e...f........X
+M:X..c...M.....#....#..................X
+M:X............#....+....e...c.....d...X
+M:X########+####....#...........M.....$X
+M:X............#..M.#.......d.........XX
+M:X<...........#....#...............$XXX
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

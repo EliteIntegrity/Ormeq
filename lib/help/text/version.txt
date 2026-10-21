@@ -1,0 +1,62 @@
+Ormeq 0.1.0
+
+A fork of FrogComposband 7.1.salmiak, taken on 23 August 2026. Ormeq 
+retains its inherited game systems in a setting shared with Ammerow: 
+Lands Beyond. Its SDL3 presentation adds themes, optional portraits and 
+tiles, creature cards, health warnings and The Reckoner's calculation 
+explanations.
+
+Official playable packages include sound effects and ambient 
+soundscapes shared with Ammerow and Ormeq - Home Theme (Dark) by 
+EliteIntegrity, which plays on the title screen. Effects, ambience and 
+music have independent controls under Settings > Sound. The audio has 
+separate asset terms; public source builds use the original synth and 
+no music. See [a] for credits and the notices in the game folder for 
+the complete terms.
+
+The second number the V command shows you, 7.1.howe, is the savefile 
+compatibility version. It is inherited and it is not a release of 
+anything.
+
+
+Where this game came from
+
+Nothing here started here. In order:
+
+Moria (1985, Robert Alan Koeneke), Umoria (1989, James E. Wilson), 
+Angband (1990, Alex Cutler and Andy Astrand, then Ben Harrison and many 
+others), ZAngband (Topi Ylinen, Robert Ruehlmann and the ZAngband 
+DevTeam), Hengband, Chengband (Chris Kousky, Dave Zhang, Andrew Levy), 
+PosChengband (Chris Kousky), ComPosband (Gwilim Owen), FrogComposband 
+(Antero Sulka).
+
+Ormeq is the newest layer on that stack. Its setting and presentation 
+build on the game systems written by the developers above.
+
+The full list is in credits.txt, beside the game, and LICENSE there too 
+for the terms they pass down -- which include, and have included since 
+1990, that this may not be sold.
+
+
+Why there is no changelog here
+
+This file used to hold about six thousand lines: the complete release 
+history of ZAngband, Hengband and FrogComposband, twenty-five years of 
+it.
+
+It was removed on 11 September 2026, for two reasons.
+
+It was never Ormeq's release history. A fork nineteen days old shipping 
+somebody else's quarter-century of release notes, as though they were 
+its own document, is at best confusing.
+
+And it had been edited. This project runs renaming passes over its data 
+files, and those passes were allowed to run through the changelog -- so 
+a first-person passage signed by one of those authors ended up 
+describing his own game in words he never wrote. That is not a small 
+thing. A record you have edited is not a record, and the right repair 
+was to stop keeping somebody else's.
+
+The originals are intact where they have always been, with the projects 
+that wrote them.
+

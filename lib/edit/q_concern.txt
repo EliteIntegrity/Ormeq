@@ -1,0 +1,122 @@
+?:[GEQ [MOD $RANDOM0 66] 33]
+K:86
+?:1
+
+?:[EQU $QUEST24 Taken InProgress]
+D:A building bearing the mark '& CO.' has appeared nearby.
+D:People in the surrounding villages are losing their money
+D:and their minds. They speak of a terrible being keeping
+D:the books inside. Find and destroy the source of the
+D:Concern's influence, then return to me. Ending that presence
+D:is the task; you do not need to clear the whole building.
+?:1
+
+?:[EQU $QUEST24 Completed]
+D:The presence behind the Concern has been destroyed. That
+D:is the work I asked of you. Take this reward, and my thanks
+D:for ending its hold over our neighbours.
+?:1
+
+?:[EQU $QUEST24 Failed]
+D:The Concern's influence remains, and this commission has
+D:ended without stopping it. There is no reward to collect.
+D:I must now consider how else to answer this threat.
+?:1
+
+T:QUEST:NORMAL:NO_ROTATE
+L:#:PERMANENT
+L:%:GRANITE
+L:.:FLOOR
+L:s:FLOOR(ICKY)
+L:+:LOCKED_DOOR_7
+L:~:SHALLOW_LAVA(ICKY)
+L:5:DEEP_LAVA(ICKY)
+L:6:DEEP_LAVA(ICKY)
+L:<:UP_STAIR
+L:^:TRAP(*)
+L:a:MON(software bug)
+L:b:MON(novice rogue)
+L:c:MON(novice rogue)
+L:d:MON(bandit)
+L:e:MON(master rogue)
+L:f:MON(master thief)
+L:g:FLOOR(ICKY):MON(the chairman)
+L:h:MON(the stalling daemon)
+L:i:FLOOR(ICKY):MON(the stalling daemon)
+L:j:OBJ(GOLD):MON(master thief)
+L:k:OBJ(GOLD):MON(software bug)
+L:$:OBJ(GOLD)
+L:A:OBJ(JUNK)
+L:B:OBJ(SKELETON)
+L:C:SHALLOW_LAVA(ICKY)
+L:D:SHALLOW_LAVA(ICKY)
+L:E:SHALLOW_LAVA(ICKY)
+L:F:SHALLOW_LAVA(ICKY)
+L:G:SHALLOW_LAVA(ICKY)
+L:H:SHALLOW_LAVA(ICKY)
+L:I:SHALLOW_LAVA(ICKY)
+L:J:SHALLOW_LAVA(ICKY)
+M:###############################################################################
+M:#a.A......AA#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#ABAA.........#
+M:#.......B.###^^^^^############################################+##AAAA.........#
+M:#...B...###^^^^#####...........................................#####..........#
+M:#.......#^^^^^##....................###########....................##.........#
+M:#.......#^^^###.....................#sssssssss#.....................###.eeeeee#
+M:#ffffff##^^##.......................#ssssgssss#.......................##.eeeee#
+M:#ddddd##^^##........................#sssssssss#........................##fffff#
+M:#eeeee#^^##.....................~~~~#sssssssss#~~~~.....................###+#+#
+M:##+##+#^##........h..........~~~~~~~#sssssssss#~~~~~~~.........h.........##^#^#
+M:#...#^#^#.................~~~~~~~~~~#sssssssss#~~~~~~~~~~.................#^#^#
+M:#...#^#^#................~~~~~~~~~~~#sssssssss#~~~~~~~~~~~................#^#^#
+M:#...#^#^#..............~~~~~~~~~~~~~#sssssssss#~~~~~~~~~~~~~..............#^#^#
+M:#.a.#^#^#.............~55~~~~~~~~~~~#sssssssss#~~~~~~~~~~~55~.............#^#^#
+M:#aba#^#^#............~~5555~~~~~~~~~#sssssssss#~~~~~~~~~5555~~............#^#^#
+M:#.a.#^#^#...........~~~~5~555~~~~~~~#sssssssss#~~~~~~~555~5~~~~...........#^#^#
+M:#...#^#^#...........~~~~55~~55~~~~~~#sssssssss#~~~~~~55~~55~~~~...........#^#^#
+M:#.a.#^#^#..........~~~~~~5~~~55~~~~~#sssssssss#~~~~~55~~~5~~~~~~..........#^#^#
+M:#aba#^#^#..........~~~~~~55~~~555~~~#sssssssss#~~~555~~~55~~~~~~..........#^#^#
+M:#dad#^#^#.........~~~~~~~~5~~~~~55~~#sssssssss#~~55~~~~~5~~~~~~~~.........#^#^#
+M:##+##^#^#.........~~~~~~~~55~~~~~55~#sssssssss#~55~~~~~55~~~~~~~~.........#^#^#
+M:#A..#^#^#........~~~~~~~~~~5~~~~~~55#sssssssss#55~~~~~~5~~~~~~~~~~........#^#^#
+M:#.a.#^#^#........~~~~~~~~~~55~~~~~IE#sssssssss#FJ~~~~~55~~~~~~~~~~........#^#^#
+M:#a.a#^#^#........~~~~~###############sssssssss################~~~~........#^#^#
+M:#.a.#^#^#.......~~~~~~#ssssssssssssssssssssssssssssssssssssss#~~~~~.......#^#^#
+M:#a.a#^#^#.......~~~~~~#ssssssssss666ssss666ssss666sssssssssss#~~~~~.......#^#^#
+M:#.a.#^#^#.......~~~~~~#sssssssss66s66ss66s66ss66s66ssssssssss#~~~~~.......#^#^#
+M:#..B#^#^#.......~~~~~~#sssssssss66sssss66sssss66sssssssssssss#~~~~~.......#^#^#
+M:#...#^#^#.......~~~~~~#sisssssss6666sss6666sss6666sssssssssis#~~~~~.......#^#^#
+M:##+##^#^#.......~~~~~~#sssssssss66s66ss66s66ss66s66ssssssssss#~~~~~.......#^#^#
+M:#...#^#^#.......~~~~~~#sssssssss66s66ss66s66ss66s66ssssssssss#~~~~~.......#^#^#
+M:#...#^#^#.......~~~~~~#ssssssssss666ssss666ssss666sssssssssss#~~~~~.......#^#^#
+M:#...#^#^#........~~~~~#ssssssssssssssssssssssssssssssssssssss#~~~~........#^#^#
+M:#...#^#^#........~~~~~###############sssssssss################~~~~........#^#^#
+M:#...#^#^#........~~~~~~~~~~~~55~~55D#sssssssss#C55~~55~~~~~~~~~~~~........#^#^#
+M:#...#^#^#.........~~~~~~~~~~55~~~~5H#sssssssss#G5~~~~55~~~~~~~~~~.........#^#^#
+M:#.#b#^#^#.........~~~~~~~~555~~~~~55#sssssssss#55~~~~~555~~~~~~~~.........#^#^#
+M:#.#b#^#^#.........~~~~~~~55~~~~~~~~5#sssssssss#5~~~~~~~~55~~~~~~~.........#^#^#
+M:#.#b#^#^#..........~~~~~55~~~~~~~~~5#sssssssss#5~~~~~~~~~55~~~~~..........#^#^#
+M:#A#b#^#^#...........~~~55~~~~~~~~~~5#ssssissss#5~~~~~~~~~~55~~~...........#^#^#
+M:#.#b#^#^#...........~~55555555555555#sssssssss#55555555555555~~...........#^#^#
+M:#.#b#^#^#............~~~~~~~~~~~~~~~#####%#####~~~~~~~~~~~~~~~............#^#^#
+M:#A#b#^#^#.............~~~~~~~~~~~~~~~~5~~~~~5~~~~~~~~~~~~~~~~.............#^#^#
+M:#.#b#^#^#.......h......~~~~~~~~~~~~~~~55~~~55~~~~~~~~~~~~~~~....h.........#^#^#
+M:#.#b#^#^##..............~~~~~~~~~~~~~~~5~~~5~~~~~~~~~~~~~~~..............##+#^#
+M:#.#b#^#^####..............~~~~~~~~~~~~~55~55~~~~~~~~~~~~~..............###$$#^#
+M:#A#c#^#^#$$##................~~~~~~~~~~~555~~~~~~~~~~~................##$$$$#^#
+M:#.#c#^#^#$$$###.................~~~~~~~~~5~~~~~~~~~.................###$$$$$#^#
+M:#.#c#^#+##kk$####...................~~~~~~~~~~~...................####$k$$$$#^#
+M:#.#d#^#$$$jjj$$#####.....................h.....................#####$$kjj$$$#^#
+M:#.###^#$$$$$$$$$$$###############################################$$$$$$$$$$$#^#
+M:#A.A#^#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#^#
+M:##+##^#######################################################################^#
+M:#<..#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#
+M:###############################################################################
+R:OBJ(^ring$, DEPTH+10):EGO(defender)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(potion of *healing*)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^amulet$, DEPTH+10):EGO(defender)
+
+# vim: filetype=q :

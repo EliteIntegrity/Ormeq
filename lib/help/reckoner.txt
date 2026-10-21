@@ -1,0 +1,105 @@
+<style:title>The Reckoner: understanding the numbers</style>
+
+The Reckoner explains calculations the game has already made. It does not predict the next attack, roll extra dice, change your chances or spend a turn. <color:keyword>Past Reckonings</color> is its history. The live panel is optional; the history works with the panel off.
+
+<topic:Controls><style:heading>Controls</style>
+
+Press <color:keypress>Ctrl+P</color> and Tab to Past Reckonings. Click The Reckoner's <color:keypress>Details</color> button to open its displayed result directly. Each recent entry has a fixed #number that stays with it when you scroll. Click an entry to read it; Enter opens the selected entry. On small screens, L switches between the list and account. Wide screens show both together. Use n/p for older/newer entries and ]/[ for results within the selected entry. Up/Down or the mouse wheel scroll the account; Page Up/Page Down scroll a page. In the compact list, arrows select entries instead.
+
+Press e for the full exact working, r to replay the diagram, and ? for this guide. In exact working, | exports text or HTML to lib/user, asks before replacing a file, and shows its path. Back, Export and Help are also clickable. Escape returns from an account to its list on small screens, then closes history. Results from the same player turn share an entry; a busy turn continues in another entry when a block fills. Ctrl+P still opens the history with the live panel off. Labels such as Casting, Damage, Healing and Status change identify what each result means.
+
+In this guide and exact working, use Page Up/Page Down (or 9/3) to scroll. Up/Down moves one line. In the guide, > jumps to the next section and < to the previous one. Escape returns to the history.
+
+<color:keypress>Escape > Settings > The Reckoner</color> cycles Off, Static and Animated. Animation follows recorded values; it never rerolls them or holds up play. Menus and full Look cards hide the live panel temporarily. Small windows use a compact, readable result card automatically; Details opens the full account. The panel and its camera clearance stay fixed as results arrive. Visible map beside the panel remains clickable.
+
+<topic:FirstLook><style:heading>Start with the result</style>
+
+Read the result's unit first. <color:keyword>Damage dealt</color> is an outgoing damage amount; it can exceed the target's remaining HP. <color:keyword>Damage received</color> is incoming damage, also labelled HP lost in the detailed calculation. <color:keyword>HP restored</color> is healing after the maximum-HP limit. <color:keyword>Power</color> is an input to an effect such as sleep, charm or teleportation. Power 60 does not mean 60 damage, a 60% chance, or 60 turns.
+
+One account may contain a casting check, several projectiles, different targets, healing and secondary effects. The live panel shows one result at a time. When several results share the latest recorded turn, its header shows a position such as 3/5. Click < or > to browse those results in place, including results from separate accounts in that turn. Click Details to open the result you are viewing. The live arrows and Details are mouse controls; they do not replace movement, running or stair keys. A new calculation selects the latest account again. The panel stays still; it does not cycle automatically or delay your next command. A + after the count means some results exceeded the recording limit. Older turns remain in Past Reckonings. A ball can reuse one damage roll for several targets; identical dice in those records are intentional. A later projectile may roll afresh.
+
+The spell diagram reads from left to right: <color:keyword>Dice / Base</color>, then <color:keyword>Cast</color> (bonuses and spell power), <color:keyword>At target</color> (after distance), then <color:keyword>Damage</color> (after target defences). A fixed base means that stage did not roll damage dice. It may be calculated from level, health or the selected power level.
+
+The large result and its short explanation come first. The explanation highlights the largest recorded change, or explains a status counter or check. Immediately below, the source, weapon or spell, and recipient sit together with the numerical stages, ribbon and dice. Glyphs preserve their appearance at the time; an unknown source stays a question mark. A star denotes magic or a generic effect.
+
+The ribbon's thickness follows the amount at each stage, relative to the largest amount on that card. It is not remaining monster health and cannot be compared directly between different attacks. Signed changes under the stages are differences between those displayed amounts; exact working preserves every recorded intermediate step. Incoming damage and healing use fewer stages for short chains; longer chains include the first change and the value before the final change. Partial records remain labelled: a visible before/after value is not a claim that its formula is known.
+
+Sparks travel along this already settled ribbon in Animated mode; a reduction sheds sparks. Their number is decorative, not one particle per damage point. Static mode keeps the same numbers and diagram. Dice faces and the range marker are actual recorded values. The centre tick marks the dice average, not a probability or expected final damage.
+
+<topic:Example><style:heading>A worked damage example</style>
+
+These are illustrative numbers, not a promise about a particular spell or creature:
+
+<style:table>
+  4d6 means four six-sided dice.
+  Actual faces:                 2 + 3 + 1 + 6 = 12
+  Spell damage bonus:                  12 + 7 = 19
+  Spell-power modifier +3:       19 + 19*3/13 = 23
+  One square from the centre:     (23 + 1)/2 = 12
+  Target takes one third:               12/3 =  4
+  Resolved outgoing damage:                     4
+</style>
+
+The engine uses integer arithmetic and the order matters. In this example 19*3/13 becomes 4, so the cast value is 23. It is not rounded to the nearest integer. Integer division truncates towards zero; for positive values this discards the fraction. Some spells use different distance rules or full damage throughout their area. Exact working shows the rule actually used.
+
+The dice average describes the dice <color:keyword>before</color> modifiers. It is not expected final damage. The position on a dice range is not a percentile: middle totals are usually more likely than extreme totals.
+
+<topic:Ranged><style:heading>Shots and thrown weapons</style>
+
+Bows, slings, crossbows and thrown weapons record the actual hit check, damage dice and critical check. Their chains include observed slays or brands, flat bonuses, launcher or throw multipliers, ambush, concentration, stun and target defences where applicable. A bow shot adds its ammunition bonus before its critical and launcher multiplier; a thrown weapon adds its weapon bonus after the critical. Exact working preserves that order.
+
+For example, a shot could roll 2d6 = 7, add an ammo bonus of 2 to make 9, receive a critical multiplier of 150/100 to make 13, then a launcher multiplier of 250/100 to make 32, and add 4 launcher damage to resolve 36. Both divisions truncate; multiplying everything together first gives the wrong answer. These are sample values, not a guaranteed weapon configuration.
+
+The ordinary ranged hit check first draws 0..99: 0..4 hits automatically and 5..9 misses automatically. Otherwise, after any character-trait check, an attack draw in 0..(effective attack power - 1) must reach armour x 3/4. Effective power already includes range and applicable bonuses or penalties. Individual armour thresholds and their hit-check inputs are always concealed: recall shows race armour, which does not establish the live creature's modifiers. This uniform rule also avoids revealing a hidden modifier just because a trace disappears. Special guaranteed or painted-target hits use their own rules.
+
+Explosive and elemental ammunition records its supplied effect power separately from the damage to each affected creature. That power is not another damage hit. Targets reuse the original projectile dice. Each piercing or repeated hit has its own record when the engine makes a new calculation.
+
+Some special cases remain partial: fatal needle tests conceal private monster HP; wounded-target crossbow bonuses and custom throwing callbacks can have boundaries without formulas. After-hit saves/statuses and ammunition breakage, return and catch checks are not comprehensively traced. A shot into empty space need not create a creature-damage record. These omissions do not affect the shot or throw itself.
+
+<topic:Incoming><style:heading>Incoming hit checks and prevention</style>
+
+Incoming attacks can now have separate <color:keyword>Defence</color> results: Attack missed, Hit allowed, Attack repelled, Attack reflected, Attack dodged, Spell turned back, or an early substitution escape. These are decisions, not damage amounts. Hit allowed only passes the accuracy check; protection, damage reduction and secondary effects follow afterwards. Use the live arrows or history to follow the results from that turn.
+
+Monster melee uses two stages. Its first draw is 0..99: 0..4 hits automatically and 5..9 misses automatically. Otherwise a draw in 1..attack power must be <color:keyword>strictly greater than</color> armour x 3/4. A tie misses. This differs from the player's ordinary ranged check. Attack power includes the monster's effective level, blow power and any stun penalty. Drunken boxing can increase armour for this check without increasing its damage reduction.
+
+For example, with a gate draw of 42, attack power 80 and armour 60, the armour threshold is 60 x 3/4 = 45. An attack draw of 45 misses; 46 allows the hit. A later invulnerability check might still block its damage. These are sample values, not an extra roll or a prediction.
+
+Protection from evil records the opposed save and the additional repulsion draw when reached. Reflection, nimble dodge and spell turning record their own comparisons. Foresight and psionic foresight record their actual prevention rolls; invulnerability records whether the hit penetrated. Shadow absorption and force bypasses have notes where applicable. Ethereal-body and stance reductions retain their minimum-damage draws. A failed early check does not mean that all later defences failed.
+
+The records preserve short-circuiting: if an early check prevents an attack, later rolls are absent because the game never made them. A successful early escape is recorded separately from the later, after-hit substitution behaviour. Escape destination selection, pre-emptive counterattacks, mount interception, absorption/evasion modifiers before the main damage record and every unusual secondary effect are not yet completely explained.
+
+Monster-dependent checks require known creature details and equipment. Unseen, disguised or insufficiently studied attackers keep their inputs concealed, as do private individual scaling values. An unseen source stays unidentified. Numeric secondary details are withheld conservatively when the source level or true form is unknown. Reflection checks are omitted while equipment is unknown: even naming an unsuccessful reflection attempt could reveal an unidentified property. A visible bounce still has its normal message. Learning something afterwards does not reveal a previously concealed record.
+
+<topic:Saves><style:heading>Casting checks and saving throws</style>
+
+A casting check decides whether you cast successfully. For example, a draw of 27 in 0..99 passes a failure threshold of 20: 27 is not below 20. The spell may then meet a separate target saving throw. Successful casting does not guarantee damage or a status effect.
+
+Different effects have different saves. Read the printed comparison, not a presumed universal rule. <color:keyword>Monster saves</color> being true means the monster made that save. A generic <color:keyword>Target condition</color> being true means that comparison holds; the following outcome or status change explains its effect. A higher number does not always favour you.
+
+For example, a player-power draw of 18 in 1..50 and a monster draw of 31 in 1..60 can be compared as 18 <= 31. That condition is true, so this particular save succeeds. Other saves compare one draw with a fixed threshold, give a unique creature another attempt, or skip the draw entirely because of immunity. Only checks actually reached are recorded; short-circuited checks do not secretly roll.
+
+<topic:Statuses><style:heading>Status effects and healing</style>
+
+Damage and statuses are separate. Zero damage can still accompany confusion, sleep or a successful teleport. Checks and effects are listed in resolution order in exact working, including observed random draws, accepted status changes and available outcome notes.
+
+Your own status counters can be recorded numerically. A player counter increasing from 6 to 12 is a gain of 6 counter units, not 12 HP or necessarily 12 turns. Recovery depends on the effect, speed and later actions. Monster timers are private: their records say applied, increased, reduced or cleared, without revealing the old or new counter. Stacking arithmetic that would expose those counters is also concealed.
+
+Healing also has limits. If a spell offers 30 healing when only 8 HP are missing, the restored result is 8. Draining attacks can report both damage and a separate healing event. Delayed effects such as Ego Whip record their later saves and damage when they occur.
+
+<topic:Missing><style:heading>Why some information is missing</style>
+
+<color:keyword>Concealed:</color> The Reckoner respects what your character knows. An unidentified creature, a disguised creature or incompletely known equipment can hide detailed inputs. The knowledge snapshot belongs to the original event: identifying something later does not reveal the old hidden numbers. Concealed values are discarded, not merely hidden in the live panel. Monster-level saving throws require the level knowledge shown by recall. Individual HP and timers remain private even with full race lore. Fatal strikes, capture and HP-based special damage therefore give an outcome without an HP-derived amount.
+
+<color:keyword>Partial:</color> A boundary records a value before and after an adjustment whose full formula is not available in that trace. It is not a fabricated explanation. A complete damage chain means that the recorded arithmetic joins from its explicit source to that damage result; it does not certify that every secondary effect or every game mechanic is represented.
+
+<color:keyword>No creature damage recorded:</color> A projectile may hit empty ground, affect terrain, heal, or apply a utility effect. Its supplied power is not proof that it damaged a creature. Detection, summons, item changes, travel and other non-numeric outcomes may still rely on normal game messages. Some special attacks and device effects can still have boundaries rather than complete source arithmetic.
+
+<color:keyword>Omitted:</color> The history keeps 48 accounts in this session, up to 24 results per account, 20 arithmetic steps per result, 32 secondary details per result and 32 individual damage-die faces. Larger records explicitly report omissions. The bounded spell-provenance pool can also expire an unusually long-lived source trace; its actual value is retained but the record is marked partial, never attached to another spell. Earlier accounts roll out of history. Starting or loading a game clears history; it is not stored in the character save.
+
+<color:keyword>Unchanged:</color> Arithmetic stages that leave a value unchanged are usually omitted. No dice shown can simply mean a fixed value. A zero or failed result is a real result, not missing data.
+
+<topic:Checking><style:heading>Checking an explanation</style>
+
+You do not need to audit the mathematics to play. Automated tests compare seeded encounters with recording disabled/enabled and all display modes. Additional development checks compare against the previous engine's outcomes and random state. The tests also recalculate recorded arithmetic independently, check roll ranges and comparisons, exercise immunity and stacking, and test hidden data and record limits.
+
+If something looks wrong, export the exact working and describe what happened. The useful question is whether the record explains the observed result with the correct units and order. A plausible-looking number alone is not proof. The test suite is targeted evidence, not a guarantee that every possible combination has been exercised.

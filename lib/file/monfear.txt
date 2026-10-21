@@ -1,0 +1,515 @@
+# This is the file for allowing uniques to speak their "own" lines
+# when in fear.
+#
+# Deleting this file will have no real effect on the game.  Modifying it may
+# cause STRANGE unique lines to come up if the format's wrong, but shouldn't
+# crash anything.  The format goes like so:
+# 
+# N:45:whoever this is
+# says line 1
+# says line 2
+# says line 3
+#
+# Empty line is separater of blocks.
+#
+# The number after the N: is the "monster index number" obtained from
+# r_info.txt.  The text field after that number isn't actually used--it's
+# just there to help humans edit the file.
+#
+# A '*' in the number field is a wildcard and applies to any monster.
+# It should only be placed at the end of the file, since all 'N:' lines
+# after it will be ignored.
+#
+# Two or more monsters can share lines; just put their N: lines in a
+# contiguous block.
+#
+# To stop a certain monster from having unique lines, put a # in front of
+# its N: line.
+#
+# Entries by Matt Graham, Andrew Hill, and Topi Ylinen
+
+N:8:Farmer Bulley
+screams, 'Don't hurt a poor helpless warrener!'
+yells, 'Where are my vicious dogs when I need them?'
+
+#N:19:Martti Ihrasaari
+N:19:Hask the Butcher
+yells, 'I only ever sold you dinner! Dinner!'
+says, 'I am a tradesman! I am a tradesman!'
+
+N:1059:Boffik
+N:1060:Brazenhead the Troll
+yells, 'Do you know who I am? Do you know what I am?'
+yells, 'Help! There is a madman loose in here!'
+
+N:53:Bristle, Farmer Bulley's dog
+N:54:Nip, Farmer Bulley's dog
+N:55:Snap, Farmer Bulley's dog
+whimpers.
+pines.
+limps away, howling.
+howls.
+looks at you sadly.
+
+N:63:Grubb, the Sneak
+says, 'Don't hurt us, mastersisis.'
+says, 'Poor Sneak, poor Sneak.'
+says, 'No AH! Don't hurtsis us.'
+
+N:135:Mughash the Kobold Lord
+screams, 'Cowards! Why did you abandon me?'
+begs for mercy.
+
+N:137:Vasker, Corvane's Whisperer
+begs you to spare his miserable life.
+whines, 'This is not my fault!'
+screams, 'Help! Help!'
+
+N:138:Robin Hood, the Outlaw
+begs you to spare his life.
+says, 'But I'm a GOOD guy, really!'
+says, 'Money? Sure, take it all back!'
+
+#N:169:Fritigern, the Eastman
+#N:291:Athanaric, Son of Ermanaric
+
+N:180:Orfax, Son of Boldor
+N:237:Boldor, King of the Yeeks
+sobs, 'I didn't MEAN it...'
+whimpers and moans.
+
+N:200:The Tiger in the Cupboard
+yells, 'Ow! Put me back in the cupboard!'
+
+N:140:Bregik, the Drudge
+N:186:Skelesh, the Hill Orc
+N:215:Drimmakt, the Hill Orc Chief
+N:260:Vennurn of the Spider Stair
+N:314:Krethik, the Orc Captain
+N:315:Halvesh, the Orc Captain
+N:330:Terrik, Son of Ossakt
+N:350:Grennik, the Great Orc
+N:356:Skabesh, the Great Orc
+N:373:Ossakt, King of the Great Orcs
+N:1182:Dresmakt, the Relentless
+N:1183:Brekk, the Grotesque
+N:1184:Vellik, the Merciless
+N:1185:Threnurn, Lord of the Orcs
+N:1186:Immakt, Son of Immesh
+N:1187:Immesh the Mighty
+screams, 'Hey, orcs have rights too!'
+says, 'You're just prejudiced against orc-kind, aren't you?'
+begs, 'Spare me and I'll get you Rimeblade! Really!'
+says, 'Next time I am bringing every brother I have got!'
+says, 'Don't hate me because I'm ugly!'
+whimpers and grovels.
+
+N:382:Mime, the Nibelung
+sobs.
+sobs and whines.
+screams, 'Ohe! Ohe! Au! Au!'
+pleads, 'Let me go!'
+wails, 'Au! Au! Au!'
+says, 'I was so good to you, and this is my reward?'
+moans, 'Such ingratitude!'
+says, 'Go now, on your way!'
+
+N:383:Hagen, son of Alberich
+shouts, 'Vassals, rouse yourselves! Take your weapons, good strong weapons!'
+shouts, 'There is danger! Danger!'
+cries, 'Woe! Woe!'
+
+N:419:Alberich the Nibelung King
+screams, 'Help! Murder! Murder!'
+screams, 'Aaah! Crushed! Shattered!'
+moans, 'Base trickery, foul deceit!'
+pleads, 'I have paid, now let me depart!'
+cries, 'O shameful humiliation!'
+shouts, 'Rascally rogue! Robber! Ruffian!'
+grumbles, 'You will regret this outrage, you wretch!'
+moans, 'Terrible vengeance I vow for this wrong!'
+says, 'Smile now, but you can never escape my curse!'
+wails, 'Alas! Alas! Woe is me!'
+moans, 'Do you mock me?'
+
+#N:392:Vitiges of the Black Havens
+#N:380:Gaiseric of the Black Havens
+
+#This next may be unnecessarily evil... :-]
+
+N:393:It
+howls, 'I'll be back!'
+whimpers, 'They said this invisibility thing was better than it is!'
+teleports away.
+
+N:409:The Bound One
+howls, 'Nnnnooo!'
+says, 'I was promised I would not have to do this part.'
+says, 'Put me back. Put me back under. Please.'
+curses you.
+
+#N:413:Sigeric, Son of Ermanaric
+
+#Grendel's fear line makes sense if you've read "Beowulf"...
+
+N:431:Grendel
+whines, 'Mommy, save me!'
+
+N:441:The Green Gulper
+N:1061:The Purple Horror
+begs, 'Don't! Think of the children!'
+screams, 'But I'm a big TV star!'
+sobs, 'All right! I apologize! I really really do!'
+
+#N:489:Bokrug
+
+N:493:Brannoc the Stone Troll
+N:494:Caddan the Stone Troll
+N:495:Morcant the Stone Troll
+N:551:Rogrog the Black Troll
+says, 'Now, stop it!'
+yells, 'Ey, watch it, you cheeky sod!'
+screams, 'Me mates'll settle yer hash!'
+
+N:1062:Blunder the Wanderer
+says, 'Oops... me get in big trouble!'
+
+N:506:Fasolt the Giant
+cries, 'Take my life, but not my gold!'
+complains, 'Why do you rush at me? I sought justice, my just payment!'
+whines, 'Why do you threaten me?'
+
+# I have no idea what these next 4 should say, so.... --MG
+#N:506:Fasolt the Giant
+#N:517:Flux the Living Gate
+#N:573:Lord Sirocco of the Hollow House
+#N:598:Thaw, Master of the Snarl
+
+N:595:Father Dagon
+N:596:Mother Hydra
+sobs, 'No! I'm an endangered aquatic species!'
+
+N:606:Cinder spirit
+pants and gasps.
+
+N:615:Undertow, Queen of the Mirrored Deep
+wails, 'Help! Murder! Murder!'
+
+N:616:Rhexan the Many-Voiced
+says, 'This is YOUR fault!' and bites itself.
+blames its problems on the head you've managed to kill.
+says, 'Run while you can, I'll breathe inertia next!'
+
+N:628:The Accursed
+says, 'C'mon! I'm sure we can work this out...'
+pleads for his miserable life.
+
+N:642:Haar, Ember's Mistress
+hisses, 'We don't die, we multiply!'
+
+#N:651:Skirl
+
+N:660:Sleet, son of Ratchis
+N:670:The Darkling Thief
+screams, 'Not the face! Not the face!'
+says, 'Yikes! Where'd I put my mail-order Iron Demon?'
+
+#N:681:The Offering-Taker
+
+N:686:The Sentence
+N:674:The Long Silence
+N:654:The Cinder Man
+N:656:The Rot
+says, 'You'll never get away with this...'
+says, 'Hey! I've got LAWYERS!'
+
+#N:687:Eirath, the Storm Crown
+
+N:697:Aurex the Golden
+groans in disbelief.
+roars furiously.
+howls, 'Not that arrow. Anything but that arrow!'
+howls, 'This CAN'T be happening!'
+
+N:712:Fafner the Dragon
+wails, 'Who are you that have wounded me so? Speak me your name!'
+complains, 'Who kindled your childish courage to this deadly deed?'
+
+#N:713:Elderbough
+
+N:715:Pyrogast, First of the Dragons
+writhes as he spouts black blood from many wounds.
+says, 'I shall be avenged!'
+
+#N:729:The Stonefist
+#N:730:Baphomet, the Horned Idol
+
+N:732:The Chairman
+sobs, 'OK, Linux doesn't suck. Let me live?'
+screams, 'Is megalomania THAT bad?'
+apologizes for MS-DOS.
+
+N:733:The Midwinter Patron
+sobs, 'Think of the children you'll disappoint!'
+sobs, 'No, Virginia, there isn't... not any more...'
+attempts to buy you off with offers of goodies.
+cries, 'Naughty! You are going on the naughty list!'
+
+#N:738:The Fourth Shade, the Eastman
+
+N:743:The Phoenix
+defiantly caws, 'I shall rise again!'
+
+#N:753:Nidhogg the Hel-Drake
+#N:754:The Lernean Hydra
+#N:755:Aeronwy
+#N:762:Elvar Bluecloak
+#N:763:Brume, the Sigil-Maker
+
+N:764:Uriel, Angel of Fire
+N:765:Azriel, Angel of Death
+N:769:Raphael, the Messenger
+screams, 'Help! I am undone!'
+says, 'The Most High hath ordained this; I must follow.'
+screams, 'My God, my God, why hast thou forsaken me?'
+
+N:766:Anthracor the Black
+writhes as he spouts acidic blood from many wounds.
+says, 'My friends the Wyrms of Power will get you!'
+says, 'This would be a lot different if this was Sil!'
+
+
+#N:770:Vipress, Champion of Chaos
+
+
+N:771:Corvane of Many Colours
+says, 'Wait! Look behind you!'
+howls, 'Erwig! Where are you, you bastard?'
+
+N:772:Elwold the Grey
+screams, 'How have things come to this... again?!'
+yells, 'Ouch!'
+
+N:777:Bast, Goddess of Cats
+spits, 'I'll be back, worse than ever!'
+snarls weakly.
+
+N:780:Vlad Dracula, Prince of Darkness
+howls with pain and fear.
+
+#N:787:Hypnos, Lord of Sleep
+#N:792:Gravefield tyrant
+#N:796:The Sump
+#N:805:The Gazer-King
+#N:814:Yig, Father of Serpents
+
+# I have little familiarity with the Hidden Court books, so these are left
+# for others to fill in as they see fit.
+
+
+N:820:Squall, Lord of the Marches
+says, 'Who am I? Where is here? Why do you attack me?'
+says, 'Let's make it a clean game as Olympics'
+says, 'Something something Champs d'Elysees'
+
+N:773:Ember, the Mad Visionary
+N:789:Gale, Master of Manipulation
+N:791:Rime the Sorceress
+N:794:Hollow, Master of the Arden Wood
+N:799:Murk, the Conspirator
+N:807:Tide, Strongman of the Hidden Court
+N:813:Cinder the Usurper
+N:824:Vane, the Ideal Warrior
+says, 'Do you know the terrors of Crossling blood curse?!'
+says, 'Dammit! I knew I should have brought my Crossings along!'
+
+
+N:825:The First Shade, the Crowned
+wails, 'Nooooo!'
+
+#N:828:The Windwalker
+
+N:817:Hela, Queen of the Dead
+N:834:Ymir the Ice Giant
+N:835:Loki the Trickster
+N:837:Surtur the Giant Fire Demon
+shouts, 'Why didn't I just stay in Asgard?'
+offers you everything in exchange for life.
+yells, 'I'll be back, with a squad of Iron Demons!'
+
+N:655:The Grey Beginning
+N:695:The Drowned Son
+N:706:The Patient One
+N:734:The Thing in the Labyrinth
+N:735:The King in Yellow
+N:757:Hastur the Unspeakable
+N:760:The Thing That Should Not Be
+N:761:The Avatar of the Crawling Chaos
+N:767:The Render of Veils
+N:788:The Lake-Sunk
+N:797:Rhan-Tegoth
+N:806:The Slow Waker
+N:809:The Low Face
+N:810:The Handed
+N:826:The Buried Eye
+N:833:The Grey Pool
+N:841:The Circling Eye
+N:845:Yog-Sothoth, the All-in-One
+N:848:Shub-Niggurath, Black Goat of the Woods
+N:849:Nodens, Lord of the Great Abyss
+N:851:Nyarlathotep, the Crawling Chaos
+N:857:Great Cthulhu
+sobs, 'I'm not bad, I was just born this way!'
+gibbers weakly.
+mumbles, 'kill -9 adventurer, kill -9 adventurer', and you say 'No such process'
+oozes greenish blood from many wounds.
+burbles something in a language with too many vowels.
+
+N:850:Throatgrim, the Jaws of Thirst
+N:846:Fenris Wolf
+N:840:Bloodpelt, First of the Werewolves
+cringes and whimpers.
+says, 'Look, I promise I won't bite the mailman anymore!'
+says, 'Hey, put that rolled-up newspaper down!'
+begins a song of oaths.
+
+N:830:Ossivar, the Bone Parliament
+N:831:Mephistopheles, Lord of Hell
+N:818:The Herald of the Iron King
+N:819:Klingsor, Evil Master of Magic
+N:804:The Emperor Lich
+N:844:Kaschei the Immortal
+N:856:Vulmurn, the High Captain of Emberlords
+N:858:Malkor, the Sorcerer
+N:860:Wender, Who Said It Whole
+screams, 'This CAN'T be happening!'
+shouts, 'Kill me if you want, the Boss will getcha!'
+
+N:862:Ormeq
+N:883:Ormeq, Named Again
+screams, 'This CAN'T be happening!'
+
+N:873:The Combat Accountant
+says shiftlessly, 'Shit...!'
+says shiftlessly, 'Yegg...!'
+says shiftlessly, 'yariyagattana!'
+says 'I knew I should have picked the Mighty personality!'
+
+N:878:Lord Vantage
+says, 'This CAN'T be happening! I feel horror?!'
+
+N:880:Wong
+says, 'You are no fool.'
+says, 'What you are doing is pointless.'
+says, 'Two Wongs don't make a Wight!'
+
+N:921:The Stalling Daemon
+is slow.
+throws off some dorky packets.
+says, 'Can't we just fix this with a patch???'
+
+N:1004:Pip, the Braver from Another World
+says, 'Magic ducks, Cover me. I don't shit hits the fan!'
+
+
+N:1005:Antharom, Magic Master in the Castle of Darkness
+cries, 'Oh! My gun dogs was dead! Damn it!'
+shouts, 'You! have been and killed my darling gun dogs!'
+
+N:1029:Baby satan
+teleports away.
+casts a Globe of Invulnerability.
+magically summons Iron Demons!
+magically summons special opponents!
+invokes a mana storm.
+invokes a darkness storm.
+invokes a starburst.
+throws a Psycho-Spear.
+invokes the Hand of Doom!
+casts a Globe of Invulnerability.
+magically summons Lords of the Hidden Court!
+yells 'The World! Time has stopped!'
+
+N:1094:The Tinkerer
+whimpers, 'Why does everybody try to kill me?'
+pleads, 'Let's make a deal instead. What do you want? Rimeblade? Vorpal Blade? Harpies?'
+boasts, 'You can kill me, but I will only have my revenge later!'
+pleads, 'Wait! I can tell the RNG to play fair!'
+cries, 'Where's a scroll of teleport level when you need one?'
+cries, 'No fair, players get 26 inventory slots and I get none!'
+whimpers, 'Don't you like this game?'
+whimpers, 'If I stop, who keeps it running? Who?'
+whimpers, 'But I had this really good idea for a new monster race!'
+whimpers, 'Shit, why did I add fail rates to scrolls of teleportation?'
+
+N:1231:Implorington III
+attempts to reads a Scroll of Teleportation and fails.
+shouts, 'Look, behind you! An obvious diversion!'
+pleads you to think of his crippled parents.
+says, 'If it's loot you're after, I have none, try The Darkling Thief.'
+says, 'Three kobolds walk into a bar. Kill me and you'll never hear the punchline.'
+
+N:*:Default lines
+says, 'I am too young to die.'
+says, 'Ok, ok! I get it: no more pals.'
+screams, 'Help, ho!'
+screams, 'What ho! Help!'
+says, 'That white '@' looked harmless enough.'
+says, 'You will pay for this!'
+says, 'Violence is no solution!'
+says, 'I thought you liked me.'
+says, 'Such senseless violence! I don't understand it!'
+screams, 'Ho! Murder! Murder!'
+says, 'Look, behind you!'
+screams, 'Run away!'
+screams, 'Out! Out! Get out while it is looking at me!'
+says, 'Wait! Spare me and I'll make you rich! Money isn't a problem!'
+says, 'I'll be back...'
+says, 'Hey -- I've got lawyers!'
+says, 'All my possession for a moment of time!'
+says, 'Hey, it was only a joke, all right?'
+says, 'Stop!'
+says, 'Cut it out, will you?'
+says, 'I will not kneel. Strike!'
+screams, 'Cowards! Why did you not protect me?'
+screams, 'Idiots! I am surrounded by incompetent idiots!'
+says, 'I was winning. A moment ago I was winning.'
+yells, 'Someone call the Gendarmes!'
+screams, 'Keep that lunatic away from me!'
+shouts, 'Drop that weapon, now!'
+says, 'Fool! You don't know what you're doing!'
+screams for help!
+begs for mercy.
+sobs.
+screams, 'Help! The maniac's murdering me!'
+screams, 'You can't do this to me! I am friends with the man called Nine!'
+says, 'Just what is it you want? Money? Babes? I can arrange it...'
+says, 'Wait! Let's make a deal!'
+says, 'I have run out of clever things to do.'
+says, 'Somebody was supposed to be watching that stair.'
+says, 'I want to be somewhere with a ceiling I know.'
+says, 'There is nothing behind me. I have looked.'
+says, 'Whatever I am owed, I forgive it. Let me out.'
+says, 'You will regret this when you meet what I was running from.'
+says, 'Everything I had is on the floor behind me.'
+asks, 'Should we be fighting at all?'
+asks, 'What are we fighting for?'
+asks you, 'Was this worth coming down for? Truly?'
+says, 'I am smaller than I was an hour ago.'
+says, 'I have been down here longer than you have been alive.'
+says, 'Every part of me has decided separately.'
+says, 'I do not want to find out what is under this.'
+says, 'Just leave me alone!'
+says, 'Please, save me!'
+says, 'You've won a battle, but I'll win the war!'
+says, 'You've won this round, next time it's *my* turn!'
+says, 'Another time, another battlefield, *my* victory.'
+says, 'Not here. Not on this floor. Any floor but this.'
+says, 'I can feel which way this is going.'
+says, 'Cowards live to fight another day.'
+says, 'Take the gold. Take all of it. Take the teeth.'
+says, 'You are quicker than the last one was.'
+says, 'Stop. Stop. I am asking properly.'
+cries, 'Let me go and I will never come this far up again.'
+cries, 'Please! I have a mate and six siblings!'
+cries, 'Whatever you are, you are worse than what sent me.'

@@ -1,0 +1,20 @@
+The Angband licence
+===================
+
+This is the notice carried by inherited C source files in src/, and it is the
+licence that governs Ormeq as a whole. It is reproduced here verbatim from the
+file headers.
+
+    Copyright (c) 1997 Ben Harrison, James E. Wilson, Robert A. Koeneke
+
+    This software may be copied and distributed for educational, research,
+    and not for profit purposes provided that this copyright and statement
+    are included in all such copies. Other copyrights may also apply.
+
+Angband relicensed to GNU General Public License v2 in 2009. The lineage this
+game belongs to -- ZAngband, Hengband, Chengband, PosChengband, ComPosband,
+FrogComposband -- branched before that change and did not follow it, so the
+notice above remains the operative one.
+
+The practical effect: this software may be copied and distributed freely for
+educational, research and not-for-profit purposes, and may not be sold.

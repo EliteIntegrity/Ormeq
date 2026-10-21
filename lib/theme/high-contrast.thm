@@ -1,0 +1,52 @@
+# High Contrast -- maximum separation on true black.
+#
+# Not a mood. This is the accessibility option, and it is also the one to check
+# against whenever a colour stops being distinguishable in one of the others:
+# if two things are hard to tell apart here, they are wrong everywhere.
+
+name    High Contrast
+blurb   Maximum separation on true black.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      000000
+ui      panel       000000
+ui      border      FFFFFF
+ui      title       FFEB00
+ui      text        FFFFFF
+ui      muted       C8C8C8
+ui      accent      35E4FF
+ui      selection   404040  F5
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        000000
+map     WHITE       FFFFFF
+map     SLATE       A0A0A0
+map     ORANGE      FF9900
+map     RED         D9262E
+map     GREEN       00B862
+map     BLUE        4D75FF
+map     UMBER       B57030
+map     L_DARK      606060
+map     L_WHITE     DCDCDC
+map     VIOLET      FF4FFF
+map     YELLOW      FFEB00
+map     L_RED       FF4B4B
+map     L_GREEN     42FF42
+map     L_BLUE      35E4FF
+map     L_UMBER     FFB85B
+map     I_GREEN     5CE000
+map     PINK        FF7AB0
+map     I_BLUE      2E8CFF
+map     PURPLE      E24FE2
+map     TEAL        00E0A0
+map     SKY_BLUE    6FD2FF
+map     MUD         A0A000
+map     D_YELLOW    E0E000
+map     TURQUOISE   5CFFE5
+map     L_ORANGE    FFC83C
+map     LILAC       F0C0FF
+map     D_PURPLE    A000A0
+map     SKY_DARK    5C9CD8
+map     PALE_BLUE   C8C8FF
+map     D_PINK      E05C9C
+map     CHESTNUT    E0A0A0

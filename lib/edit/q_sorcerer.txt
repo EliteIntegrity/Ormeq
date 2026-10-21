@@ -1,0 +1,57 @@
+# This is an old quest that was slightly modified for FrogComposband
+# 7.0.strawberry. The descriptions are partly old, partly new and
+# partly based on Gwarl's quest descriptions from ComPosband
+
+?:[EQU $QUEST64 Taken InProgress]
+D:An old sorcerer has betrayed the order and built a tower nearby. Kill
+D:him and return to me. He is the target of this examination; you need not
+D:clear every other creature from the tower. The Sultan is concerned, so
+D:try not to leave this one to your fellow students.
+?:1
+
+?:[EQU $QUEST64 Completed]
+D:You passed the special examination. Take this wizard's hat as your
+D:reward.
+?:1
+
+?:[EQU $QUEST64 Failed]
+D:You could not do it? Then the order will have to deal with its former
+D:member itself.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:FLOOR
+L:,:FLOOR(ICKY)
+L:<:UP_STAIR
+L:+:CLOSED_DOOR
+L:^:TRAP(*, 75%)
+L:a:SIGIL_1
+L:b:SIGIL_2
+L:c:SIGIL_3
+L:d:SIGIL_4
+L:A:SIGIL_START
+L:M:SIGIL_END
+L:L:SIGIL_EXIT
+L:p:FLOOR(ICKY):MON(old sorcerer, NO_SLEEP)
+L:$:OBJ(DEVICE)
+L:?:OBJ(HI_BOOK)
+M:#########################
+M:#?$+.................+$$#
+M:####.................####
+M:#.....dcbadcbadcbad.....#
+M:#...bad,,,,,,,,,,,dcc...#
+M:#...b,,,,,,,,,,,,,,,b...#
+M:#...c,,,,,,,,,,,,,,,a...#
+M:#...d,,,,,,,p,,,,,,,d...#
+M:#...a,,,,,,,,,,,,,,,c...#
+M:#..^bbcdML,,,,,,,,,,b...#
+M:#..^^^^,,,,,,,,,,,,,a...#
+M:#..^Abc,,,,,,,,,,,cda...#
+M:#.....cdabcdabcdabc.....#
+M:####.................####
+M:#<...................+$$#
+M:#########################
+R:OBJ(pointy hat, DEPTH+25):EGO(magi)
+
+# vim: filetype=q :

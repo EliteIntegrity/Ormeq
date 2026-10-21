@@ -1,0 +1,73 @@
+# New quest for FrogComposband 7.1.chocolate
+
+?:[EQU $QUEST2 Taken InProgress]
+D:The town's compost heap is overrun with rats, including kinds our workers
+D:do not recognise. They are spreading beyond the rubbish and into the
+D:stores. Find their nest on the other side of town and clear it out before
+D:we lose the food as well.
+?:1
+
+?:[EQU $QUEST2 Completed]
+D:The stores are safe and the workers can approach the heap again. A town
+D:needs this sort of work as much as it needs its walls. You have earned
+D:your reward.
+?:1
+
+?:[EQU $QUEST2 Failed]
+D:The infestation remains. I will have to hire another company before it
+D:reaches more of our stores.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:<:UP_STAIR
+L:.:FLOOR
+L:*:QUARTZ_TREASURE
+L:%:QUARTZ_VEIN
+L:G:GRANITE
+L:':BROKEN_DOOR
+L:~:SHALLOW_WATER
+L:V:DEEP_WATER
+L:&:MAGMA_VEIN
+L:R:MON(nizukil)
+L:r:MON(plague rat)
+L:w:MON(giant white rat)
+L:s:MON(swamp rat)
+L:W:MON(rat shaman)
+L:2:MON(pox-chanter)
+!:SCRAMBLE(R,r,w,2)
+M:############################################
+M:#&%%&&&&%&&&&&&&&&&%%&%%%%&&&%&&%%%%&%%%%%%#
+M:#%GG%&&&&&%&&&%%&&%&GG%%%&%&%%%%%%&&&%%%%&&#
+M:#%%&%&&&&%.%%&&&%&&%%GG&&&&&&%%%%........&%#
+M:#&%%&&%%.......%&&&&&%&%%&&&%&%&%........&%#
+M:#&&%%%%%........&&%&&%%G%<%&%&%&%........&&#
+M:#%%%&%&&........................'........%&#
+M:#&%&&&&.........%&&&&&&&%%%&&%%%%....r...%&#
+M:#%&&%%....R.....%%%G%%%%%%&&%%%&&........G%#
+M:#%&%%%.........&&%%%&&%%&&%%%%&&&%%&.%GGG%%#
+M:#%%&&.......&%%%&&%%&%G%%%%%&&&%%%%%.%%&&%&#
+M:#GG%&%.....%%&&%%&%%&*%&&&&%%%&&G%&&.&%%%&%#
+M:#&&&&%%&.%%%%&&%%&&%&%%&%%&%&%%%%%&..%%&%%&#
+M:#&&&&&&%.%&&&&%%%%%&&&&&%&&&&%&%&%%.%&&&%&%#
+M:#&&%&&%%.G%%&&%&&%G%%%%&%%&&%GG%&%%.%%GGG%%#
+M:#%&&&%%&.%%%%&&&%&&%&&%%&&%%............G%&#
+M:#%&%%%&&.%%%&&&%%&&%&.%G&&%G............%&&#
+M:#G%%%.........%%&&&%%.%G%&&%............%%%#
+M:#%GG&.......2.&&%....W...............w..%%%#
+M:#%%&&.........&%%.%%%G&&%G%%............G%&#
+M:#&%%%.............&%&&&&&%%G........GGGGG%%#
+M:#%%%~~s.......G%%&&&%%%%&&%G........GG%G%GG#
+M:#GG~~~~.......GGG%GGG%GGG%GGGGGGGG%GG%%&&GG#
+M:#%~~~~~%%GGGGGG&%%G%G%G%G%G&%&%%%&&%&%%%%&&#
+M:#%~~~~%%&&&%%%GG%&GG&&G&G%G%G%%&&&%%&&%%GG%#
+M:#GV~~G%%%%&&&%G&&&GGG%G%G&G%G%%%%&&%%%%&G%%#
+M:#%GV~G%&&&&%&%G&&%G%G%GGG&GGG%&&%%&&%&&%G%&#
+M:#%%%GG&&%%%&%%%&&%%&%%%%&&&&&&&%%&G&%%&&&%G#
+M:############################################
+R:OBJ(hard leather boots):EGO(levitation)
+
+?:[AND [EQU $CLASS Monster] [EQU $RACE Dragon Demon Hydra Gazer Death-Sword Spider Quylthulg Ring Jelly] ]
+R:OBJ(ROD_BEAM_ACID, DEPTH+2)
+
+# vim: filetype=q :

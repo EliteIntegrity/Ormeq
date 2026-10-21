@@ -1,0 +1,128 @@
+{
+  "packages": [
+    {
+      "library": "SDL3",
+      "file": "third-party/SDL3/lib/x64/SDL3.dll",
+      "sha256": "132e7f953951944f7628861227ecaea8c37a5a484f004c2072b7f3a1c343fa73",
+      "archive": "https://github.com/libsdl-org/SDL/releases/download/release-3.4.4/SDL3-devel-3.4.4-VC.zip",
+      "archive_sha256": "b3eaafc6ba06395b140579f14aff64a624eb690735496a5d508854c4c4bf732b"
+    },
+    {
+      "library": "SDL3_image",
+      "file": "third-party/SDL3_image/lib/x64/SDL3_image.dll",
+      "sha256": "2a77cdf3e8a3ae67f43c5dfcbc3bee6d5a641fee493ed8cbdb95badcff152ff9",
+      "archive": "https://github.com/libsdl-org/SDL_image/releases/download/release-3.4.2/SDL3_image-devel-3.4.2-VC.zip",
+      "archive_sha256": "4e4e6b9050b227d93f44dad39b3cf207e36b5f2813d1000b00e85c7afd459d20"
+    },
+    {
+      "library": "SDL3_ttf",
+      "file": "third-party/SDL3_ttf/lib/x64/SDL3_ttf.dll",
+      "sha256": "95a20af07f194f057b6e778bee0ce608d3c90c3dbd64a4b5120dc4879f43a6be",
+      "archive": "https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-devel-3.2.2-VC.zip",
+      "archive_sha256": "67805c5babfc49ca0c56882dc9b8cabbcdd1e6f9edde10ddac91ddb38f3afb8c"
+    }
+  ],
+  "notices": [
+    {
+      "file": "licenses/FreeType-FTL.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/docs/FTL.TXT",
+      "sha256_lf": "08c135755dd589039470f1fdbb400daaabaaa50d0b366d19cebff4d22986baa1"
+    },
+    {
+      "file": "licenses/FreeType-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/LICENSE.TXT",
+      "sha256_lf": "2e3bbb7d7c5c396368dd0853a790ec29ce5b8647163dde42a0493fb0d6556b2b"
+    },
+    {
+      "file": "licenses/FreeType-zlib.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/src/gzip/zlib.h",
+      "sha256_lf": "871024b2721f77d335ed79d10a7f90f47a14502cf8f1aa6e9ae7448e06ff7988"
+    },
+    {
+      "file": "licenses/HarfBuzz.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/harfbuzz/564bf9818a18709776856533829c0c04950773d6/COPYING",
+      "sha256_lf": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+    },
+    {
+      "file": "licenses/HarfBuzz-Microsoft-USE.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/harfbuzz/564bf9818a18709776856533829c0c04950773d6/src/ms-use/COPYING",
+      "sha256_lf": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "file": "licenses/PlutoSVG.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/plutosvg/2983eb6919feea272d793bc386384e3f5b97b03c/LICENSE",
+      "sha256_lf": "e008ab9f8b36ec517cc47be20e776e68d69f5ba75f8f774d506ae4696d0e50c4"
+    },
+    {
+      "file": "licenses/PlutoVG.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/plutovg/3e6f922f453da1c9e7d1d7f66cac1d9724a18b47/LICENSE",
+      "sha256_lf": "308647f12c8111159e299a0aa50161c8b4309c59e58accd52a5f3a0c53702c05"
+    },
+    {
+      "file": "licenses/FreeType-BDF.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/src/bdf/README",
+      "sha256_lf": "7984455e7e5a9faba3797c8bf095fbe10cc846316b7320aff8c58402e22b82fe"
+    },
+    {
+      "file": "licenses/FreeType-PCF.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/src/pcf/README",
+      "sha256_lf": "18d9782898d9eac04476e2f744678137b2a889689ed3e923e052fc396a86f86b"
+    },
+    {
+      "file": "licenses/FreeType-hash.txt",
+      "source": "https://raw.githubusercontent.com/libsdl-org/freetype/9973564cfa63763a3e4ac67c09147899539b1e07/src/base/fthash.c",
+      "sha256_lf": "5285d96f6aa3188193d5fbefd8710ed6a46af185e0a43817c17acee5f4b1ab3d"
+    },
+    {
+      "file": "licenses/SDL_image-nanosvg.txt",
+      "source": "https://github.com/libsdl-org/SDL_image/blob/release-3.4.2/src/nanosvg.h",
+      "sha256_lf": "ec446c7df5e6d260d9a145630898787fdd72d5b7a2c336137aacb08abd012818"
+    },
+    {
+      "file": "licenses/SDL_image-nanosvgrast.txt",
+      "source": "https://github.com/libsdl-org/SDL_image/blob/release-3.4.2/src/nanosvgrast.h",
+      "sha256_lf": "68b0214b2416d5f7ee7be7b21035959bbb24aedfee89ee4e9bf3f5107c80c3e9"
+    },
+    {
+      "file": "licenses/SDL_image-qoi.txt",
+      "source": "https://github.com/libsdl-org/SDL_image/blob/release-3.4.2/src/qoi.h",
+      "sha256_lf": "787202d5b16677c751d38f7cbb728f706fa3f0ebb5ed5e4e479f6a4f19806a80"
+    },
+    {
+      "file": "licenses/SDL_image-stb_image.txt",
+      "source": "https://github.com/libsdl-org/SDL_image/blob/release-3.4.2/src/stb_image.h",
+      "sha256_lf": "7587efcca32db8f95bf5860dea6dfa4be410ee723e1964db3689c8ddf2a2e4a9"
+    },
+    {
+      "file": "licenses/SDL-hidapi-BSD.txt",
+      "source": "https://github.com/libsdl-org/SDL/blob/release-3.4.4/src/hidapi/LICENSE-bsd.txt",
+      "sha256_lf": "30eb1bef29b46f8ba7ab8b416035dbd93cb034a45481dd97815b944284582cd2"
+    },
+    {
+      "file": "licenses/SDL-yuv2rgb.txt",
+      "source": "https://github.com/libsdl-org/SDL/blob/release-3.4.4/src/video/yuv2rgb/LICENSE",
+      "sha256_lf": "f7d74004cc75778cae46c5f0139f244d67c07ef64cf51937e8272352197dcb18"
+    },
+    {
+      "file": "licenses/SDL-libm.txt",
+      "source": "https://github.com/libsdl-org/SDL/tree/release-3.4.4/src/libm",
+      "sha256_lf": "40e0b8587aa67cc9102778c46554f2c0f8d5d00150c437b86b0df370e8f9ba94"
+    },
+    {
+      "file": "licenses/SDL-Khronos.txt",
+      "source": "https://github.com/libsdl-org/SDL/blob/release-3.4.4/src/video/khronos/KHR/khrplatform.h",
+      "sha256_lf": "438187dca092de4032c1a16524aa4c34c71a0f985a71251a675aad54e77ed561"
+    },
+    {
+      "file": "licenses/SDL-stb_image.txt",
+      "source": "https://github.com/libsdl-org/SDL/blob/release-3.4.4/src/video/stb_image.h",
+      "sha256_lf": "7587efcca32db8f95bf5860dea6dfa4be410ee723e1964db3689c8ddf2a2e4a9"
+    },
+    {
+      "file": "licenses/Apache-2.0.txt",
+      "source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "sha256_lf": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "coverage": "Apache-2.0 sections of SDL_egl.h and SDL_opengles2_gl2platform.h in the vendored SDL3 headers; original header notices retained."
+    }
+  ]
+}

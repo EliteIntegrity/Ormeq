@@ -1,0 +1,71 @@
+?:[GEQ [MOD $RANDOM0 76] 38]
+K:87
+?:1
+
+?:[EQU $QUEST2 Taken InProgress]
+D:The drains beneath Outpost carry more than water now. Workers hear
+D:movement beyond the lamps and will not go back in. Enter the sewer and
+D:clear out the creatures occupying it. Until the work is done, every
+D:household above it is at risk.
+?:1
+
+?:[EQU $QUEST2 Completed]
+D:The workers have gone back below, and the drains are running again. It was
+D:foul work, but necessary. This is your reward.
+?:1
+
+?:[EQU $QUEST2 Failed]
+D:The sewer remains unsafe. I have called in a local druid to deal with it;
+D:we cannot leave the town without working drains.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:<:UP_STAIR
+L:.:FLOOR
+L:~:SHALLOW_WATER
+L:*:DEEP_WATER
+L:a:MON(giant white rat)
+L:b:MON(ash basin bat, NO_GROUP)
+L:c:SHALLOW_WATER:MON(giant slug)
+L:d:SHALLOW_WATER:MON(^devilfish$)
+L:e:MON(rat shifter)
+L:f:MON(blue icky thing)
+L:g:MON(giant spider)
+L:h:MON(gremlin)
+L:i:MON(metallic green centipede)
+L:j:MON(nether worm mass)
+L:k:DEEP_WATER:MON(deep puddle)
+L:l:SHALLOW_WATER:MON(shallow puddle)
+L:m:DEEP_WATER:MON(white crocodile)
+M:#####################################################################
+M:#a..<.............%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+M:#~l~~~l~~~~~~~~~~.........%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+M:#a.....a........~~~~~~~~~.....................%%%%%%%%%%%%%%%%%%%%%%#
+M:#%%%%%%%%%%%%%%.........~~~~~~~~~~~~~~~~~~~~~...........*****%%%%%%%#
+M:#%%%%%%%%%%%%%%%%%%%%%%..~.%................~~~~~~~~...*******%%%%%%#
+M:#%%%%%%%%%%%%%%%%%%%%%%%.~.%%%%%%%%%%%%%%%%........~~~~*******%%%%%%#
+M:#%%%%%%%%%%%%%%%%%%%%%%%.~..........b%%%%%%%%%%%%%h....*******%%%%%%#
+M:#%%%%%%%%%%%%%%%%%%%%%%%.~~~~~~~~~~~.%%%%%%%%%%%%%%%%%%k****%%%%%%%%#
+M:#%%%%%%%%%%%%%%%%%%%%%%%.......****~.%%%%%%*****%%%%%%%%%%%%%%%%*%%%#
+M:#%%%%%d~d%%%%%%%%%%%%%i........****~.%%%%%%*****%%%%%%%%%%%%..***.%%#
+M:#%%%%%.~.%%%%%%%%%%%%%.~~~~~~~~~~~~~.%%%%%%%****%%%%%%%%%%%%j..**.%%#
+M:#%%%%%.~.%%%%%%%%%%%%..~.............%%%%%%%.**f%%%%%%%%%%%.....k.%%#
+M:#%%%%%%~%%%%%%%%%%%%%.~~.%%%%%%%%%%%%%%%%%%%%...%%%%%%%%%%%%.%%.%%%%#
+M:#%%%%%%~%%%%%%%%%%%...~..%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%%%%%%%%%.%%%%#
+M:#%%%%%%~%%%%%%%%%%%.~~~.%%%%%%%%%%%%%%%%%%%%%%.%%%%%%%%%%%%%%%%.%%%%#
+M:#%%%%%%l~~~~~~c~~~~~~....e..........%%%%%%%%%%.%%%%%%%%%%%%%%%%.%%%%#
+M:#%%%%%%%%%%%%%%%%%%.~~~~~~~~~~~~~~~..................%%%%%%%%%%.%%%%#
+M:#%%%%%%%%%%%%%%%%%%..~............~~~~~~~~~~~~l~~~~~.%%%%%%%%%%.%%%%#
+M:#%%%%%%%%%%m*%%%%%%%%~%%%%%%%%%%%..................~............%%%%#
+M:#%%%%%%%%%%**%%%%%%%%~%%%%%%%%%%%%%%%%%%%%%%%%%%%%.~~~~~~~~~~~l.....#
+M:#%%%%%%%%%%~~~~~~~~~~~%%%%%%%%%%%%%%%%%%%%%%%%%%%%gggggg......~~~~~.#
+M:#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%.......#
+M:#####################################################################
+R:OBJ(hard leather boots):EGO(levitation)
+
+?:[AND [EQU $CLASS Monster] [EQU $RACE Dragon Demon Hydra Gazer Death-Sword Spider Quylthulg Ring Jelly] ]
+R:OBJ(ROD_BEAM_ACID, DEPTH+2)
+
+# vim: filetype=q :

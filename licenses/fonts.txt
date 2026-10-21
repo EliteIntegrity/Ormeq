@@ -1,0 +1,90 @@
+Bundled fonts -- copyright notices
+==================================
+
+Every line below is read from the font file's own OpenType 'name' table,
+not transcribed from a web page. The SIL Open Font License and the MIT
+licence both require these notices to travel with the font; that is what
+this file is for.
+
+None of these fonts has been modified. They are shipped as delivered.
+
+CozetteVector.ttf
+    copyright: (c) 2020-2025 Ines <ines@moonwit.ch>
+    licence:   MIT -- see MIT-Cozette.txt
+
+IBMPlexMono-Regular.ttf
+    copyright: Copyright 2017 IBM Corp. All rights reserved.
+    licence:   OFL-1.1 -- see OFL-1.1.txt
+
+RobotoMono-SemiBold.ttf
+    copyright: Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)
+    licence:   OFL-1.1 -- see OFL-1.1.txt
+
+ShareTechMono-Regular.ttf
+    copyright: Copyright (c) 2012, Carrois Type Design, Ralph du Carrois (post@carrois.com www.carrois.com), with Reserved Font Name 'Share'
+    licence:   OFL-1.1 -- see OFL-1.1.txt
+
+VT323-Regular.ttf
+    copyright: Copyright 2011, The VT323 Project Authors (peter.hull@oikoi.com)
+    licence:   OFL-1.1 -- see OFL-1.1.txt
+
+Reserved Font Names
+-------------------
+
+Share Tech Mono is released with the Reserved Font Name 'Share'. Under
+clause 3 of the OFL, a modified version of it may not be distributed under
+that name. Nothing here is modified, so the restriction is not engaged -- it
+is recorded because anybody who does modify one of these needs to know.
+
+
+Bitmap fonts -- lib/xtra/font/*.fon
+===================================
+
+Twenty-two Windows bitmap fonts inherited from upstream. **Only the Win32
+port reads these**; the SDL3 port opens TrueType faces and never looks in
+this directory, and tools/package.ps1 removes it from the SDL3 release
+package. They are here because the Win32 build is the known-good baseline
+and will not start without at least one of them.
+
+Every line below is the copyright string inside the .fon file itself, read
+out of the binary rather than transcribed from anywhere. None has been
+modified.
+
+    Leon Marrick, 2005.  Freeware.  Share and enjoy!
+        10x14x  10x14xb  12x18x  16x16x  8x12x  8x12xb  8x8x  8x8xb
+
+    Public domain font.  Share and enjoy.
+        6x13x  6x13xb  7x13x  7x13xb  8x13x  9x15xb
+
+    Public domain terminal emulator font.  Share and enjoy.
+        6x12x  9x15x
+
+    Public domain font, edited by LMarrick. Share and enjoy.
+        8x16x
+
+    BitmapMania and Leon Marrick.  Freeware.  Share and enjoy!
+        5x8x
+
+    Microsoft & Leon Marrick, 2005.  Freeware. Share and enjoy!
+        16x24x
+
+    W. Sheldon Simms III & Leon Marrick, 2005. Freeware.
+        6x10x
+
+    Copyright 1989 Network Computing Devices, Inc.
+        10x20x
+
+    Copyright (c) 1987, 1988 Sony Corp.
+        12x24x
+
+The last two are the ones that matter. They are X11 bitmap fonts that NCD
+and Sony contributed to the X distribution, converted to Windows .fon by
+somebody upstream, and they carry corporate copyright notices rather than a
+grant of the public domain. The X Consortium terms they were released under
+permit redistribution provided the notice travels with them; this file is
+that notice.
+
+Found on 7 September 2026, while looking for things nobody had looked for.
+Nothing recorded these at all before that -- this file said "bundled fonts"
+and listed the five TrueType faces we chose, and twenty-two more were
+sitting in the tree.

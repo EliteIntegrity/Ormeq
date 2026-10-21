@@ -1,0 +1,76 @@
+?:[EQU $QUEST5 Taken InProgress]
+D:The ancient burial ground has become a refuge for dark creatures. They
+D:have been attacking our villagers, including our children. Clear the Howes
+D:of them. We cannot offer much, but our people cannot endure these attacks.
+?:1
+
+?:[AND [EQU $QUEST5 Completed] [EQU $WILDERNESS NORMAL] ]
+D:The Howes are clear, and our people can mourn without fearing another
+D:attack. Vellum the librarian, Suiyan the weaponmaster and Ostler the
+D:beastmaster have agreed to reduce their service prices for you. It is what
+D:we can offer, and it is gladly given.
+?:1
+
+?:[AND [EQU $QUEST5 Completed] [EQU $WILDERNESS NONE] ]
+D:The Howes are clear, and our people can mourn without fearing another
+D:attack. Accept this gift with our thanks.
+?:1
+
+?:[EQU $QUEST5 Failed]
+D:The creatures still hold the Howes. I must tell the families that the
+D:danger has not passed. Leave me to that duty for now.
+?:1
+
+T:QUEST:NORMAL
+L:;:RUBBLE
+L:#:PERMANENT
+L:.:GRASS
+L:%:GRANITE
+L:<:UP_STAIR
+L:A:GRASS:MON(kouko)
+L:B:GRASS:MON(white wraith)
+L:C:GRASS:MON(grave wight)
+L:W:GRASS:MON(mound wight)
+L:Z:GRASS:MON(emperor wight)
+L:2:GRASS:OBJ(potion of healing, NUMBER=1+1d2)
+L:4:GRASS:ART(of tolly)
+L:9:GRASS:OBJ(*)
+L:8:GRASS:OBJ(*, DEPTH+7)
+L:7:GRASS:OBJ(broken sword):EGO(the drowned reach)
+M:#######################################################
+M:#..............................................;.....2#
+M:#..................;;;;;;;;....................;...ZW9#
+M:#................;;;......;;;..................;......#
+M:#...............;;..........;;.................;;.;;;;#
+M:#........C.....;;.....C......;;...B...................#
+M:#..............;.9...CZC......;.......................#
+M:#........;.....;......C......;;......;................#
+M:#...............;;..........;;........................#
+M:#.B..............;;;......;;;.........................#
+M:#..................;;;;;;;;...........................#
+M:#....;;;;;;;;..................;;;;;;;;;;.............#
+M:#..;;;......;;;..............;;;........;;;...........#
+M:#.;;..........;;............;;.....%%%....;;..........#
+M:#;;............;;..........;;8...W.%4%....7;;.........#
+M:#;.9....WZ....9.;....B.....;.....Z.%Z%.Z...8;.........#
+M:#;;............;;..........;;......%Z%.W...;;.........#
+M:#.;;..........;;............;......%C%....;;..........#
+M:#..;;.......;;;..............;;;........;;;...........#
+M:#....;;;;;;;;..................;;;;;;;;;;.............#
+M:#.B...................................................#
+M:#.......A..........;;;;;;;;...........................#
+M:#................;;;......;;;.........................#
+M:#...............;;..........;;........................#
+M:#......;.......;;......C....9;;.......;.B.............#
+M:#..............;......CZC.....;.......................#
+M:#..............;;......C....9;;.......................#
+M:#...............;...........;;.................;;.;;;;#
+M:#................;;;......;;;..................;......#
+M:#..................;;;;;;;;....................;..ZW..#
+M:#<.................................A...........;....92#
+M:#######################################################
+
+?:[EQU $WILDERNESS NONE]
+R:OBJ(potion of new life, NUMBER=1)
+
+# vim: filetype=q :

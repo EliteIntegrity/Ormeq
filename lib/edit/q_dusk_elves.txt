@@ -1,0 +1,61 @@
+# Dusk elf Lords Quest
+# By Shayne Steele (steele@cs.fsu.edu)
+
+?:[EQU $QUEST32 Taken InProgress]
+D:A group of Dusk elf Lords has opened a shop inside the Magic
+D:Shop building. I have no appetite for more competition.
+D:Clear every enemy from their shop, then return here for your
+D:payment. They have guards; do not mistake a shopfront for
+D:an easy job. Anything you recover there is yours to keep.
+?:1
+
+?:[EQU $QUEST32 Completed]
+D:The Dusk elf Lords' shop is out of business. Quiet streets
+D:suit me. Here is the payment for a completed job.
+?:1
+
+?:[EQU $QUEST32 Failed]
+D:Their shop remains in business, and this job is closed.
+D:Keep whatever you recovered; there is no payment for an
+D:unfinished clearance.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:.:FLOOR
+L:+:CLOSED_DOOR
+L:<:UP_STAIR
+L:^:TRAP(*, 25%)
+L:y:MON(dweller on the threshold)
+L:P:MON(stone giant)
+L:g:MON(stone golem)
+L:z:MON(stunwall)
+L:h:MON(dusk elf lord)
+M:#########
+M:#.......#
+M:#.h.h.h.#
+M:#.......#
+M:#.h...h.#
+M:#.......#
+M:#P.P.g.g#
+M:#+++%+++#
+M:#...%...#
+M:#y^y%z^z#
+M:#y^y%z^z#
+M:#y^y%z^z#
+M:#...%...#
+M:#...%...#
+M:#+++%+++#
+M:#P.P%g.g#
+M:#.......#
+M:#.......#
+M:#..%%%..#
+M:#...<...#
+M:#########
+R:OBJ(^amulet$):EGO(trickery)
+
+?:[EQU $RACE Death-Sword Filthy-Rag]
+R:OBJ(potion of resistance, NUMBER=2+1d3)
+
+# vim: filetype=q :

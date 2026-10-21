@@ -1,0 +1,75 @@
+# The Mystery of Apina Island(TM)
+# New quest for FrogComposband 7.0.strawberry
+
+?:[GEQ [MOD $RANDOM0 64] 32]
+K:83
+?:1
+
+?:[EQU $QUEST75 Taken InProgress]
+D:Sailors are avoiding Apina Island. They say the pirate Roope's dead crew
+D:haunts it and attacks passing ships. I would dismiss the tale, but trade
+D:is suffering. Visit the island and clear every enemy you find there,
+D:then report back. Rumour or not, we need the route safe.
+?:1
+
+?:[EQU $QUEST75 Completed]
+D:So there was something to the sailors' tale. Thank you for clearing the
+D:island; this reward is yours.
+?:1
+
+?:[EQU $QUEST75 Failed]
+D:The ships will keep their distance, then. I must find someone else to
+D:settle the matter.
+?:1
+
+T:QUEST:NORMAL:NO_ROTATE
+# Terrain
+L:#:PERMANENT
+L:~:SHALLOW_WATER
+L:<:UP_STAIR
+L:G:FLOWER:MON(shadowlord)
+L:d:GRASS:MON(^dread$, NO_GROUP)
+L:D:GRASS:MON(dreadmaster)
+L:p:GRASS:OBJ(large steel chest, DEPTH+25):MON(enchantress)
+L:g:GRASS:MON(phantom warrior)
+L:::FLOWER
+L:;:BRAKE
+L:.:GRASS
+L:,:DIRT
+L:?:RUBBLE
+L:T:TREE
+
+# Dungeon layout
+M:######################################################
+M:#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~~~~~~~~~..;;~~~?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~~~~~.;.;...T.;;??;~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~~~...T:.gT..T;T.;T;;;.~~~~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~;;.T;..TT.;:;;;Td;.T;:?.?~~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~;.T;..;.;;..;;;Td.TT;;.:d??;~~~~~~~~~~~~~~~~~~#
+M:#~~~~;;T.::.T;;T;;;?T;;;TT;T..T;T;..??~~~~~~~~~~~~~~~#
+M:#~~~......g;;.;:,;:T;TTT;T;DTT;;TTT..??.~~~~~~~~~~~~~#
+M:#~~.;...::.;?;:;;.;;T;T;TTT;;?T,T;TTd..T..~~~~~~~~~~~#
+M:#~;;.;....:.;;.;.;T;;TTTT;:T??:TdT;TT~T;d...?~~~~~~~~#
+M:#<.;..;;...:..;.;;.Td.TdTTT;?p?GTTTT:T::T..T..?~~~~~~#
+M:#~~.;~~~;;;;..:..;;.T;;TTdT;???,DTT.::T~T.T.:.?.~~~~~#
+M:#~~~~~~~~~;;;.;.T..;.;;d;TTTTT,T.T.TTTd..TT:T.:..~~~~#
+M:#~~~~~~~~~~~~..T:.;::;;.d;;TTTTD.TTT..d::.TT;T;???~~~#
+M:#~~~~~~~~~~~~~::.;;:;...T.TDT??TTTd.T.:.:T;;TTT;?..~~#
+M:#~~~~~~~~~~~~~~~.;;;.;..:.dT;TT;TTTTTT.T.;TT;T;;..??~#
+M:#~~~~~~~~~~~~~~~~~;T..Td.T..TT;TT.T;T.::.::TT;T?..;.~#
+M:#~~~~~~~~~~~~~~~~~~.T..::T.TTTT.TT.TT.T..T:T:...?.?~~#
+M:#~~~~~~~~~~~~~~~~~~~..T:..T..TTT.dT;.T.;:.T..::;.:~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~...;:.T.;;.T...;.T....:.::~~~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~~~;:..;.....T;.:.::.::;~~~~~~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~~~~~.;..;T.;;.;;..:~~~~~~~~~~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~~~~~~~~;;...~~~~~~~~~~~~~~~~~~~#
+M:#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+M:######################################################
+R:OBJ(STAFF_CONFUSING_LITE, TYPE=simplicity)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of life, NUMBER=1)
+
+# vim: filetype=q :

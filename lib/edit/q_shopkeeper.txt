@@ -1,0 +1,56 @@
+?:[GEQ [MOD $RANDOM0 72] 36]
+K:93
+?:1
+
+?:[EQU $QUEST53 Taken InProgress]
+D:An old friend could bargain the price off anything, except in one shop
+D:in the ancient city. My advisor suspects its storekeeper charmed his
+D:customers with magic. Search that shop among the ruins and clear its
+D:dangers. I would like to know what was behind those remarkable bargains.
+?:1
+
+?:[EQU $QUEST53 Completed]
+D:The old shop is cleared. You have done what I asked, and I am grateful.
+D:There is no separate payment for this job; anything you recovered is yours.
+?:1
+
+?:[EQU $QUEST53 Failed]
+D:Then the shop keeps its secrets. I needed the place cleared before
+D:anyone else went looking. Leave it be; this commission is closed.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:<:UP_STAIR
+L:^:TRAP(*, 25%)
+L:a:MON(starmetal golem):OBJ(starmetal shod boots)
+L:b:MON(starmetal golem):OBJ(starmetal shield)
+L:c:MON(starmetal golem):OBJ(starmetal plate)
+L:d:MON(starmetal golem):OBJ(starmetal helm)
+L:e:MON(starmetal golem):OBJ(starmetal gauntlets)
+L:f:MON(colossus)
+L:g:OBJ(*, DEPTH+7):MON(threshold idol)
+L:h:MON(worldcore golem)
+L:i:OBJ(*, DEPTH+20):MON(drolem)
+L:k:OBJ(potion of charisma)
+L:l:OBJ(WAND_CHARM_MONSTER)
+L:m:OBJ(SCROLL, DEPTH+10)
+L:n:OBJ(small iron chest)
+
+M:######################################################################
+M:#..............################################################.h.####
+M:#..............#################################################+#####
+M:#......f.......+..................................................+h.#
+M:#..............#..###################+################################
+M:#..............#..#.................................##################
+M:################..#.......g.......g......g..........##############kml#
+M:#..............#..#.................................##############..n#
+M:#.<............+..#...###########################...##########......k#
+M:#..............#..#...###########################...##########.i.##nm#
+M:################..#.................................+...^..^.+...#####
+M:########......##..#^^^^^##^^^^^##^^^^^##^^^^^##^^^^^##################
+M:########..f....+..#..a..##..b..##..c..##..d..##..e..##################
+M:########......##..####################################################
+M:######################################################################

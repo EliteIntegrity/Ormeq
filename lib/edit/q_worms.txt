@@ -1,0 +1,59 @@
+# The Sand Pit (clouded)
+?:[GEQ [MOD $RANDOM0 34] 17]
+K:91
+?:1
+
+?:[EQU $QUEST36 Taken InProgress]
+D:A nest of strange worms lies in a nearby sand pit. They
+D:are quiet for now, but I will not stake the town's safety
+D:on their staying asleep. Clear every enemy from the pit,
+D:then return to me. I have a reward for completing the work.
+?:[EQU $QUEST36 Completed]
+D:The sand pit is cleared. We no longer have to wait for
+D:its occupants to stir. Take the reward I promised you.
+?:[EQU $QUEST36 Failed]
+D:The sand pit remains uncleared. This commission has ended
+D:without the work being done, so there is no reward to
+D:collect. I must find another answer.
+?:1
+
+T:QUEST:NORMAL
+L:X:PERMANENT
+L:#:GRANITE
+L:.:DIRT
+L:;:RUBBLE
+L:<:UP_STAIR
+L:C:MON(undercrawler)
+L:D:MON(dhole)
+L:w:MON(trenchcoil)
+L:W:MON(deathcoil colony)
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+M:X;;;;;;;;#;;;;;;;;;;;;;;;;;;;;;;;;X
+M:X;;;;;;;;;;;;;#;;;;;;;;#;;;;;;;;;;X
+M:X;;;#;;;...;;;;;;;;;;;;;;;.;;#;;;;X
+M:X;;;;;;C;;.w.;;;;#;;;;;;..w.D;;;;;X
+M:X;;;;;;;......;;;;;;;#;;;...;;;;;;X
+M:X;#;;;;.....;;;;;;;;;;;;;;...#;#;;X
+M:X;;;;#;;;...;;;#;;;#;;;#...;;;;;;;X
+M:X;;;;;;;;;;;;;;;;;;;;;;;;;.;;;;;;;X
+M:X;;;;#;;;;;;;#;;;...;;;;;;;;;#;;;;X
+M:X;#;;;;;;#;;;;;.....;;;#;;;;;;;;;;X
+M:X;;;;;;.;;;;;;;;.<;..;;;;;;;;;;;#;X
+M:X;;;;;..;;;;#;;....;.;;;#;;;.#;;;;X
+M:X;;#;..;#;;;;;;;....;;;;;;;...;;;;X
+M:X;;;;;...;;;;;;;;;;;#;;;;;;;.w;;;;X
+M:X;;;..w.;;;...;;;;;;;;;#;;;;;..#;;X
+M:X;;;;....;#;...;#;;;;.;;;;;..;;;;;X
+M:X;;;#;D.;;;;..;;;;;#;..;;#;;;;;;;;X
+M:X;;;;;.;;;;;;;;;;....w...;;;#;;;#;X
+M:X;;;;..;#;;;;#;;;;.W..;;...;#;;;;;X
+M:X;;#;;;;;;;;;;;;;...;#;;;..C;;;;;;X
+M:X;;;;;;;;;;#;;;#;;;;;;;;;#;;;;#;;;X
+M:X;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;X
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+R:OBJ(blade of chaos, DEPTH+12)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(undying lamp)
+
+# vim: filetype=q :

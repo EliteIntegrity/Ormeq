@@ -1,0 +1,65 @@
+# New quest for FrogComposband 7.0.strawberry
+
+?:[EQU $QUEST71 Taken InProgress]
+D:Shadow fairies have made the forest unsafe for evening walks. My scouts
+D:place them in a deep thicket northeast of the main gate. Clear every
+D:enemy from the thicket, then return to me for your reward.
+
+?:[EQU $QUEST71 Completed]
+D:You have made the forest safer. Please accept this reward for your work.
+?:1
+
+?:[EQU $QUEST71 Failed]
+D:The thicket is still unsafe. I will seek another volunteer.
+?:1
+
+T:QUEST:NORMAL
+L:%:PERMANENT
+L:7:TREE
+L:<:UP_STAIR
+L:.:DIRT
+L:::BRAKE
+L:h:BRAKE:MON(shadow fairy, NO_GROUP)
+L:i:BRAKE:MON(shadow fairy, NO_GROUP)
+L:j:BRAKE:MON(shadow fairy, NO_GROUP)
+L:k:BRAKE:OBJ(filthy rag, DEPTH+16)
+!:SCRAMBLE(h,i,j,k)
+
+M:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+M:%7777777777777777777777777777777%
+M:%777777777777777777:777777777777%
+M:%777777::777777777:::777777:7777%
+M:%77777:k::77777777:i:77777:h:777%
+M:%77777:::7777777777::77777:::777%
+M:%777777:777777777777:777777:7777%
+M:%7777777:777777777777::777:77777%
+M:%77777777:7777777777777:7:777777%
+M:%777777777::777777777777:7777777%
+M:%77777777777::7:77777777:7777777%
+M:%7777777777:77777:::7777:7777777%
+M:%777777777:77777777::....7777777%
+M:%777777777:77777777777777.777777%
+M:%77777777:::77777777777777..7777%
+M:%77777777::j:777777777777777..77%
+M:%777777777::777777777777777777.7%
+M:%777777777777777777777777777777<%
+M:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+R:OBJ(hard leather cap):EGO(seeing)
+
+?:[EQU $RACE Tomte]
+R:OBJ(knit cap):EGO(seeing)
+
+?:[EQU $RACE Ring Centipede]
+R:OBJ(amulet):EGO(dwarven necklace)
+
+?:[EQU $RACE Gazer]
+R:OBJ(undying lamp)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(potion of sight, NUMBER=5+3d3)
+
+?:[EQU $RACE Filthy-Rag]
+R:OBJ(pair of hard leather boots):EGO(gnomish)
+
+?:[AND [EQU $CLASS Disciple] [EQU $SUBCLASS Troika] ]
+R:OBJ(ROD_BEAM_LITE)

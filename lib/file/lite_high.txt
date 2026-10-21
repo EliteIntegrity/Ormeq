@@ -1,0 +1,25 @@
+N:*:Default
+'Altair'
+'Apocalypse Beacon'
+'Arcturus'
+'Aurora Borealis'
+'Avatar of Light'
+'Dawnbringer'
+'Destiny Star'
+'Eye of the Wyrm'
+'Eye of the Emperor Lich'
+'Furnace of Light'
+'Lightbringer'
+'Lux Aeterna'
+'Mirzam'
+'Morrowend'
+'Phoenix Eye'
+'Suncaller'
+'Sundrop of the Starmaker'
+'Vaevictis'
+of Celestial Guidance
+of Brume
+of Revelation
+of Sustareth
+of the Firmament
+of the Zodiac

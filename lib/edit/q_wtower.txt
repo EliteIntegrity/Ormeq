@@ -1,0 +1,76 @@
+# New quest for FrogComposband 7.0.strawberry
+
+?:[AND [EQU $QUEST69 Taken InProgress] [EQU $WILDERNESS NORMAL] ]
+D:Vampires have taken the old watchtower near the shore. A child
+D:disappeared in the forest, and we later found him drained of blood.
+D:Clear every enemy from the tower before anyone else is lost, then return
+D:for your reward.
+?:1
+
+?:[AND [EQU $QUEST69 Completed] [EQU $WILDERNESS NORMAL] ]
+D:The watchtower is clear. Thank you for making the approaches to Thalos
+D:safer. Here is your reward.
+?:1
+
+?:[AND [EQU $QUEST69 Taken InProgress] [EQU $WILDERNESS NONE] ]
+D:Vampires have taken an old watchtower in the forest west of here, near
+D:the river. A child disappeared nearby and was later found drained of
+D:blood. Clear every enemy from the tower before anyone else is lost, then
+D:return for your reward.
+?:1
+
+?:[AND [EQU $QUEST69 Completed] [EQU $WILDERNESS NONE] ]
+D:The watchtower is clear. Thank you for protecting Outpost's people. Here
+D:is your reward.
+?:1
+
+?:[EQU $QUEST69 Failed]
+D:I relied on you to end this danger. I must find someone else to clear
+D:the tower.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:<:UP_STAIR
+L:+:CLOSED_DOOR
+L:-:LOCKED_DOOR_6
+L:':OPEN_DOOR
+L:p:MON(banshee)
+L:M:MON(master vampire)
+L:V:MON(vampire lord)
+L:*:MON(redglut)
+L:v:MON(^vampire$)
+L:b:MON(vampire bat)
+L:F:MON(fire vampire)
+L:O:MON(oriental vampire)
+L:r:MON(giant grey rat)
+L:~:OBJ(human skeleton)
+L:d:OBJ(^dagger$):EGO(death)
+L:6:OBJ(cloak, DEPTH+16)
+L:=:OBJ(RING, DEPTH+16)
+L:c:OBJ(large steel chest, DEPTH+10)
+
+M:####################
+M:#.M~#######...######
+M:#.p~#######c*.######
+M:#..d#######...######
+M:#+###########+######
+M:#F.#########.F######
+M:##.###6.=###.#######
+M:##..##...##..#######
+M:###.###+###.########
+M:#....#...#.......###
+M:#.v..'.v....vvv..+O#
+M:#....#...#.......#b#
+M:#######.##########b#
+M:#######.#....#####.#
+M:#######.#.V..#####.#
+M:#######<#....-..r..#
+M:####################
+R:OBJ(WAND_DRAIN_LIFE)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(long sword):EGO(death)
+
+?:[AND [EQU $CLASS Disciple] [EQU $SUBCLASS Troika] ]
+R:OBJ(two-handed sword):EGO(death)

@@ -1,0 +1,92 @@
+# Adapted from Frogspawn
+# (This quest is normally in Anambar, but doubles as a lite-town quest.
+# The settings of these quests require totally different descriptions,
+# but apart from that they're the same)
+
+?:[AND [EQU $QUEST73 Taken InProgress] [EQU $WILDERNESS NORMAL] ]
+D:Illegal mushrooms are reaching our streets and school. We know the
+D:smugglers' base: a small house just north of here. We cannot obtain a
+D:warrant, so I am asking for your discreet help. Clear every enemy from
+D:the den and report back. You may keep what you find; there is a separate
+D:reward for the work.
+?:1
+
+?:[AND [EQU $QUEST73 Completed] [EQU $WILDERNESS NORMAL] ]
+D:The smugglers are gone. Keep what you recovered, and take this legal
+D:mushroom from our evidence stores as your reward. I shall ask no further
+D:questions.
+?:1
+
+?:[AND [EQU $QUEST73 Failed] [EQU $WILDERNESS NORMAL] ]
+D:Then the den remains a problem. I will have to pursue it another way.
+?:1
+
+?:[AND [EQU $QUEST73 Taken InProgress] [EQU $WILDERNESS NONE] ]
+D:Someone is selling illegal mushrooms in town, and it is not me. The
+D:smugglers work from a small house south of the Arena. Clear every enemy
+D:from their den and return to me. Keep what you find; I have a separate
+D:bonus for your help.
+?:1
+
+?:[AND [EQU $QUEST73 Completed] [EQU $WILDERNESS NONE] ]
+D:Thank you for clearing the den. Keep your haul, and take this mushroom
+D:as my promised bonus.
+?:1
+
+?:[AND [EQU $QUEST73 Failed] [EQU $WILDERNESS NONE] ]
+D:Too bad. I will have to find another way into their business.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:<:UP_STAIR
+L:.:FLOOR
+L:,:FLOOR(ICKY)
+L:f:MON(the cellar cat)
+L:&:LOCKED_DOOR_7
+L:+:CLOSED_DOOR
+L:A:FLOOR(ICKY):MON(archangel)
+L:C:MON(clairvoyant)
+L:n:MON(black knight)
+L:t:MON(master thief)
+L:p:MON(gravebound knight)
+L:r:MON(master rogue)
+L:o:OBJ(*)
+L:!:OBJ(pint of fine ale)
+L:7:FLOOR(ICKY):OBJ(mushroom of fast recovery)
+L:P:FLOOR(ICKY):OBJ(mushroom of confusion)
+L:8:FLOOR(ICKY):OBJ(mushroom of hallucination)
+L:2:FLOOR(ICKY):OBJ(mushroom of weakness)
+L:3:FLOOR(ICKY):OBJ(mushroom of naivety)
+L:5:FLOOR(ICKY):OBJ(mushroom of poison)
+L:9:FLOOR(ICKY):OBJ(mushroom of stupidity)
+L:6:OBJ(*, DEPTH+5)
+L:0:OBJ(cloak)
+L:4:OBJ(leather gloves, DEPTH+3):EGO(thief)
+L:x:OBJ(scroll of rumour)
+L:1:OBJ(piece of elven journeybread)
+L:$:OBJ(GOLD)
+L:E:FLOOR(ICKY):OBJ(GOLD)
+L:-:OBJ(WAND_STONE_TO_MUD)
+!:SCRAMBLE(2,3,5,9)
+!:SCRAMBLE(7,P)
+M:####################
+M:#EEE,,,,,9523P78888#
+M:#EEE,A,,,32957P8888#
+M:#####%##############
+M:#####..#.........r6#
+M:#4..#..+.....xp.r-6#
+M:#.t.#..#.........r6#
+M:#...#..#############
+M:##+##..#..........$#
+M:#.r.r..+.....nt...$#
+M:#.r.r..#..........$#
+M:###+################
+M:#0.........#......6#
+M:#......!#r.#.......#
+M:#......rr1.&....C..#
+M:#..........#.......#
+M:#4..<......#$.....6#
+M:####################
+R:OBJ(mushroom of restoring, NUMBER=1)

@@ -1,0 +1,10 @@
+# vim: filetype=q :
+
+?:[EQU $QUEST9 Taken InProgress]
+D:The last errand, and the one all the others have quietly been.
+D:Go down into the place that was never taken from anywhere, and
+D:finish it. Say the whole of it if you have to; he will come, he
+D:always has. Be ready, and be patient. Nobody who has done this
+D:has come back to tell us how.
+?:1
+

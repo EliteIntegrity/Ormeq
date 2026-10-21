@@ -1,0 +1,56 @@
+# New quest for FrogComposband 7.0.strawberry (not actually used at the time)
+# The original description ended up as the description for Shadow Fairies,
+# and the original map ended up as the map for Djinni's Cavern...
+# Redesigned for FrogComposband 7.1.chocolate
+
+?:[EQU $QUEST62 Taken InProgress]
+D:We used to see one grizzly at a time in the eastern woods. Now they come
+D:in groups and use the roads as if they own them. People have disappeared
+D:there. Search the den at the foot of the hill on the forest's southern
+D:edge and clear it out. I would like my guests to reach the inn alive.
+
+?:[EQU $QUEST62 Completed]
+D:People are using the forest road again. I will not pretend I would have
+D:gone into that den myself. You earned every bit of this.
+?:1
+
+?:[EQU $QUEST62 Failed]
+D:The forest road is still dangerous. I will find another company to try the
+D:den. You should rest before going out again.
+?:1
+
+T:QUEST:NORMAL
+L:#:MOUNTAIN_WALL
+L:%:PERMANENT
+L:<:UP_STAIR
+L:i:DIRT
+L:.:DIRT
+L:m:MON(mad bear)
+L:M:MON(mad bear, NO_GROUP)
+L:N:MON(mad bear, NO_GROUP | NO_SLEEP)
+L:(:OBJ(filthy rag, DEPTH+18)
+L:h:OBJ(human skeleton)
+L:H:OBJ(human skeleton)
+L:i:OBJ(human skeleton)
+L:o:OBJ(*, DEPTH+1)
+L:O:OBJ(*, DEPTH+1)
+L:q:OBJ(*, DEPTH+1)
+L:p:OBJ(potion of berserk strength)
+!:SCRAMBLE(h,o,H,O)
+!:SCRAMBLE(i,q)
+
+M:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+M:%#############################%
+M:%####M(######<################%
+M:%###OH..####...######ii#######%
+M:%##HNMo...##......##..Mq######%
+M:%##oM.h......####.......iq####%
+M:%###hO.....#######...m...q####%
+M:%####..m##########N.....M#####%
+M:%##################M...i######%
+M:%#############################%
+M:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+R:OBJ(STAFF_ENLIGHTENMENT)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of enlightenment, NUMBER=1)

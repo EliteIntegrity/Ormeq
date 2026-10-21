@@ -1,0 +1,61 @@
+?:[GEQ [MOD $RANDOM0 98] 49]
+K:88
+?:1
+
+?:[EQU $QUEST3 Taken InProgress]
+D:Since a foreign merchant bought a house here, our animals have been dying,
+D:people have fallen ill, and the moats have become foul. This is more than
+D:a run of bad luck. I have evidence that the stranger in the northwestern
+D:corner of town is responsible. Kill him before he does further harm.
+?:1
+
+?:[EQU $QUEST3 Completed]
+D:The stranger's work is ended. You have spared this town a great deal of
+D:suffering. Take this gift; you have earned it.
+?:1
+
+?:[EQU $QUEST3 Failed]
+D:Vellum, our librarian, tells me the Anti-paladin has left town. That gives
+D:us some respite, though your task remains unfinished. We must hope he does
+D:not return.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:FLOOR
+L:<:UP_STAIR
+L:a:MON(anti-paladin)
+M:###############
+M:#.............#
+M:#.........a...#
+M:#.............#
+M:#....##########
+M:#.............#
+M:#.............#
+M:#.............#
+M:#<............#
+M:###############
+R:OBJ(long bow):EGO(accuracy)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Crossbows] ]
+R:OBJ(cloak):EGO(electricity)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Slings] ]
+R:OBJ(sling):EGO(accuracy)
+
+?:[EQU $RACE Gazer Spider Ring Dragon]
+R:OBJ(^ring$):EGO(combat)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(long sword, DEPTH+10)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^cloak$):EGO(elemental protection)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots):EGO(dwarven)
+
+?:[EQU $RACE Demon Vein-grazer Jelly Hound Vortex Filthy-Rag]
+R:OBJ(STAFF_CONFUSE_MONSTERS)
+
+# vim: filetype=q :

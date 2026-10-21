@@ -1,0 +1,116 @@
+Credits
+
+Ormeq builds on the work of the developers, contributors and players 
+credited below, in the order they arrived.
+
+The Beginning
+
+1980-1983 -- Robert Alan Koeneke writes Moria on a VAX at the 
+University of Oklahoma, with Jimmey Wayne Todd. It is the reason for 
+all of this.
+
+1987-1989 -- James E. Wilson rewrites it in portable C as Umoria, which 
+is how it escaped the VAX and reached everybody else.
+
+The Scottish Game
+
+1990 -- Alex Cutler and Andy Astrand build the thing we do not name, at 
+university, on top of Umoria. Sean Marsh, Geoff Hill and Charles Teague 
+carry it to version 2.0.
+
+1993-1994 -- Charles Swiger maintains it through 2.5 and 2.6.
+
+1995-2000 -- Ben Harrison takes it over at 2.7 and rewrites most of it, 
+including the terminal layer that let it be ported to anything with a 
+screen. Much of the code in this game is still recognisably his.
+
+1997-2007 -- ports and frontends by Skirmantas Kligys, Robert 
+Ruehlmann, Gregory Velichansky, Eric Stevens, Antony Sidwell and 
+Sheldon Simms.
+
+The Variants
+
+1994-1998 -- the Japanese version, by Sitoshin, sayu, FIRST and TeO.
+
+1998-2000 -- ZAngband. Old code by Topi Ylinen, new code by Robert 
+Ruehlmann, and then the ZAngband DevTeam. Its Japanese version is 
+Mitsuhiro Itakura's.
+
+2001-2010 -- Hengband, by Mr.Hoge and the Hengband Development Team: 
+Habu, Henkma, iks, Kuwa, Mogami and nsk.
+
+2000s -- Posband, by Alexander Ulyanov and Graham Philips. A great many 
+of its ideas are still here.
+
+2011-2013 -- Chengband, by Chris Kousky, Dave Zhang and Andrew Levy.
+
+2013-2018 -- PosChengband, by Chris Kousky.
+
+2018 -- ComPosband, by Gwilim Owen.
+
+2018-2024 -- FrogComposband, by Antero Sulka. This game is a fork of 
+that one, and the great majority of what you are playing is his work 
+and the work of everyone above him.
+
+Ormeq
+
+2026 -- EliteIntegrity: Ormeq's setting, creative direction and 
+presentation, with AI-assisted development. Ormeq shares its world with 
+Ammerow: Lands Beyond.
+
+Sound Effects and Music
+
+The optional sound effects and ambient soundscapes are shared with 
+Ammerow. They were created under human direction with Claude 
+Code-assisted Python synthesis: mathematical models and recorded seeds, 
+without recordings, third-party samples or a generative-audio service.
+
+Title music: Ormeq - Home Theme (Dark), directed, reviewed and approved 
+by EliteIntegrity. Created with Claude Compose: AI-assisted code placed 
+the notes, and licensed virtual instruments performed them in Ableton 
+Live. Audio analysis informed revisions; no generative audio or music 
+model was used.
+
+The theme plays on the title screen. Effects, ambience and music have 
+separate controls under Settings > Sound. Footsteps and menu feedback 
+can be switched off individually. Background sound follows surface 
+day/night or dungeon depth, lowers in menus and pauses when unfocused.
+
+Audio is copyright (c) 2026 John Horton, to the extent copyright and 
+related rights subsist. Normal play, personal backups, private 
+modifications and gameplay coverage, including monetised videos and 
+streams, are permitted. Redistribution or reuse of the audio requires 
+written permission except where applicable law permits otherwise. 
+Public source forks omit the audio; effects fall back to the synth and 
+missing music stays silent.
+
+The Players
+
+Every one of these people found a bug, argued a point, or suggested 
+something that got built. They are in the changelogs by name and they 
+belong here too.
+
+
+Aav, Aber, Aver, Benly, BobZero, Bucephalus, CyclopsSlayer, 
+DavidMedley, Derakon, Draghmar, FlauterFiddle, Fnord, Gwarl, Hugo, 
+Karkaroth, Kreutzer, Marty, Melum, MITZE, Mitternatch, Mocht, murphy, 
+Nivim, OmniNegro, Oneiron, pav, Philip, Prandar, Saru, SethaWetha, 
+ster, TauzentBlitz, Thraalbee, Tiltorax, vertigo, Wolpertinger, aban, 
+bostock, budswell, caruso, emulord, floatRand, grodrigues, 
+introsp3ctive, isnok, kt, meltdown, mewmew, nikheizen, wobbly.
+
+
+And everyone who played it, said nothing, and kept playing.
+
+The Terms
+
+Based on Moria, copyright (c) 1985 Robert Alan Koeneke, and Umoria, 
+copyright (c) 1989 James E. Wilson.
+
+This software may be copied and distributed for educational, research, 
+and not for profit purposes provided that this copyright and statement 
+are included in all such copies. Other copyrights may also apply.
+
+Artwork and audio have separate terms from the code. See LICENSE and 
+licenses/Ormeq-Audio.txt in the game folder for the complete notices.
+

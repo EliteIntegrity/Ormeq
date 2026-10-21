@@ -1,0 +1,75 @@
+?:[EQU $QUEST55 Taken InProgress]
+D:Our archaeologists have found an ancient underground city. They need
+D:its dangers cleared before they can work. Defeat every enemy at the site
+D:and return to me. There may be interesting finds down there, but making
+D:the place safe is the job.
+?:1
+
+?:[AND [EQU $QUEST55 Completed] [NEQ $RACE Centipede Gazer Ring Dragon Quylthulg Death-Sword Hydra Vortex Jelly] ]
+D:The city is cleared, and our archaeologists can begin their work.
+D:Take my old battle gloves. They have served me well; now they are yours.
+?:1
+
+?:[AND [EQU $QUEST55 Completed] [EQU $RACE Centipede Gazer Ring Dragon Quylthulg Death-Sword Hydra Vortex Jelly] ]
+D:The city is cleared, and our archaeologists can begin their work.
+D:Take this reward. You have earned more than a word of thanks.
+?:1
+
+?:[EQU $QUEST55 Failed]
+D:The city remains dangerous. The archaeologists will have to put their
+D:work aside. That is a costly delay, but I will not risk them down there.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:;:RUBBLE
+L:W:DEEP_WATER
+L:V:SHALLOW_WATER
+L:.:FLOOR
+L:<:UP_STAIR
+L:a:MON(undead spider)
+L:b:OBJ(large steel chest, DEPTH+30):MON(grave skull idol)
+L:c:OBJ(large steel chest, DEPTH+30):MON(grave hand idol)
+L:d:OBJ(large steel chest, DEPTH+30):MON(grave eye idol)
+L:e:OBJ(skeleton)
+L:*:OBJ(*, DEPTH+20)
+L:k:OBJ(CROWN, DEPTH+25):EGO(lordliness)
+L:l:OBJ(RING, DEPTH+20):EGO(speed)
+L:m:OBJ(starmetal chain, DEPTH+30):EGO(70)
+!:SCRAMBLE(k,l,m)
+!:SCRAMBLE(b,c,d,e)
+
+# Dungeon layout
+M:#####################################################################
+M:#............................%......................................#
+M:#%%%%%%%%%%%%%%%%%%%%%%%%%%%.%.....##############################...#
+M:#..........................%.%.....#......................#....*#...#
+M:#.#########........................#.........aa...........+....*#...#
+M:#.#.......+...............##+##....#......................#.....#...#
+M:#.#..c....#...............#*b.#....###+##############+###########...#
+M:#.#*......#...............#####...................#.....+......l#...#
+M:#.#########.......................................#...a.#..e....#...#
+M:#..................................;;;;...........#.....#......*#...#
+M:#................................;;VVVV;;.........###############...#
+M:#.....########...########........;VVWWVV;...........................#
+M:#.....#......#...#......#........;;VVVV;;...........................#
+M:#.....#......##+##..a...#..........;;;;.........................%%%%#
+M:#.....#..d...#...#......#.......................................%...#
+M:#.....#......+...+......#.......######+####################.....%.%.#
+M:#.....#k.....#...#......#.......#.............+....a.....*#.....%;%.#
+M:#.....###################.......#.............#...........#.....%;%.#
+M:#...............................#...a..a..a...#############.......%.#
+M:#....WWWWWWWWWWWWWWWWWWWWW......#.............#...........#.......%.#
+M:#....WWWWWWWWWWWWWWWWWWWWW......#.............+....a.....m#.......%.#
+M:#....WWWWWWWWWWWWWWWWWWWWW......###########################.......%.#
+M:#.................................................................%<#
+M:#####################################################################
+
+R:OBJ(starmetal gauntlets, DEPTH+5):ART(*)
+
+?:[EQU $RACE Centipede]
+R:OBJ(hard leather boots):ART(*)
+
+?:[EQU $RACE Gazer Ring Dragon Quylthulg Death-Sword Hydra Vortex Jelly]
+R:OBJ(ROD_BALL_NETHER, TYPE=Regeneration | DEPTH+5)

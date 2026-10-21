@@ -1,0 +1,26 @@
+?:[EQU $QUEST67 Taken InProgress]
+D:I always... our city always needs more money. A mage in Thalos will pay
+D:handsomely for dragons' hearts. Kill five great crystal drakes in the
+D:crystal castle to the east, then return for your share. The hunt is what
+D:counts; you need not bring me an item for each heart.
+?:1
+
+?:[EQU $QUEST67 Completed]
+D:Five drakes, as agreed. Here is your share of the payment. I look
+D:forward to doing business with you again.
+?:1
+
+?:[EQU $QUEST67 Failed]
+D:A pity. Perhaps I should have found someone more experienced for this
+D:particular bargain.
+?:1
+
+R:OBJ(AMULET):ART(*)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(broad sword):EGO(sharpness)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(undying lamp):ART(*)
+
+# vim: filetype=q :

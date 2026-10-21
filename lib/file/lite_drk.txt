@@ -1,0 +1,51 @@
+N:*:Default
+'Black Eye'
+'Black Heart'
+'Blacklight'
+'Black Star'
+'Darkenstone'
+'Dark Spark'
+'Dimmerhand'
+'Devil's Candle'
+'Dimbulb'
+'Extinguisher'
+'False Light'
+'Fire-Eater'
+'Fog Light'
+'Ghost Light'
+'Heart of Darkness'
+'Hidespark'
+'Lackluster'
+'Lazy Eye'
+'Murkcandle'
+'New Moon'
+'Nightbringer'
+'Ninja's Little Helper'
+'Shade Lamp'
+'Shadowcaster'
+'Shadower'
+'Unbelievable'
+'Waterfly'
+'Wimp'
+of Chindasuinth
+of Alhazred
+of the Burglar
+of Concealment
+of the Dusk Elves
+of Dysart
+of Feldergast
+of Gloominess
+of the Long Depression
+of the Missing Genie
+of Corvane
+of Mupinium
+of the Spider Vale
+of Narus
+of Negativity
+of Nephthys
+of Nyx
+of Obscurity
+of the Shadowlords
+of Tarn
+of Umbrage
+of Unsight

@@ -1,0 +1,69 @@
+# Description for quest
+?:[EQU $QUEST50 Taken InProgress]
+D:A band of mercenaries has taken over my other house. They frighten off the
+D:neighbours and treat everything inside as theirs. I have tried asking;
+D:they laughed. Go to the occupied house and kill the band. I want my home
+D:back, and I cannot do this myself.
+?:1
+
+# Description for quest reward
+?:[EQU $QUEST50 Completed]
+D:I went as far as the doorway. Quiet, at last. The damage can be mended; it
+D:is having the place back that matters. Here is what I owe you.
+?:1
+
+# Description for quest failed
+?:[EQU $QUEST50 Failed]
+D:They are still in the house. I will have to find someone else. Get
+D:yourself patched up before you try that sort of work again.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:<:UP_STAIR
+L:.:FLOOR
+L:+:CLOSED_DOOR
+L:$:OBJ(*)
+L:&:MON(*, DEPTH+5 | NO_GROUP | NO_UNIQUE)
+L:a:MON(mean looking mercenary)
+L:b:MON(singing)
+L:k:OBJ(elven journeybread)
+L:m:OBJ(potion of boldness)
+L:n:OBJ(potion of booze)
+!:SCRAMBLE(m,n)
+M:######################################
+M:#$...........#....#....kkm#.........$#
+M:#..b.........+....+....kkn#..........#
+M:#............#....#########..........#
+M:##############....#..................#
+M:#............#....#############++++###
+M:#..b.........+.......................#
+M:#............#.......................#
+M:##############.....##a....##a....##a.#
+M:#............#.....##b....##.....##b.#
+M:#$....&......+.......................#
+M:#............#.......................#
+M:##############.....##....b##a...b##a.#
+M:#............#.....##.....##b....##..#
+M:#............+.......................#
+M:#............#...........<...........#
+M:######################################
+R:OBJ(hard studded leather)
+
+?:[EQU $CLASS Monk Mystic Force-Trainer Ninja Ninja-Lawyer Scout]
+R:OBJ(padded armour)
+
+?:[EQU $CLASS Warrior Blood-Knight Mauler Samurai]
+R:OBJ(set of studded leather gloves)
+
+?:[EQU $RACE Gazer Spider Ring Dragon]
+R:OBJ(^ring$):EGO(protection)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(broad sword)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^cloak$)
+
+?:[EQU $RACE Centipede]
+R:OBJ(hard leather boots)

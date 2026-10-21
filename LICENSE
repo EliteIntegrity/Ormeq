@@ -1,0 +1,212 @@
+Ormeq
+=====
+
+Ormeq is a fork of FrogComposband, which descends from Angband by way of
+ZAngband, Hengband, Chengband, PosChengband and ComPosband. It inherits its
+licensing from that line, and that inheritance is a hard constraint rather
+than a choice.
+
+**This software may not be sold.** See "The Angband licence" below.
+
+**The artwork and optional audio ship on narrower terms than the code.**
+See "Artwork" and "Sound effects and music".
+
+The full text of every licence named here is in the `licenses/` directory,
+which travels with every release.
+
+
+--------------------------------------------------------------------------
+The game's own source
+--------------------------------------------------------------------------
+
+In the inherited tree,
+67 of the C source files in `src/` carry this notice -- 65 of them
+and nothing else -- and it governs the work as a whole:
+
+    Copyright (c) 1997 Ben Harrison, James E. Wilson, Robert A. Koeneke
+
+    This software may be copied and distributed for educational, research,
+    and not for profit purposes provided that this copyright and statement
+    are included in all such copies. Other copyrights may also apply.
+
+Angband itself relicensed to GNU GPL v2 in 2009. **This lineage branched
+before that and never followed**, so the notice above is the binding one and
+the not-for-profit clause stands.
+
+Copyright in the material added since the fork (23 August 2026) is held by
+John Horton, and is offered on the same terms.
+
+Full text: `licenses/Angband.txt`
+
+### Inherited dual-licensed files
+
+`src/randname.c` (Antony Sidwell, Sheldon Simms, 2007) and `src/main-cocoa.m`
+(Peter Ammon, 2011) are each offered under **either** GNU GPL v2 **or** the
+Angband licence. This distribution relies on the Angband branch, which is what
+the rest of the tree is under. The unsupported Cocoa frontend is omitted from
+public exports, which contain 66 of the notice-bearing files (65 Angband-only).
+The GPL text is included for anyone who prefers the other branch.
+
+Full text: `licenses/GPL-2.0.txt`
+
+### Microsoft sample code
+
+`src/readdib.c`, used only by the legacy Win32 frontend, carries Microsoft's
+1993 royalty-free sample-code grant. Its notice is retained. Ormeq's small
+interface in `src/win_bitmap.h` is supplied under the game's source terms.
+The old header and bitmap wall resource are no longer distributed.
+
+Full text: `licenses/Microsoft-Sample-Code.txt`
+
+
+--------------------------------------------------------------------------
+Libraries shipped with the game
+--------------------------------------------------------------------------
+
+`SDL3.dll`, `SDL3_ttf.dll` and `SDL3_image.dll` are distributed under the
+zlib licence.
+
+    Copyright (C) 1997-2026 Sam Lantinga <slouken@libsdl.org>   (SDL3, SDL3_image)
+    Copyright (C) 1997-2025 Sam Lantinga <slouken@libsdl.org>   (SDL3_ttf)
+
+Full text: `licenses/SDL3.txt`, `licenses/SDL3_ttf.txt`,
+`licenses/SDL3_image.txt`
+
+The DLLs also contain third-party components. Their additional notices are
+listed in `licenses/README.md`, with exact source references and DLL hashes
+in `licenses/dependency-sources.json`.
+
+SDL3_ttf uses FreeType 2.13.2 and HarfBuzz 8.5.0, already linked into its DLL.
+Ormeq distributes FreeType under the FreeType License (FTL), not its GPL
+alternative. Portions of this software are copyright (c) 1996-2023 The FreeType
+Project (www.freetype.org). All rights reserved.
+
+The image library uses its built-in stb decoder for Ormeq's PNGs; optional
+AVIF, TIFF, WebP and libpng DLLs are not bundled. Their names in a DLL string
+scan are not evidence that those libraries are embedded. Additional notices
+cover the compiled stb, NanoSVG and QOI code.
+
+
+--------------------------------------------------------------------------
+Fonts shipped with the game
+--------------------------------------------------------------------------
+
+Five typefaces are bundled in `font/`. Four are under the SIL Open Font
+License 1.1 and one under the MIT licence. **Neither licence is satisfied by
+a link**; both require their text to travel with the font, which is why it
+does.
+
+| font | copyright | licence |
+|---|---|---|
+| Cozette | (c) 2020-2025 Ines <ines@moonwit.ch> | MIT |
+| IBM Plex Mono | Copyright 2017 IBM Corp. | OFL-1.1 |
+| Roboto Mono | Copyright 2015 The Roboto Mono Project Authors | OFL-1.1 |
+| Share Tech Mono | (c) 2012 Carrois Type Design, Ralph du Carrois, with Reserved Font Name 'Share' | OFL-1.1 |
+| VT323 | Copyright 2011 The VT323 Project Authors | OFL-1.1 |
+
+Share Tech Mono carries a **Reserved Font Name**. A modified version of it may
+not be distributed under the name "Share". None of these fonts is modified
+here; they are shipped as delivered.
+
+Full text: `licenses/OFL-1.1.txt`, `licenses/MIT-Cozette.txt`,
+`licenses/fonts.txt`
+
+
+--------------------------------------------------------------------------
+Artwork
+--------------------------------------------------------------------------
+
+**The artwork is not covered by the licence above, and is licensed to you
+separately and more narrowly.**
+
+This applies to:
+
+  * `lib/art/` — the character-art plates (`.art`)
+  * `lib/tiles/` — the sprite sheets, terrain atlases and their indexes
+  * `_art-src/` — the source images the plates were made from, which are
+    kept separately and are not part of the source distribution
+  * `_art-held/` — source images held out of the active collection
+
+The artwork belongs to the copyright holder identified in the source section
+above and was made for this game. The assets are not derived from Angband or
+from anything in the lineage, so the Angband licence does not reach them and
+does not grant you anything in respect of them.
+
+You may:
+
+  * **Play the game.** Use the artwork by running Ormeq, for as long as you
+    like.
+  * **Pass the game on.** Redistribute the complete, unmodified release
+    package containing the artwork, free of charge, as many times as you like.
+
+You may not:
+
+  * **Take the artwork out.** The plates, sprite sheets and atlases may not be
+    extracted, converted, modified, redistributed on their own, or reused in
+    any other work, product, game or dataset, without written permission.
+
+A fork of the source code is welcome under the licence in the first section.
+**A fork must strip or replace `lib/art/` and `lib/tiles/`.** The game is built
+to survive that: it draws a large glyph wherever a plate is missing, and tile
+mode falls back to glyphs wherever optional artwork is absent.
+
+How the artwork was made, stated plainly because it is better said than
+discovered: the source images behind the character-art plates were generated
+with AI image tools and converted to plates by this project's own code, which
+measures each glyph's ink in the current typeface and pools the source pixels
+against that ramp. The optional 32/64-pixel map sprites are deterministic
+reductions of retained original portraits, using foreground-only colour sampling
+and transparent padding. Wall and vegetation source images are shared with
+the Ammerow project and reduced into separate scenery sheets.
+Supplemental scenery and everyday-item sprites use original AI-generated
+source sheets; generic category icons also reuse retained item illustrations.
+No Ammerow monster identities or gameplay rules are imported. Original images and
+sprite sheets are excluded from public source; conversion tools and synthetic
+tests are included. Earlier experimental tile artwork remains subject to these
+same separate artwork terms.
+
+
+--------------------------------------------------------------------------
+Sound effects and music
+--------------------------------------------------------------------------
+
+The optional WAV files in `lib/xtra/sound/pack/` and
+`lib/xtra/music/pack/` are copyright (c) 2026 John Horton, to the extent
+copyright and related rights subsist. The effects are shared with Ammerow:
+Lands Beyond; the title music is Ormeq - Home Theme (Dark).
+
+They are supplied with official playable releases, separately from the
+program's source terms. Normal play, personal backups, private modifications
+and gameplay coverage, including monetised videos and streams, are permitted.
+Asset redistribution, repackaging or reuse requires written permission except
+where applicable law permits otherwise. Public source forks must omit or
+replace these assets. Missing effects use Ormeq's original synth; missing
+music stays silent. The public mapping, inventory, tests and playback code
+remain under the program's source terms.
+
+Full asset terms and production description: `licenses/Ormeq-Audio.txt`.
+
+
+--------------------------------------------------------------------------
+Game content
+--------------------------------------------------------------------------
+
+The monsters, objects, quests, prose and place names in `lib/edit/` are
+substantially rewritten from what was inherited, to remove material belonging
+to other authors.
+
+Where the data files, source headers, changelogs and help pages still say
+"FrogComposband", that is deliberate and factual: a version stamp recording
+which upstream release last edited a page, an attribution, or an answer to a
+question about lineage. `lib/file/credits.txt` is upstream's own attribution
+and is left exactly as it was written.
+
+Artwork and audio are covered separately -- see the sections above.
+
+
+--------------------------------------------------------------------------
+No warranty
+--------------------------------------------------------------------------
+
+This software is provided as-is, without warranty of any kind. See the
+individual licences for the terms that apply.

@@ -1,0 +1,4 @@
+# Write the proxy in one of the forms below.
+# Only the first one is read.
+# 127.0.0.1:8080
+# proxyserver.hoge.jp:8080

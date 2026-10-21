@@ -1,0 +1,211 @@
+N: 1:BIAS_ELEC
+'Vajra'
+'Frostpoint'
+'Kaladbolg'
+'Blackthorn'
+'Storm Halberd'
+'Thunder Zap'
+'Angered Thunder God'
+'Thunder Bringer'
+'Rising Thunder'
+of Djinni
+of Poseidon
+of Raijin
+
+N: 2:BIAS_POIS
+'Dragon Fang'
+'Serpent's Tongue'
+'Assassin's Strike'
+'Killer Needle'
+'Edge of Execution'
+'Deathbringer'
+'Sidewinder'
+'Crotals Fang'
+of Mortal Venom
+of Radioactivity
+
+N: 3:BIAS_FIRE
+'Red Storm'
+'Phoenix'
+'Flame Tongue'
+'Exodus'
+'Inferno'
+'Fjalar's Trouble'
+'Spitting Fire'
+'Volcanic Geyser'
+of Prominence
+#of the Merciful
+
+N: 4:BIAS_COLD
+'Absolute Zero'
+'Ice Master'
+'Belangil'
+'Polaris'
+'Ice Edge'
+'Snowbringer'
+'Diamond Dust'
+'Ice Blast'
+'Icy Manacle'
+of Ice
+of Ymir
+
+N: 5:BIAS_ACID
+'Disintegrator'
+'Dissolver'
+'Acidic Drop'
+'Acid Blade'
+'Worm's Tongue'
+'Defiler'
+'Golembreaker'
+'Stonesmasher'
+of Fendilo
+of *Melting*
+
+N:12:BIAS_CHAOS
+(*Chaotic*)
+'Doomblade'
+'Armageddon'
+'Mournedge'
+'Laplace's Devil'
+of The Red Throne
+of The Turning Wheel
+of Snarl
+of the Champion of Chaos
+of The Widowmaker
+of The Long Face
+of The Last Harvest
+of The Empty Coat
+of The Unlit Room
+of The Nine of Blades
+of the Keeper of What Endures
+
+N:14:BIAS_NECROMANTIC
+'Soulsucker'
+'Deathstorm'
+'Word of Death'
+'Harrowdrake'
+'Soul Burn'
+'Angel of Ruin'
+'Taminalbringer'
+'Darknessbringer'
+of Vlad
+of Abyss
+of The Twin-Crowned Prince
+of Death
+of the Keeper of the Dead
+
+N:15:BIAS_LAW
+N:13:BIAS_PRIESTLY
+N: 8:BIAS_WIS
+of the Guardian
+(*Holy Avenger*)
+'Word of God'
+'Hand of God'
+'Judgement of Heaven'
+'Apocalypse-Now'
+'Wrath of Heaven'
+'Divine Intervention'
+'Right Hand of Justice'
+'Yggr-drasill'
+'Ascalon'
+'Grimhold'
+'Alondait'
+'Brionac'
+'Lawbringer'
+
+N:16:BIAS_ROGUE
+'Cubragol'
+'Secret Weapon'
+'Shadow Murder'
+'Quick Kill'
+'Speed Star'
+'Windwalker'
+'Red Comet'
+'Mystletain'
+'Windwalker'
+of Hermes
+of Assassins
+of Light Speed
+of the High Wind
+
+N:17:BIAS_MAGE
+N: 7:BIAS_INT
+'Eternal Verities'
+'Mana Spectrum'
+'Invisible Hand'
+'Ancient Wisdom'
+'Ancestral Knowledge'
+'Mana Stone'
+'Giver of Intelligence'
+of the Grey Walker
+of Mana
+of the Keeper of Doors
+of Corvane
+of Ea
+
+N:18:BIAS_WARRIOR
+N: 6:BIAS_STR
+N:10:BIAS_CON
+'Masamune'
+'Undying Samurai'
+'Vanquisher'
+'Snickersnee'
+'Iron Biter'
+'Spiral Wave'
+'Gaea's Might'
+'Destroyer'
+'Mundwine'
+'Snickersnee'
+of Ultimate Might
+of Endings
+of Destruction
+of Tide
+of Vane
+
+N: 9:BIAS_DEX
+N:19:BIAS_RANGER
+'Lion Fang'
+'Shark Cutter'
+'Eagle Sword'
+'Bull Axe'
+'Tiger Baton'
+'Whirlwind'
+'Animalbane'
+'Nature's Wrath'
+'Galaxy'
+of the Black Havens
+
+N:11:BIAS_CHR
+'Charm of Kaguya'
+'Andromeda'
+'Millennium Queen'
+of Parzival
+of Jeanne d'Arc
+of Dreams
+of Venus
+
+N:*:Default
+'Bloodscourge'
+'Soul Searer'
+'Cosmic Horror'
+'Nemesis'
+'Doom!'
+'Inferno'
+'Warhead'
+'Conqueror'
+'Angel of Death'
+'Destroying Angel'
+'Avenging Angel'
+'Black Star'
+'Kalma'
+'Megadeath'
+'Doomsday'
+'Eternity's End'
+'Word of Death'
+'Weapon Omega'
+'Finalizer'
+of Blaise
+of Cinder
+of the Albino
+of Beowulf
+'Fatal Destiny'

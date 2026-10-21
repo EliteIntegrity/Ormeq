@@ -1,0 +1,53 @@
+# Blueprint -- a technical drawing of a dungeon
+#
+# Deep drawing-office blue, and everything drafted on top of it in chalk.
+# Hues are pulled hard towards cyan so the map reads as one drawing, and
+# the warm families are left just warm enough to stand out as the things
+# that will kill you.
+
+name    Blueprint
+blurb   White lines on drawing-office blue.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      0E2038
+ui      panel       16304E
+ui      border      3D6B96
+ui      title       BFE4FF
+ui      text        DCEAF6
+ui      muted       7FA0BE
+ui      accent      6FD0FF
+ui      selection   234A72  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        0E2038
+map     WHITE       FAF9FA
+map     SLATE       9DAAB5
+map     ORANGE      72E07D
+map     RED         A057D6
+map     GREEN       42BFAD
+map     BLUE        739ECF
+map     UMBER       43A34C
+map     L_DARK      51616F
+map     L_WHITE     E0DDE2
+map     VIOLET      9998D5
+map     YELLOW      91E7A7
+map     L_RED       CE9AEE
+map     L_GREEN     9BDDC9
+map     L_BLUE      B3D0E5
+map     L_UMBER     91D297
+map     I_GREEN     6BCD9D
+map     PINK        C7B3E5
+map     I_BLUE      82B3D0
+map     PURPLE      797BBE
+map     TEAL        5FADBD
+map     SKY_BLUE    A7CFE1
+map     MUD         66A67B
+map     D_YELLOW    76CC8D
+map     TURQUOISE   9DD3DA
+map     L_ORANGE    8EEA9A
+map     LILAC       DFE0EF
+map     D_PURPLE    5B5AA7
+map     SKY_DARK    79A1BE
+map     PALE_BLUE   E8EDF2
+map     D_PINK      9C81C1
+map     CHESTNUT    BA99C9

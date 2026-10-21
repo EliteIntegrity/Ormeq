@@ -1,0 +1,65 @@
+# By Shayne Steele (steele@cs.fsu.edu)
+
+?:[EQU $QUEST29 Taken InProgress]
+D:The Magic Shop's owner wants a Thieves' Guild of his own.
+D:I would rather he stayed in his present line of work. Here
+D:is the key to his back treasure room. Clear every enemy from
+D:that room, then return here for payment. Keep whatever you find;
+D:I am interested in ending the competition, not counting his stock.
+?:1
+
+?:[EQU $QUEST29 Completed]
+D:The Magic Shop's little venture has lost its guards. A useful
+D:piece of work. Keep your takings; this is your payment from me.
+?:1
+
+?:[EQU $QUEST29 Failed]
+D:The room was not cleared, so our agreement ends here. Keep
+D:what you took. I pay for finished work, not good intentions.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:.:FLOOR
+L:<:UP_STAIR
+L:|:MON(death sword)
+L:u:MON(tengu)
+L:j:MON(corridor jelly)
+L:$:OBJ(AMULET):EGO(barbarian talisman)
+L:A:GRANITE:SECRET(CLOSED_DOOR)
+L:B:GRANITE
+L:C:GRANITE
+L:D:GRANITE
+!:SCRAMBLE(A,B,C,D)
+M:#####################
+M:#...................#
+M:#.j...............j.#
+M:#..%%%%%%AAA%%%%%%..#
+M:#..%.............%..#
+M:#..%..|.u.|.u.|..%..#
+M:#..%.............%..#
+M:#..%..u.|.|.|.u..%..#
+M:#..D.............B..#
+M:#..D..|.|.$.|.|..B..#
+M:#..D.............B..#
+M:#..%..u.|.|.|.u..%..#
+M:#..%.............%..#
+M:#..%..|.u.|.u.|..%..#
+M:#..%.............%..#
+M:#..%%%%%%CCC%%%%%%..#
+M:#.j...............j.#
+M:#.........<.........#
+M:#####################
+R:OBJ(^ring$):EGO(protection)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(^dagger$):EGO(the drowned reach)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^amulet$):EGO(elemental)
+
+?:[EQU $RACE Filthy-Rag]
+R:OBJ(set of leather gloves):EGO(free action)
+
+# vim: filetype=q :

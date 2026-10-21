@@ -1,0 +1,29 @@
+# File: font-mon.prf
+
+#
+# This file is used by The Sink when using monochrome mode
+#
+
+
+
+### Terrain Features ###
+
+
+# deep water
+F:83:6:37:LIT
+
+# shallow water
+F:84:14:37:LIT
+
+# deep lava
+F:85:4:37:LIT
+
+# shallow lava
+F:86:12:37:LIT
+
+# dark pit
+F:87:8:37:LIT
+
+# tree
+F:96:5:37:LIT
+

@@ -1,0 +1,124 @@
+?:[EQU $QUEST1 Taken InProgress]
+D:My guards are needed at the borders, and the thieves know it. Families in
+D:the northeastern quarter are paying twice for every loaf: once to the
+D:baker, once to the men at their doors. Find the thieves' hideout in that
+D:quarter and kill the band occupying it. I need that neighbourhood safe
+D:again.
+?:1
+
+?:[EQU $QUEST1 Completed]
+D:The complaints have stopped, and my patrol found the hideout empty. You
+D:have given those families a little peace. Take this; Outpost pays its
+D:debts.
+?:1
+
+?:[EQU $QUEST1 Failed]
+D:The hideout is still a danger. I have sent another company to finish the
+D:work. You are alive, at least; remember what this task cost before taking
+D:on another.
+?:1
+
+T:QUEST:NORMAL:FORMATION
+L:#:PERMANENT
+L:.:FLOOR
+L:+:CLOSED_DOOR
+L:<:UP_STAIR
+L:^:TRAP(*, 50)
+L:0:MON(THIEF, DEPTH+5)
+L:$:OBJ(*)
+M:#####################
+M:#####..$#..$#..$#..$#
+M:#####.2.#.5.#.7.#.4.#
+M:#####.^.#...#...#.^.#
+M:#<..##+###+###+###+##
+M:#.^^#....^...^..^...#
+M:#.^.+...0......8....#
+M:#####################
+
+R:OBJ(long sword)
+
+?:[EQU $RACE Gazer Spider Ring]
+R:OBJ(^ring$):EGO(protection)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+?:[EQU $RACE Dragon]
+R:OBJ(^cloak$)
+
+?:[EQU $RACE Hound Hydra Vortex]
+R:OBJ(steel helm)
+
+?:[AND [EQU $CLASS Monster] [EQU $RACE Golem] ]
+R:OBJ(steel helm)
+
+?:[AND [EQU $CLASS Monster] [EQU $RACE Giant] ]
+R:OBJ(two-handed sword)
+
+?:[EQU $RACE Lich Quylthulg]
+R:OBJ(^ring$):EGO(protection)
+
+?:[EQU $RACE Demon]
+R:OBJ(studded leather gloves)
+
+?:[EQU $CLASS Duelist]
+R:OBJ(rapier)
+
+?:[EQU $CLASS Archaeologist]
+R:OBJ(^whip$)
+
+?:[EQU $CLASS Beastmaster Cavalry]
+R:OBJ(broad spear)
+
+?:[EQU $CLASS Necromancer]
+R:OBJ(fur cloak)
+
+?:[EQU $CLASS Monk Force-Trainer Mystic]
+R:OBJ(gauntlets)
+
+?:[EQU $CLASS Samurai]
+R:OBJ(katana)
+
+?:[EQU $CLASS Mauler]
+R:OBJ(potion of cure critical wounds)
+
+?:[EQU $CLASS Warrior Paladin]
+R:OBJ(broad sword)
+
+?:[EQU $CLASS Priest]
+R:OBJ(war hammer)
+
+?:[EQU $RACE Angel]
+R:OBJ(war hammer)
+
+?:[EQU $CLASS Weaponsmith]
+R:OBJ(broad axe)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Axes] ]
+R:OBJ(broad axe)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Clubs] ]
+R:OBJ(war hammer)
+
+?:[EQU $CLASS Ninja Ninja-Lawyer]
+R:OBJ(^dagger$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Daggers] ]
+R:OBJ(^dagger$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Diggers] ]
+R:OBJ(^pick$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Staves] ]
+R:OBJ(quarterstaff)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Polearms] ]
+R:OBJ(^pike$)
+
+?:[EQU $RACE Filthy-Rag]
+R:OBJ(robe):EGO(protection)
+
+?:[AND [EQU $SPEED 2] [EQU $CLASS Mage High-Mage Azure-Mage Sorcerer Mirror-Master Blood-Mage Yellow-Mage Gray-Mage] ]
+R:OBJ(WAND_BOLT_ELEC)
+
+# vim: filetype=q :

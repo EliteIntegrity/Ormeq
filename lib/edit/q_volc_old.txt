@@ -1,0 +1,49 @@
+?:[EQU $QUEST6 Taken InProgress]
+D:The volcano in the eastern part of our territory is stirring. We suspect
+D:the creatures living there are responsible. Clear them all out before the
+D:lava reaches our crops. Do not mistake this for an ordinary climb.
+?:1
+
+?:[EQU $QUEST6 Completed]
+D:The volcano's inhabitants are gone. You have given the farms a chance.
+D:Take this reward for the work.
+?:1
+
+?:[EQU $QUEST6 Failed]
+D:The creatures remain, and the fields are still at risk. We will have to
+D:find another way to deal with them.
+?:1
+
+T:QUEST:NORMAL
+L:<:UP_STAIR
+L:#:PERMANENT
+L:.:FLOOR
+L:L:DEEP_LAVA
+L:K:SHALLOW_LAVA
+L:a:MON(lava golem)
+L:b:MON(fire vortex)
+L:c:MON(fire elemental)
+L:d:MON(magma elemental)
+L:e:MON(efreeti)
+
+M:######################################################################
+M:#####..##..#####<.##..a.###########..........KKKKKKKLLKKKKKKK......###
+M:##..b........#.............#####...b....KKLLLLLKKKKLLLKKKKKKKK......##
+M:##..........................#........KKKKKKKKLLLKKKLLLKKKKKKKKKK....##
+M:###.......a............c............KKKKKKKKKKLLLKLLLLKKKKKKKKKKKK...#
+M:##................................KKKKKKKKKKKLLLLLLLLLLKKKKKKKKKKK...#
+M:##.............d....................bKKKKLLLLLLLLLLLLLKKKKKKKKKKK....#
+M:##..................................KKKKKKKKKKLLLLLLLLKKKKKKKKKK.....#
+M:#......c.................b..........KKKKKKKKKLLLKKKLLLKKKKKKKKK.....##
+M:#..............a......................KKKKKKLLLKKKKLLLKKKKKKKKKK.....#
+M:##....................................KKKKKLKKKKKKKLLLKKKKKKK........#
+M:##.......................a..............KKKKKKKKKKLLLKKKKKKK........##
+M:##.........................................KKKKKKKLLLKKKKKK.........##
+M:###..b...........c.............................KKLLKKKKKKK...........#
+M:##.................#..................e...........KKKKKKK............#
+M:#...............#####....###.....b..................................##
+M:##############################...####...#####....##########.......####
+M:######################################################################
+R:OBJ(cloak):EGO(immolation)
+
+

@@ -1,0 +1,65 @@
+# The Angwilian Stables
+# New quest for FrogComposband 7.1.liquorice
+
+?:[EQU $QUEST98 Taken InProgress]
+D:An Angwilian tried opening a livery stable here with beasts too wild to
+D:ride. He has gone; the beasts and the smell have not. Clear every enemy
+D:from the old stables, then return to me. Visitors are staying away, and
+D:even the locals stay indoors where they are harder to rob.
+?:1
+
+?:[EQU $QUEST98 Completed]
+D:The stables are clear! Perhaps I can go outside without a clothespin on
+D:my nose. Here is your reward.
+?:1
+
+?:[EQU $QUEST98 Failed]
+D:Too bad. I suppose diverting the river through the stables is still an
+D:option.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:DIRT
+L:,:GRASS
+L:+:CLOSED_DOOR
+L:-:JAMMED_DOOR_7
+L:<:UP_STAIR
+L:h:MON(hrulga, NO_SLEEP)
+L:d:MON(fiendish donkey, NO_SLEEP)
+L:q:MON(indigo scavenger, NO_SLEEP)
+L:p:MON(pegasus, NO_SLEEP)
+L:u:MON(^unicorn$)
+# We definitely want "unicorn" to be its full name...
+L:~:OBJ(human skeleton)
+L:%:OBJ(elf skeleton)
+L:_:OBJ(STAFF_ENLIGHTENMENT, DEPTH+10)
+L:C:OBJ(capture ball)
+!:SCRAMBLE(d,h)
+M:###############################
+M:##......#~~............~C#....#
+M:##......#~...............#....#
+M:##..q...#.......d........#..p.#
+M:##......#................#....#
+M:##......#................#....#
+M:##......#................#....#
+M:##......#................#~..~#
+M:####++#########----########++##
+M:#..................,,,,,,,,,,,#
+M:#<.................,,,,,,,,,,,#
+M:#..................,,,,,,,,,,,#
+M:####++#########----########++##
+M:##......#................#~..~#
+M:##......#................#....#
+M:##......#................#....#
+M:##...q..#.......h........#..u.#
+M:##......#................#....#
+M:##......#~...............#....#
+M:##......#~~............%_#....#
+M:###############################
+R:OBJ(WAND_TELEPORT_AWAY)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of booze, NUMBER=10)
+
+# vim: filetype=q :

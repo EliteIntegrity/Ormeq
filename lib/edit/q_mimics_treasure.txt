@@ -1,0 +1,59 @@
+# By Shayne Steele (steele@cs.fsu.edu)
+
+?:[EQU $QUEST30 Taken InProgress]
+D:Now the Black Market's owner fancies running a rival guild.
+D:Trade must be slow. Here is the key to his treasure room.
+D:Clear every enemy from it, then come back for your payment.
+D:Anything you recover there is yours as well.
+?:1
+
+?:[EQU $QUEST30 Completed]
+D:The Black Market's venture is finished. You kept your side
+D:of the agreement; here is my side. Keep your takings as well.
+?:1
+
+?:[EQU $QUEST30 Failed]
+D:The treasure room is still a problem. This agreement is closed;
+D:there is no guild payment, but your takings remain yours.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:.:FLOOR
+L:,:FLOOR(ICKY)
+L:+:CLOSED_DOOR
+L:<:UP_STAIR
+L:L:MON(lurker)
+L:!:MON(potion mimic)
+L:D:MON(door mimic)
+L:&:MON(chest mimic)
+L:$:OBJ(*, DEPTH+10)
+L:T:OBJ(*)
+M:#################
+M:#$$$%!$!%!$!%$$$#
+M:#$T$%$$$%$$$%$T$#
+M:#T&T%$&$%$&$%T&T#
+M:#DDD%DDD%DDD%DDD#
+M:#,,,%,,,%,,,%,,,#
+M:#,,...........,,#
+M:#...%.L.%.L.%...#
+M:#...%...%...%...#
+M:#.L.%...%...%.L.#
+M:#...............#
+M:#++%%%%%%%%%%%++#
+M:#...............#
+M:#.......<.......#
+M:#################
+R:OBJ(^ring$):EGO(protection)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^amulet$):EGO(trickery)
+
+?:[AND [EQU $RACE Death-Sword Filthy-Rag] [EQU $WILDERNESS NONE] ]
+R:OBJ(potion of sight, NUMBER=4+1d5)
+
+?:[AND [EQU $RACE Death-Sword Filthy-Rag] [EQU $WILDERNESS NORMAL] ]
+R:OBJ(potion of curing, NUMBER=4+1d5)
+
+# vim: filetype=q :

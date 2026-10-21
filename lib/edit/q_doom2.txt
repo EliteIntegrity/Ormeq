@@ -1,0 +1,85 @@
+# a quick creation by Jeff Coleburn <vsp@netaxs.com>
+
+?:[AND [EQU $WILDERNESS NORMAL] [GEQ [MOD $RANDOM0 52] 26] ]
+K:85
+?:1
+
+?:[EQU $QUEST21 Taken InProgress]
+D:A second breach has opened at the edge of town. Five knights
+D:went inside; one returned, badly burned and unable to give
+D:a clear account. We cannot spare another patrol. Clear every
+D:enemy from the site, then report back to me. Take the
+D:survivor's condition as warning enough to prepare carefully.
+?:1
+
+?:[AND [EQU $QUEST21 Completed] [EQU $WILDERNESS NORMAL] ]
+D:The second breach has been cleared, and the town can breathe
+D:again. Our resident wizard has supplied this reward. Take it
+D:with the thanks of everyone who lives here.
+?:1
+
+?:[AND [EQU $QUEST21 Completed] [EQU $WILDERNESS NONE] ]
+D:The second breach has been cleared, and the town can breathe
+D:again. My wizard friend has supplied this reward. Take it
+D:with the thanks of everyone who lives here.
+?:1
+
+?:[EQU $QUEST21 Failed]
+D:The second breach remains uncleared. I had hoped to spare
+D:more people from it, but this commission has ended. There
+D:is no reward to collect.
+?:1
+
+T:QUEST:NORMAL
+L:a:MON(grave imp, NO_GROUP)
+L:b:MON(^imp$)
+L:c:MON(flying skull, NO_GROUP)
+L:d:MON(pyre-priest)
+L:e:MON(revenant)
+L:f:MON(furnace baron)
+L:g:MON(iron lich)
+L:h:MON(hammerhorn)
+L:i:MON(hell knight)
+
+L:#:PERMANENT
+L:.:FLOOR
+L:<:UP_STAIR
+L:%:GRANITE
+L:+:CLOSED_DOOR
+L:$:OBJ(*, DEPTH+1)
+
+M:#####################################################################
+M:#$$$$$$$..f..a..b..c..d..e..d..c..b..a..b..c..d..e..d..c..b..a%.#####
+M:###############################################################.#####
+M:#b...b.b..b.#.......##..#......#........#......#..........+.....#####
+M:#%#####..c.c#.......#a##%..b...+........#......#..b.......+.....#####
+M:#.....#.....#.......#.###..c...#........#...d..#..........+.....#####
+M:#####.#.....#.......#.###......#...$....+......#.b.c......#%%%%%#####
+M:#...#.#.b.$c#.......##c##......#........#......#.......c..#eeeee#####
+M:#<..%.#.....#........##c###+##############+#####..........#abcde#####
+M:#...#.#.....#..#####+##c#......#$$...c.c#......#...b......#%%%%%#####
+M:#####.#.ccb.#..#e##.###b#......#...$.db.#...e..#.......c..#.....#####
+M:#.....#.....#..##..##.#.#......#.$.c.cb.#......#.a........#f...f#####
+M:#########+###..#.###.#.##.bbb..#..d.c..a#......#....a..b..#.....#####
+M:#$##.......##..#.#b.########+###########+###+###....g.....#.....#####
+M:#d##......##...#.##.#####......#........#......#.a.c......#$.f.$#####
+M:#+##.....##....##.#.#.###......#....d...#......#....a.c...#%%%%%#####
+M:#.......##.....#.##..#.##......#........#......#.........##.....#####
+M:#......##$$....##.#cd#.##......+....ccc.+...$..#..b...b..##.....#####
+M:#.....######+####..##.###..$...#........#......##......d.##g...g#####
+M:#....######+#+##e##..##########################%##..a...##......#####
+M:#...########+##############$..................##f#...c..##$....$#####
+M:#..##f..........e....$...e#.c.................#+##......##%%%%%%#####
+M:#.#####...................#....................#####..a.##%%%%%%##i##
+M:#.##......................#g..$................#####....##......##.##
+M:#.##.....d................#e...................#####.b..##......##.##
+M:#.##......................#....................#####...##........%###
+M:#d##..........d..........$#.c..................####...##$$........###
+M:#d%%................e.....#$....................+....##$$$..h...$$$##
+M:#####################################################################
+R:OBJ(STAFF_HEAL_CURING)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of healing, NUMBER=5+1d4)
+
+# vim: filetype=q :

@@ -1,0 +1,258 @@
+User Preferences
+
+Ormeq allows you to change various aspects of the game to suit your 
+tastes. You may define keymaps (changing the way your keypresses are 
+mapped to underlying commands), create macros (allowing you to map a 
+single keypress to a series of keypresses), modify the visuals 
+(allowing you to change the appearance of monsters, objects, or terrain 
+features), change the colors (allowing you to make a given color 
+brighter, darker, or even completely different), or set options 
+(turning them off or on).
+
+Preference Files
+
+There are two types of preference files: system preferences and user 
+preferences. The former represent the default display and input 
+options, while the latter are optional customizations that you may add 
+to override the default settings. System preference files, such as 
+pref.prf, are stored in /lib/pref relative to the installation: if you 
+installed in C:\games\Ormeq, they are in C:\games\Ormeq\lib\pref. User 
+preference files are stored alongside them in /lib/user. Both are 
+inside the game's own folder, on every platform -- Ormeq keeps 
+everything it writes where you put it, and never in a hidden directory 
+elsewhere.
+
+During initialization, the system preference file pref.prf is loaded, 
+and this file directs the loading of other preference files, such as 
+pref-key.prf for keyboard mappings and pref-opt.prf for default option 
+settings. Then, system preference files for visuals are loaded starting 
+with font.prf for normal ASCII display and graf.prf for those weird 
+graphics users. Each of these system preference files will redirect to 
+another file depending on which platform you are playing (e.g. 
+font-win.prf on Windows).
+
+Finally, once your character has been born or loaded, the game then 
+tries to load the following user preference files:
+  user.prf
+  user-$SYS.prf
+  $RACE.prf
+  $CLASS.prf
+  $PLAYER.prf
+Here, $SYS is the 3-character system code for your platform, such as 
+win for the Windows port or gcu for the Curses port. $RACE is your 
+current character's race, $CLASS the class name, and $PLAYER the 
+character's actual name, unless it contains illegal characters for your 
+file system (e.g, naming your player Mr. *WONDER* is probably a bad 
+idea). User preference files are loaded last so that you may override 
+system preferences with your own settings. We'll discuss some examples 
+below.
+
+Preference files consist of a list of commands which are parsed to 
+configure various options. These are discussed next.
+
+Preference Commands
+
+There are many commands for setting preferences, and the syntax is 
+fiddly. Most of what you would want is on a screen instead: & for 
+colours, @ for macros and keymaps, = for options and _ for what to pick 
+up and destroy. Those screens write the files for you. This page is 
+about the syntax underneath, which you need only when you want 
+something a screen does not offer -- chiefly changing what a monster or 
+an object is drawn as.
+
+An Example
+
+In this example, fire up the game and load your character. My character 
+is imaginatively named Test, so when I refer to Test.prf later on, 
+you'll know to mentally change that filename to whatever your character 
+happens to be named.
+
+For this example, we will be directly entering a single user preference 
+command. To do this, we use the special Enter a user pref command 
+command which is available with the ! key. This requires us to know the 
+exact syntax of the preference command we want, as well as the internal 
+numeric code for various values. It is an advanced command, and 
+normally you will want to use one of the friendlier in-game commands 
+(for visuals, in this case) instead.
+
+Suppose you find @ boring to look at. Let's use @ instead! To make this 
+change, type ! then enter R:0:11:@. The R preference command is used to 
+set display values for monster races (which, as you may know, are 
+defined in /lib/edit/r_info.txt). The game uses the special 0th entry 
+in the monster race table as the display options for the player. That 
+we entered R:0 says we wish to override this value. The next field is 
+the attribute to use. We need to enter a value of 0 to 15 for one of 
+the 16 available colors; I picked 11 for yellow. Finally, we keep the @ 
+as the character for this monster race. After entering this command, 
+you'll notice the player is still a plain old @; type ^R to force a 
+redraw, and now you should be proudly displayed as @.
+
+If we were to restart the game at this point, our change would be lost: 
+! changes the game as it is running and writes nothing down. To keep 
+it, put the same line in your own preference file. Open 
+lib/user/$NAME.prf in a text editor -- Test.prf, for my character -- 
+and add R:0:11:@ on a line of its own. That file is one of the ones the 
+game loads when it starts, so the change is there every time you play 
+this character.
+
+One final comment: You may edit the Test.prf file you dumped directly, 
+or you may delete it. Since this was an example, you probably just want 
+to delete it, but you should know that the game stores all user 
+preferences for your current character here (by default), and this 
+includes any macros you might have defined.
+
+Recolouring your theme (&)
+
+This screen changes the colours the game is drawn in. You are always 
+recolouring the theme you are wearing, not some separate palette, and 
+there is nothing to remember to save: leaving keeps your version of 
+that theme under lib/user, and the game reads it in preference to the 
+one it ships with. ! puts the original back.
+
+Move with the arrows. r and R change the red by eight, g and G the 
+green, b and B the blue; # lets you type a value straight in as six hex 
+digits. Beside the list you get the colour on a line of prose, on a row 
+of map glyphs and on some numbers, because the only question that 
+matters is whether you can read it.
+
+Interacting with Options (=)
+
+The various game options are documented elsewhere (see [a]). Here, I'll 
+just mention that there exist two preference commands for turning 
+options on and off: you may use Y:option_name to turn an option on, and 
+X:option_name to turn it off (use ! for this). Obviously, replace 
+option_name with the exact name for the option you wish to configure. 
+The list of internal option names is documented in the previous link.
+
+    Note: You cannot alter cheating options with the user 
+    pref commands X or Y. Nor can you configure these 
+    options in the pref-opt.prf system preference file. To 
+    cheat, you need to enable the allow_debug_opts and then 
+    set the option through the user interface. This will 
+    mark your character as a cheater, though!
+
+Interacting with Macros (@)
+
+The @ screen lists everything you have bound and lets you add, change 
+and remove bindings. A macro maps a whole key sequence to a run of 
+commands, which is how a function key, a keypad key or a mouse button 
+gets to mean something -- those arrive as several bytes rather than 
+one.
+
+Since macros represent keypress sequences, and not all keypresses have 
+a printable representation, macro triggers and actions must often be 
+"encoded" into a human readable form. This is done using several types 
+of encoding, including "\xHH" for character number HH in hexadecimal, 
+"\e" for the "escape" code, "\n" for the "newline" code, "\r" for the 
+"return" code, "\s" for the "space" code, "\\" for backslash, "\^" for 
+caret, and "^X" for the code for any "control" key "ctrl-X".
+
+In Ormeq, a special key used as a macro-trigger will be displayed using 
+its real name, for example the Control-key plus the F1-key is displayed 
+as "\[control-F1]", and the Alt-key plus the G is displayed as 
+"\[Alt-G]". In some other variants these special keys are displayed 
+using key-codes.
+
+Note that the "action" of a macro will not be checked against other 
+macro triggers, so you cannot make infinite loops. You may specify 
+extremely long macros, but you are limited in length by the underlying 
+input mechanisms, which in general limit you to about 1024 keys in both 
+triggers and actions.
+
+The special "\" command (which must be encoded in macros as "\\") is 
+very useful in macros, since it bypasses all keymaps and allows the 
+next keystroke to be considered a command in the underlying Ormeq 
+command set. For a list of the Ormeq command set, see the "command.txt" 
+help file. For example, a macro which maps Shift-KP6 to "\" + "." + "6" 
+will induce the "run east" behavior, regardless of what keyset the user 
+has chosen, and regardless of what keymaps have been defined.
+
+Macros can be specified in user pref files as a pair of lines, one of 
+the form "A:<str>", which defines the encoded macro action, and one of 
+the form "P:<str>", which defines the encoded macro trigger.
+
+Keymaps
+
+The "Interact with macros" command also allows you to define keymaps, 
+which are vaguely related to macros. A keymap maps a single keypress to 
+a series of keypresses, which bypass both other keymaps and any macros. 
+Ormeq uses keymaps to map the original and the roguelike keysets to the 
+underlying command set, and allows the user to modify or add keymaps of 
+their own. Note that all keymap actions must be specified using 
+underlying commands, not keypresses from the original or roguelike 
+keysets. The original keyset is almost identical to the underlying 
+keyset, except that "numbers" are mapped to ";" plus a direction, "5" 
+is mapped to ",", and a few control-keys are mapped to various things. 
+See "command.txt" for the full set of underlying commands. Some uses 
+for keymaps include the ability to "disable" a command by mapping it to 
+"\x00". Keymaps are safer than macros in that macros should always use 
+a special key as the trigger; using a regular key as a macro trigger 
+will interfere with that key's normal functionality, but using regular 
+keys as keymap triggers is okay as long as the key does not overwrite 
+commands.
+
+Keymaps can be specified in user pref files as pairs of lines of the 
+form "A:<str>" "C:<T>:<key>", where <str> is the encoded keymap action, 
+<T> is the keyset (0 for original and 1 for roguelike), <key> is the 
+encoded trigger key.
+
+Some Macro and Keymap Examples
+
+You may now forget about keymaps and pretend that macros are things 
+that allow you, the user, to bind a sequence of commands to a single 
+keystroke. Here are a few examples:
+
+Example #1: Archery
+Inscribe @f1=g on your primary ammo, then map the sequence f1*5 or *5f1 
+to your favorite macro key. This will automatically target the nearest 
+opponent and fire the inscribed ammo; and the =g part of the 
+inscription allows you to automatically pick up the ammo once the 
+battle is over. (Use f1*5 if the use_old_target option is off, as it is 
+by default, and *5f1 if you have switched that option on.)
+
+Example #2: Resting
+Add the macro sequence R&\r to a convenient key, say F1. Normally, 
+resting requires 2 keystrokes (R and Enter), which some players find 
+frustrating when their resting gets constantly interrupted.
+
+Example #3: Illumination
+Inscribe your Staff of Illumination with @ug, then map the sequence ug 
+to your favorite key, say F6. When you find a Rod of Illumination, just 
+change the macro action to za and you can keep lighting up rooms with 
+the same key.
+
+Example #4: Mass Identify
+Inscribe @ui on your Staff of Identify (the one with 50+ charges) and 
+then bind ui* to your favorite knowledge key. Use this macro once your 
+pack has filled up with unknown objects.
+
+Example #5: Spells
+Suppose your favorite attack spell is spell e in a book you have 
+inscribed with @mf. Let's use y as our trigger key here; for this 
+trigger key we'll want a keymap rather than a macro, otherwise we'll 
+interfere with the normal functionality of the y key! Create a keymap 
+for y with mfe as the action; mfe*5 or *5mfe if you want to go a step 
+further and automatically target the nearest monster. See [b] for more 
+spell examples.
+
+Example #6: Screenshots
+The screenshot key ) is somewhat limited in that it only works in 
+specific situations and can blank potentially interesting material like 
+messages. The special key x1d (keycode 29) will take a screenshot at 
+any time without such downsides, but many keyboards or platforms offer 
+no way to actually trigger keycode 29. Add the macro sequence \x1d to 
+your favorite key, say F11, and use it to take a screenshot whenever 
+you want! (Note that this must be a macro, not a keymap.)
+
+    Remember to append your macros and keymaps to a file.
+
+Original   : Alexander Cutler and Andy Astrand
+Updated    : (2.7.6) by Russ Allbery (rra@cs.stanford.edu)
+Updated    : (2.7.9) by Ben Harrison (benh@phial.com)
+Updated    : Zangband 2.2.0 through 2.2.6c by Robert Ruehlmann
+Updated    : Zangband DevTeam
+Updated    : Hengband 1.7.0
+Updated    : PosChengband 4.0.0
+Updated    : FrogComposband 7.1.liquorice
+
+

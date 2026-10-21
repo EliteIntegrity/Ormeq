@@ -1,0 +1,55 @@
+# Created by Topi Ylinen
+?:[EQU $QUEST11 Taken InProgress]
+D:A Node of Chaos has formed in a nearby volcano. Clear every guardian
+D:from the site so our tower can claim its energies, then return to me.
+D:Prepare before entering; abandoning the site will cost us the
+D:opportunity.
+?:1
+
+?:[EQU $QUEST11 Completed]
+D:The Node of Chaos is ours to study. Take this spellbook as your reward.
+?:1
+
+?:[EQU $QUEST11 Failed]
+D:The node's energies have faded. We cannot recover this lost opportunity.
+?:1
+
+T:QUEST:NORMAL
+L:#:MOUNTAIN_WALL
+L:.:FLOOR
+L:~:SHALLOW_LAVA
+L:*:DEEP_LAVA
+L:<:UP_STAIR
+L:a:MON(chaos spawn)
+L:b:MON(hell hound, NO_GROUP)
+L:c:SHALLOW_LAVA:MON(fire elemental)
+L:d:SHALLOW_LAVA:MON(magma elemental)
+L:e:DEEP_LAVA:MON(great hell wyrm)
+M:###############################
+M:##*****~~~~~~*****~~~~~~~****##
+M:#***~~~c~~~~~~***~~~~~c~~~*~**#
+M:#*~~~~cdc~~~~~~~~~~~~cdc~~~~~*#
+M:#.~~~#########ccc#########~~~.#
+M:#..~#########cdddc#########~..#
+M:#..~###...aaaacccaaaa...###~..#
+M:#..~##....aaaabbbaaaa....##~..#
+M:#..~##...#############...##~..#
+M:#..~##..##...........##..##~..#
+M:#..~##..#.....cdc.....#..##~..#
+M:#..~##..#b...cdedc...b#..##~..#
+M:#..~##..bbb.cdeeedc.bbb..##~..#
+M:#..~##..#b...cdedc...b#..##~..#
+M:#..~##..#.....cdc.....#..##~..#
+M:#..~##..##...........##..##~..#
+M:#..~###..###.......###..###~..#
+M:#..~###..aaaaaaaaaaaaa..###~..#
+M:#..~####.aaaaabbbaaaaa.####~..#
+M:#..~#######################~..#
+M:#..~~#####################~~..#
+M:#...~~~~~~~~~~~~~~~~~~~~~~~...#
+M:#.....~~~~~~~~~~~~~~~~~~~.....#
+M:#<...........................##
+M:###############################
+R:OBJ(armageddon tome)
+
+# vim: filetype=q :

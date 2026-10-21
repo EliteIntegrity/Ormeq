@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "path": "inventory.json",
+      "bytes": 142782,
+      "sha256": "f406c53e01d5470b3e72be9676b20e3ae997026da9f7ebcadb0b97d4edfeaed1"
+    },
+    {
+      "path": "monster-1-32.png",
+      "bytes": 879436,
+      "sha256": "028dc85a657eb00e1a9421855e2aee1856d8a757e74873df8904027ac6de9111"
+    },
+    {
+      "path": "monster-1-64.png",
+      "bytes": 3261140,
+      "sha256": "afa7aa9b5f2e4435f7c5e7bbb9050e6ecc2623b2df15555a37074784cc85329e"
+    },
+    {
+      "path": "monster-1.txt",
+      "bytes": 11706,
+      "sha256": "4899efd73e78fb3d3bc73811863433fcae8524ed91c41fcc7ed7a8877567c07f"
+    },
+    {
+      "path": "object-1-32.png",
+      "bytes": 56604,
+      "sha256": "b237adec97fd0d293eecd38b6c3a50d7d4facca7580b0383e77bf4929b40e5d9"
+    },
+    {
+      "path": "object-1-64.png",
+      "bytes": 204299,
+      "sha256": "f0c786508a94caa141c2d737345543fe6e46c97f1cea110797bd80773c7ef901"
+    },
+    {
+      "path": "object-1.txt",
+      "bytes": 1970,
+      "sha256": "3351737954fd619790ba0ae14ad68beb6d5e6799278251096ef8fe0caec09b12"
+    },
+    {
+      "path": "pack-32.txt",
+      "bytes": 114,
+      "sha256": "54dad0c26aaf595a5a90c319ef333a1920c8dab04b897df254d4af0f739cae5e"
+    },
+    {
+      "path": "pack-64.txt",
+      "bytes": 114,
+      "sha256": "c19a388fe1335ec42e498ef0d05ac6582f80b04a0f5c78b6aba325541558a6e0"
+    },
+    {
+      "path": "terrain-1-32.png",
+      "bytes": 132875,
+      "sha256": "5d8b36adb56fe8147b5e8e4d60ae16d82cdf67b6feb9c1b975067d0841a7e644"
+    },
+    {
+      "path": "terrain-1-64.png",
+      "bytes": 502982,
+      "sha256": "0ed3f21d8992d90d6546a2f8042f26a889032ffabfa06774d8847ee7d2ac8650"
+    },
+    {
+      "path": "terrain-1.txt",
+      "bytes": 1310,
+      "sha256": "a8109b6861019d35edfa47d30546274c1682377ef013459b61dc811f23517f8a"
+    }
+  ]
+}

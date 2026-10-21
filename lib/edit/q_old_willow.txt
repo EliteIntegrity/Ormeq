@@ -1,0 +1,62 @@
+# The Old Willow Quest
+# By Shayne Steele (steele@cs.fsu.edu)
+?:[EQU $QUEST31 Taken InProgress]
+D:There is a clearing east of town where the trees have turned on anyone who
+D:passes. The Old Willow is at the centre of it. Kill him before his
+D:influence spreads further. I have enough empty chairs at the inn without
+D:losing people to the trees as well.
+?:1
+
+?:[EQU $QUEST31 Completed]
+D:The path is quiet again. I miss the days when the Old Willow was just a
+D:landmark you gave travellers directions by. Thank you; this is yours.
+?:1
+
+?:[EQU $QUEST31 Failed]
+D:The clearing is still dangerous. I will keep warning travellers away until
+D:someone can finish the work.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:GRASS
+L:<:UP_STAIR
+L:T:TREE
+L:r:MON(vorpal bunny)
+L:M:MON(the old willow)
+L:H:MON(grimbough)
+L:f:MON(sabre-tooth tiger)
+L:Y:MON(sasquatch)
+M:###############################
+M:#TTTTTTTTTTTTTTTT.............#
+M:#T.........Y..TTT.TTHTTTTTTTT.#
+M:#T.H....H.....TTTY........r.T.#
+M:#T............TTTTTTTTTTTTT.T.#
+M:#T.....M....H.TTT.......r.T.T.#
+M:#T..H....H....TTT.TTTTTTT.T.T.#
+M:#T............TTT.....r.T.T.T.#
+M:#T.Y....Y..Y..HTTTTTTTT.T.T.T.#
+M:#T....Y...............T.T.T.T.#
+M:#TTTTTTTTTTTTTTTTTTTT.T.T.T.T.#
+M:#TTTTTTTTTTTTTTTTTTTT...T...T.#
+M:#TTTTTTTTTTTTTTTTTTTTTTTTTTTT.#
+M:#r..........................f.#
+M:#rTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:#r.......................f....#
+M:#TTHTTTTTTTTTTTTTTTTTTTTTTTTT.#
+M:#.............................#
+M:#<TTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:###############################
+R:OBJ(^ring$):EGO(elemental)
+
+?:[EQU $RACE Hydra]
+R:OBJ(^amulet$):EGO(elemental)
+
+?:[AND [EQU $RACE Death-Sword Filthy-Rag] [EQU $WILDERNESS NORMAL] ]
+R:OBJ(ROD_LITE_AREA, DEPTH+12)
+
+?:[AND [EQU $RACE Death-Sword Filthy-Rag] [EQU $WILDERNESS NONE] ]
+R:OBJ(ROD_BEAM_ACID, DEPTH+5)
+
+
+# vim: filetype=q :

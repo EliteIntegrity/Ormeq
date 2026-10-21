@@ -1,0 +1,22 @@
+/*
+ * File: ormeq_icon.rc
+ *
+ * The application icon, for the SDL3 build.
+ *
+ * Two things want it and they want it under this exact name. Explorer and the
+ * taskbar take the first icon group in the executable's resources, whatever it
+ * is called; SDL asks for it by name -- SDL_RegisterApp() does
+ * LoadIcon(instance, "IDI_ICON1") -- and puts what it finds in the window's
+ * title bar and in alt-tab. One resource, both jobs.
+ *
+ * The win32 build has its own resource file (ormeq.rc) because it carries the
+ * menus as well, and its icon has to be called ANGBAND: main-win.c uses one
+ * string for the window class, the menu, the bitmap and the icon, and that
+ * string is a registration key the operating system matches on rather than a
+ * word about the game.
+ *
+ * The icon itself is generated: tools/make_icon.py, where the mark is a block
+ * of text rather than a binary nobody can edit.
+ */
+
+IDI_ICON1 ICON "ormeq.ico"

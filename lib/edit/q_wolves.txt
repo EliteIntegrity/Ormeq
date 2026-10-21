@@ -1,0 +1,105 @@
+?:[AND [EQU $QUEST14 Taken InProgress] [LEQ $SPEED 1] ]
+D:The supply parties cannot get through the Warrens. Great wolves are
+D:guarding the route at 250 feet, and every delayed cart leaves our people
+D:short of food and lamp oil. Kill eight Great wolves there and clear the
+D:way. We can offer a modest reward, but the work matters.
+?:1
+
+?:[AND [EQU $QUEST14 Taken InProgress] [EQU $SPEED 2] ]
+D:The supply parties cannot get through the dungeon. Great wolves are
+D:guarding the route at 250 feet. Kill eight of them there and clear the
+D:way. Come back to me at the White Horse Inn afterwards; there is a modest
+D:reward waiting.
+?:1
+
+?:[EQU $QUEST14 Completed]
+D:The supply route is open again. Most of what we have must go to the people
+D:waiting in the dungeon, but this is yours. You have done useful work.
+?:1
+
+?:[EQU $QUEST14 Failed]
+D:The supply parties are still waiting. I must find someone else to clear
+D:their route.
+?:1
+
+R:OBJ(fur cloak)
+
+?:[EQU $CLASS Magic-Eater]
+R:OBJ(WAND_BOLT_COLD)
+
+?:[EQU $RACE Death-Sword]
+R:OBJ(long sword)
+
+?:[EQU $CLASS Scout]
+R:OBJ(light crossbow)
+
+?:[EQU $CLASS Archer Ranger Sniper]
+R:OBJ(short bow)
+
+?:[EQU $CLASS Mage High-Mage Azure-Mage Sorcerer Mirror-Master Blood-Mage Yellow-Mage Gray-Mage]
+R:OBJ(WAND_BOLT_ELEC)
+
+?:[EQU $CLASS Necromancer]
+R:OBJ(sepulchral ways, NUMBER=1)
+
+?:[EQU $RACE Dragon Hound Spider]
+R:OBJ(^ring$):EGO(combat)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+?:[EQU $RACE Ring Gazer Vortex]
+R:OBJ(^ring$):EGO(elemental)
+
+?:[EQU $RACE Hydra Quylthulg]
+R:OBJ(^cloak$)
+
+?:[EQU $RACE Filthy-Rag]
+R:OBJ(potion of sight, NUMBER=5+3d3)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Axes] ]
+R:OBJ(broad axe)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Bows] ]
+R:OBJ(short bow)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Clubs] ]
+R:OBJ(war hammer)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Crossbows] ]
+R:OBJ(light crossbow)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Daggers] ]
+R:OBJ(^dagger$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Diggers] ]
+R:OBJ(^pick$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Polearms] ]
+R:OBJ(^pike$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Shields] ]
+R:OBJ(small leather shield)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Slings] ]
+R:OBJ(^sling$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Staves] ]
+R:OBJ(quarterstaff)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Swords] ]
+R:OBJ(long sword)
+
+?:[AND [EQU $CLASS Disciple] [EQU $SUBCLASS Troika] ]
+R:OBJ(short bow)
+
+?:[EQU $CLASS Beastmaster Cavalry Ninja Ninja-Lawyer]
+R:OBJ(gauntlets)
+
+?:[EQU $CLASS Mauler]
+R:OBJ(two-handed flail)
+
+?:[AND [EQU $SPEED 2] [NOT [EQU $CLASS Mauler Berserker Lawyer Ninja-Lawyer Ranger Scout Archaeologist]] [NOT [EQU $RACE Half-Giant]] ]
+R:OBJ(WAND_STONE_TO_MUD)
+
+# vim: filetype=q :

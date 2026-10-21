@@ -1,0 +1,52 @@
+# Ember -- firelight, and not much of it
+#
+# Warm the whole way through: hues rotated towards orange, the cool
+# families allowed to stay cool but dimmed, so blues sit back in the dark
+# and anything red comes forward. Reads like a room lit by one fire.
+
+name    Ember
+blurb   Banked coals. Everything is a little too warm.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      120906
+ui      panel       221109
+ui      border      5A2C16
+ui      title       FFB05A
+ui      text        F0DCC8
+ui      muted       A07B60
+ui      accent      FF7A3C
+ui      selection   4A2010  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        120906
+map     WHITE       E3E0DF
+map     SLATE       877598
+map     ORANGE      ED7D21
+map     RED         D33018
+map     GREEN       5DA023
+map     BLUE        912ED0
+map     UMBER       834F28
+map     L_DARK      453950
+map     L_WHITE     BCB4B3
+map     VIOLET      CC59A8
+map     YELLOW      EFB640
+map     L_RED       FA6544
+map     L_GREEN     AFDA56
+map     L_BLUE      A16EDF
+map     L_UMBER     CA8852
+map     I_GREEN     C1C82C
+map     PINK        DF6E7E
+map     I_BLUE      40CD6A
+map     PURPLE      AF4693
+map     TEAL        34A933
+map     SKY_BLUE    62DC7B
+map     MUD         887946
+map     D_YELLOW    CA9C35
+map     TURQUOISE   66D45B
+map     L_ORANGE    F5953B
+map     LILAC       DAA4CF
+map     D_PURPLE    873D6F
+map     SKY_DARK    7546AF
+map     PALE_BLUE   C2B1D7
+map     D_PINK      B64952
+map     CHESTNUT    B87C64

@@ -1,0 +1,64 @@
+# New quest for FrogComposband 7.1.chocolate
+
+?:[AND [EQU $QUEST36 Taken InProgress] [EQU $WILDERNESS NORMAL] ]
+D:Creatures creep out of the old quarry south of town at
+D:night, spreading fear through Angwil. Clear every enemy
+D:from the quarry, then return to me. We cannot keep watching
+D:the road and hoping they stay away.
+?:[AND [EQU $QUEST36 Taken InProgress] [EQU $WILDERNESS NONE] ]
+D:Creatures creep out of an old quarry in the forest
+D:northwest of town at night, spreading fear through Outpost.
+D:Clear every enemy from the quarry, then return to me.
+D:We cannot keep watching the road and hoping they stay away.
+?:[EQU $QUEST36 Completed]
+D:The quarry is cleared. The people who live along that
+D:road can rest more easily. Take this reward for seeing
+D:the work through.
+?:[EQU $QUEST36 Failed]
+D:The quarry remains unsafe. This commission is closed,
+D:without a reward. I will need another way to keep those
+D:creatures from the road.
+?:1
+
+T:QUEST:NORMAL
+L:X:PERMANENT
+L:#:GRANITE
+L:.:DIRT
+L:;:RUBBLE
+L:<:UP_STAIR
+L:q:DIRT:MON(night mare)
+L:Q:DIRT:MON(night mare)
+L:w:DIRT:MON(deathcoil colony)
+L:U:DIRT:MON(nightgaunt)
+L:p:DIRT:MON(fearmaster)
+L:u:DIRT:MON(deep one)
+!:SCRAMBLE(Q,w,U,p)
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+M:X;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;X
+M:X;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;X
+M:X;;;;;;;;;;;;;;;;;;;;;..;;....;;;;X
+M:X;;;;;;;;;;;;;;;;;.....Q...;:.;;;;X
+M:X;;;;;;;;;;;;;;;;..;;....;;;;..;;;X
+M:X;;;;;;;;;;;;;;;..;;;;..;;;;....;;X
+M:X;;;;;;;;;;;;;;..;;;;;;..;....w.;;X
+M:X;;;;;;;;;;;;;..;;;;;;;;...;;..;;;X
+M:X;;;;;;;;;;;;;.;;;..;;;;;.;;;;;;;;X
+M:X;;;;;;..::....;;....;;;;.;;;;;;;;X
+M:X;;;;;......;;.....u.;;;;........<X
+M:X;;;;;.q...;;;.;;;..;;;;;.;;;;;;;;X
+M:X;;;;;;;..;;;;.;;;;;;;;;;.;;;;;;;;X
+M:X;;;;;;;;;;;;;.;..;;;;;...;;;;;;;;X
+M:X;;;;;;;;;;;;;..p..;;...;..;;;;;;;X
+M:X;;;;;;;;;;;;;;.......;;;;....;;;;X
+M:X;;;;;;;;;;;;;;....:;;;;;;..U..;;;X
+M:X;;;;;;;;;;;;;;;..;;;;;;;;....;;;;X
+M:X;;;;;;;;;;;;;;;;.;;;....;;..;;;;;X
+M:X;;;;;;;;;;;;;;;;.....;;....;;;;;;X
+M:X;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;X
+M:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+R:OBJ(blade of chaos, DEPTH+12)
+
+?:[EQU $RACE Pumpkin]
+R:OBJ(undying lamp)
+
+# vim: filetype=q :

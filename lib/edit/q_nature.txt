@@ -1,0 +1,58 @@
+# Created by Topi Ylinen
+?:[EQU $QUEST12 Taken InProgress]
+D:A Node of Nature has formed in a nearby forest. Clear every guardian
+D:from the site so our tower can claim its energies, then return to me.
+D:Prepare before entering; this is not an expedition you can leave
+D:unfinished and resume later.
+?:1
+
+?:[EQU $QUEST12 Completed]
+D:The Node of Nature is secure. This spellbook is your reward; you need
+D:not search outside for another payment.
+?:1
+
+?:[EQU $QUEST12 Failed]
+D:The node's energies have faded. This commission has ended in failure.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:.:GRASS
+L:<:UP_STAIR
+L:T:TREE
+L:a:MON(war bear)
+L:b:MON(basilisk)
+L:c:MON(giant spider)
+L:d:MON(earth elemental)
+L:e:MON(great storm wyrm)
+L:g:MON(colossus)
+M:#################################
+M:#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:#TTTTTT...................TTTTTT#
+M:#TTTT..........TgT..........TTTT#
+M:#TTT..aaa.TTTTTbbbTTTTT.aaa..TTT#
+M:#TTaacTTTTTTTTT...TTTTTTTTTcaaTT#
+M:#TcccTTTTTTTTT..T..TTTTTTTTTcccT#
+M:#T..TTTTbbdd...TTT..ddbbbTTTT..T#
+M:#T..TTTbbdd...TTTTT..ddbbbTTT..T#
+M:#T..TTTddgTTTTTTTTTTTTTgddTTT..T#
+M:#T..TTT..TTT.........TTT..TTT..T#
+M:#T.TTTT..TT....TTTe...TT..TTTT.T#
+M:#T.TTTT..T....TTeTT....T..TTTT.T#
+M:#T.TTTT..g...TTeeeTT...g..TTTT.T#
+M:#T.TTTT..T....TTeTT....T..TTTT.T#
+M:#T.TTTT..TT...eTTT....TT..TTTT.T#
+M:#T..TTTddTTT.........TTTddTTT..T#
+M:#T..TTTTbdTTT.......TTTdbTTTT..T#
+M:#T..TTTTgbd...........dbgTTTT..T#
+M:#TcccTTTTgbd.TTTTTTT.dbgTTTTc..T#
+M:#TacaTTTTTTTTTTTTTTTTTTTTTTTc..T#
+M:#TTa..TTTTTTTTTTTTTTTTTTTTTacaTT#
+M:#TT.....TTTTTTTTTTTTTTTTT...a.TT#
+M:#T..........TTTTTTTTT.......TTTT#
+M:#T<........................TTTTT#
+M:#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:#################################
+R:OBJ(nature's wrath)
+
+# vim: filetype=q :

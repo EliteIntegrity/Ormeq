@@ -1,0 +1,66 @@
+# New quest for Composband
+
+?:[AND [GEQ [MOD $RANDOM0 64] 1] [LEQ [MOD $RANDOM0 64] 32] ]
+K:90
+?:1
+
+?:[EQU $QUEST66 Taken InProgress]
+D:Your next examination is the basilisk cave to the north. Clear every
+D:enemy from it and return to me. I would like drawings of their gizzards,
+D:but the commission is completed by clearing the cave; there is no
+D:drawing or specimen to collect. The pass rate is low. Prepare
+D:accordingly.
+?:1
+
+?:[EQU $QUEST66 Completed]
+D:You survived, and the cave is clear. Top marks. Take this badge of
+D:merit.
+?:1
+
+?:[EQU $QUEST66 Failed]
+D:You abandoned the examination? No credit for this assignment.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:+:CLOSED_DOOR
+L:%:QUARTZ_VEIN
+L:*:QUARTZ_TREASURE
+L:.:FLOOR
+L:<:UP_STAIR
+L:W:DEEP_WATER
+L:V:SHALLOW_WATER
+L:^:TRAP(*, 25%)
+L:b:MON(^basilisk$)
+L:B:MON(greater basilisk)
+L:G:MON(banshee)
+L:f:MON(giant pink frog)
+L:i:MON(blue icky thing)
+L:s:OBJ(human skeleton)
+L:r:OBJ(RING, DEPTH+5):EGO(wizardry)
+L:w:OBJ(WAND_BOLT_ICE)
+L:x:OBJ(WAND_BALL_FIRE)
+L:y:OBJ(ROD_BEAM_LITE)
+L:z:OBJ(STAFF_TELEPORT)
+!:SCRAMBLE(w,x,y,z)
+
+M:##########################################################
+M:########........###***##%..VV%######%.VVVVVVVVVVVVVVWWWWW#
+M:#####......r.......###**VVV.#G.VV*%..VVVVVVVVVVVVWVWWWWVV#
+M:###..b.sVVV..VVVs..B.###iV.####....VVVVVVVVVVVVWVWWVVWWWW#
+M:##...BVVVV.VVV..VV.b.##*VV*##%..VVVVVVVVVVVVVVVWWVVWWWWWV#
+M:##....V..sVVVVVVV...s.##*###.s....fVVVVVVVVVVVVVVWWVVWWVV#
+M:#...w.VVVV.VV...V.....#####%y...VVVVVVVVVVVVVVVVWWWWVVVW<#
+M:#..s...V..V..VV.s....#####..VVVVVVVVVVVVVVVVVVWWVWWVWWWVV#
+M:##..b...VV.VVV...z#####...f...VVVVVVVVVVVVVVVVWWWVVWWWWVV#
+M:###.......V...V..##......VVVVVVVVVVVVVVVVVVVVVVVVWWWWWWWW#
+M:#####......VV.VV....VVVVVVV..%..VVVVVVVVVVVVVWWWVWVVWWWWW#
+M:#######..s...VVVV.VVVV......%#%%%%fVVVVVVVVWWWWWWVVVVVVWW#
+M:#########..b...VVVVx..%%%%#######%%%%%VVVVWWVVVVVWWVWWWVV#
+M:##############....s.%%%%############%%%fVVVVVVWWWVVWWWVVV#
+M:##########################################################
+
+
+R:OBJ(amulet):EGO(magi)
+
+# vim: filetype=q :

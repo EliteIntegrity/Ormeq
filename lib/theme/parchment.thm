@@ -1,0 +1,54 @@
+# Parchment -- a light palette, for reading by daylight
+#
+# The one that is not a dark theme. Everything is inverted: a colour now
+# has to get *darker* to be seen, so the whole lightness curve is turned
+# over and the saturation lifted to stop the darker end going to mud.
+# Worth having if you play in a bright room, where a black screen is a
+# mirror.
+
+name    Parchment
+blurb   Ink on old paper. Lamp not included.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      EDE2CC
+ui      panel       E0D2B6
+ui      border      B39F7C
+ui      title       7A4A18
+ui      text        2C2418
+ui      muted       7A6E58
+ui      accent      9A5A1E
+ui      selection   D8C49A  D0
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        EDE2CC
+map     WHITE       1F1F1F
+map     SLATE       556366
+map     ORANGE      AE600D
+map     RED         C52015
+map     GREEN       2ECE31
+map     BLUE        2529A4
+map     UMBER       C6874D
+map     L_DARK      8DA0A5
+map     L_WHITE     323232
+map     VIOLET      78287D
+map     YELLOW      92790B
+map     L_RED       8E1502
+map     L_GREEN     39801D
+map     L_BLUE      185F6A
+map     L_UMBER     84582A
+map     I_GREEN     7EAB26
+map     PINK        6A1832
+map     I_BLUE      288D93
+map     PURPLE      873E93
+map     TEAL        38AF85
+map     SKY_BLUE    1A7570
+map     MUD         9D9B57
+map     D_YELLOW    9E8C2B
+map     TURQUOISE   217B52
+map     L_ORANGE    965706
+map     LILAC       351A3D
+map     D_PURPLE    A553AA
+map     SKY_DARK    3E8793
+map     PALE_BLUE   1C2F32
+map     D_PINK      8C3C4F
+map     CHESTNUT    754A39

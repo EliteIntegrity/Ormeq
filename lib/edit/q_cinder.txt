@@ -1,0 +1,71 @@
+?:[EQU $QUEST15 Taken InProgress]
+D:Since Wender, rightful ruler of the Hidden Court, disappeared, Cinder has
+D:claimed the throne. He waits for his coronation in a secure stronghold.
+D:Kill him before his claim becomes accepted. If the other Crosslings
+D:recognise him as king, they may feel bound to obey him.
+?:1
+
+?:[EQU $QUEST15 Completed]
+D:Cinder's claim ends here. You have prevented him from securing the
+D:obedience of the Hidden Court. This reward is yours.
+?:1
+
+?:[EQU $QUEST15 Failed]
+D:Cinder has been crowned King of the Hidden Court. Perhaps Wender will
+D:return to challenge him; perhaps he will not. For now, the usurper holds
+D:the throne.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:%:GRANITE
+L:.:FLOOR
+L:<:UP_STAIR
+L:T:TREE
+L:~:DEEP_WATER
+L:+:CLOSED_DOOR
+L:^:TRAP(*)
+L:$:TRAP(*, 25%):OBJ(*, DEPTH+10)
+L:a:MON(black knight)
+L:b:MON(ninja)
+L:c:MON(snarl master)
+L:d:MON(gravebound knight)
+L:e:MON(enchantress)
+L:f:MON(sorcerer)
+L:g:MON(anti-paladin)
+L:h:MON(lord of chaos)
+L:E:MON(cinder the usurper):OBJ(*, DEPTH+10):ART(*)
+M:##########################################################################
+M:#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:#TTTTTTTTTTT...........T..TT.TTTTTTTTTTTTTTTTTTTTTTTTT.TTT...........TTTT#
+M:#TTTTTTTTT......~~~~~...T..TTTTT.T..TT.TTTTTT.TT.TTT....T...~~~~~......TT#
+M:#TTTTTTT.......~~%a%~~.......T............TT...............~~%a%~~....T.T#
+M:#TTTT<TT.......~%%c%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%%e%%~...TT.T#
+M:#TTT.TT........~%aaa%%%%%%%%%%%.%%%%%%%%%%%%%%%%%.%%%%%%%%%%%aaa%~..TTTTT#
+M:#TT.TT...TT....~afda+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^+adaf~...TT.T#
+M:#TT....TTT.....~%aaa%%%%%%%%%%%%%%+%%%%%%%%%%%%%%%%%%%%%%%%%%aaa%~....TTT#
+M:#T......TTT....~%%e%%^^^^^^^^^^^^+b+^^^^^^^^^^^^^^%$$$$c%gg%%%c%%~..TTTTT#
+M:#T....TTT.TT...~~%%%%^%%%%%%%%%%%%+%%%%%%%%%%%%%^^%%%%%+%gg%b%+%~~...TTTT#
+M:#T.........TT...~~%a%^%......+ggggggggggggggggg%^^^^^^^^+gg%bbb%~...TT.TT#
+M:#T.....TT.TT.....~%+%^%...%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%++%%+%%~..TT..TT#
+M:#T......TTT.......+^^^%%%%%$$$+hheeddggg+gggfgggegggdggg+cc+$$$%~..TT...T#
+M:#T........TT......+^^^%%%%%$$E+hheeddggg+gggfgggegggdggg+cc+$$$%~.TT....T#
+M:#TTT.......T.....~%+%^%...%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%++%%+%%~.TT...TT#
+M:#TTTT...........~~%a%^%......+ggggggggggggggggg%^^^^^^^^+gg%bbb%~..TT.TTT#
+M:#TT......T.....~~%%%%^%%%%%%%%%%%%+%%%%%%%%%%%%%^^%%%%%+%gg%b%+%~~..TTTTT#
+M:#T..TT....T....~%%c%%^^^^^^^^^^^^+b+^^^^^^^^^^^^^^%$$$$c%gg%%%d%%~...TTTT#
+M:#T.TT..T.TT....~%aaa%%%%%%%%%%%%%%+%%%%%%%%%%%%%%%%%%%%%%%%%%aaa%~....TTT#
+M:#TTTT..TTT.....~afda+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^+acfa~...TTTT#
+M:#TTTTTTTT......~%aaa%%%%%%%%%%%.%%%%%%%%%%%%%%%%%.%%%%%%%%%%%aaa%~...TTTT#
+M:#T..TTTT.......~%%e%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%%e%%~..TTTTT#
+M:#TT..TT........~~%%%~~............TTT......................~~%a%~~.TTTTTT#
+M:#TTTTTTTT.......~~~~~.....TTT...TTT.TTTTTT..TTT.TTTT..TTT...~~~~~..TTTTTT#
+M:#TTTTTTTTTTT.TT........TTTT....TT.TTTTTT.TTTT.TTTT.TTTTTTTT.......TTTTTTT#
+M:#TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT#
+M:##########################################################################
+R:OBJ(ROD_HEAL_CURING_HERO)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(potion of enlightenment, NUMBER=5+1d4)
+
+# vim: filetype=q :

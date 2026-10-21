@@ -1,0 +1,60 @@
+# original by Jeff Coleburn <vsp@netaxs.com>
+# remade by Gwarl for ComPosband 7.0.4 in pursuit of doominess
+# slightly edited for FrogComposband
+
+?:[EQU $QUEST19 Taken InProgress]
+D:A breach has opened northwest of town. A resident who went
+D:inside barely escaped, and speaks of demons in the chambers
+D:beyond. I cannot leave that danger on our doorstep. Enter
+D:the breach and clear every enemy from the site, then return
+D:to me. Prepare before you go; this is no scouting errand.
+?:1
+
+?:[EQU $QUEST19 Completed]
+D:The first breach has been cleared. Our people can pass that
+D:way without fearing what might emerge. Accept this reward
+D:for seeing the work through.
+?:1
+
+?:[EQU $QUEST19 Failed]
+D:The breach remains a danger. I will have to make other
+D:arrangements. This commission is closed; I cannot reward
+D:work left unfinished.
+?:1
+
+T:QUEST:NORMAL:NO_ROTATE
+L:#:PERMANENT
+L:.:FLOOR
+L:+:CLOSED_DOOR
+L:W:PERMANENT_GLASS_WALL
+L:~:DEEP_WASTE
+L:<:UP_STAIR
+L:a:MON(zombified human)
+L:b:MON(^imp$)
+L:c:MON(black knight)
+L:d:MON(pyre-priest)
+L:e:OBJ(elven cloak)
+L:f:OBJ(blue dragon)
+L:g:OBJ(potion of healing)
+L:h:OBJ(BOLT, DEPTH+15)
+L:i:OBJ(light crossbow, DEPTH+10)
+L:j:OBJ(potion of cure serious wounds)
+L:k:MON(landmine)
+L:l:OBJ(scroll of enchant armor)
+M:###############################################
+M:####.c.##########.c........#######.....~~~~~~~#
+M:####...#l.....l.+....##.......a........a~~~~~~#
+M:#....#..........+....a#.........a..~...~~~~~~~#
+M:#.e.............#....##..c.#######~~~..a~~.b..#
+M:#....#..........#c.........#...#.%~~c..~~~..d.#
+M:####...#.......######WWWW###...#.####++#####%##
+M:####.c.#.......W....~~~........#.#.aW..Wa.#h..#
+M:########j.....jW....~f~....#####.#..#..#..#h..#
+M:##########.<.###....~~~....%....g#.k.b..k.#i..#
+M:###############################################
+R:OBJ(STAFF_TELEPORT)
+
+?:[EQU $CLASS Berserker]
+R:OBJ(^ring$):EGO(elemental)
+
+# vim: filetype=q :

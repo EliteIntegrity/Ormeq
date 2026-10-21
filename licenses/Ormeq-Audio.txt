@@ -1,0 +1,50 @@
+Ormeq sound effects and music
+Copyright (c) 2026 John Horton.
+
+The optional WAV files in lib/xtra/sound/pack/ and lib/xtra/music/pack/
+are separate from the program's source licence. All rights are reserved
+except as expressly permitted here, to the extent copyright and related
+rights subsist. These terms do not create rights that applicable law does
+not recognise or restrict uses that applicable law permits.
+
+Ormeq includes 230 procedural sound effects and 14 background soundscapes
+shared with Ammerow: Lands Beyond, and the title track Ormeq - Home Theme (Dark). Their exact delivery files
+are identified in the adjoining pack-manifest.json inventories.
+
+These assets may be supplied with official Ormeq and Ammerow releases.
+Players may use them for normal play, personal backups and private,
+non-distributed modifications. Normal gameplay coverage, including videos,
+livestreams, reviews, criticism and guides, is permitted, including monetised
+coverage. These permissions do not include standalone soundtrack uploads,
+asset dumps or a claim that the copyright holder endorses your work.
+
+Outside those permissions, redistribution, repackaging, sale or reuse of
+these assets, separately or within a modified or unmodified game, another
+product, an asset pack or a public fork, requires the owner's written
+permission except where applicable law permits otherwise. Public source
+forks must omit or replace these files. These asset terms do not restrict
+rights in the program source or its dependencies.
+
+The sound mapping, inventories, tests and playback code are supplied under
+the program's source terms. Missing effects use Ormeq's original
+code-synthesised fallback; missing music stays silent. The WAV files and
+production masters/tools are not part of the public source release.
+
+Production
+
+The sound effects and ambient soundscapes were produced under human direction using Claude
+Code-assisted Python synthesis and recorded seeds. PCM samples were
+computed from mathematical models; no performers, recordings, third-party
+samples, sample libraries or generative-audio service were used for these
+effects.
+
+Ormeq - Home Theme (Dark) was created separately with Claude Compose.
+AI-assisted composition code placed its notes, melody, harmony and
+orchestration; licensed virtual instruments performed the composition in
+Ableton Live. Rendered-audio analysis informed revisions under human
+direction, review and approval. No generative audio or music model was used.
+
+The theme was supplied as a stereo 24-bit FLAC master. The playable
+edition uses a 16-bit PCM WAV delivery copy with
+the same duration, dynamics and natural ending. The original master is
+retained privately.

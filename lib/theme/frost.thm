@@ -1,0 +1,52 @@
+# Frost -- cold, and a long way underground
+#
+# The opposite treatment to Ember: everything pulled towards ice, the
+# warm families desaturated rather than removed. Cold enough that a torch
+# flame or a pool of lava genuinely startles.
+
+name    Frost
+blurb   Deep winter. Bring a light source.
+
+# --- interface roles -------------------------------------------------------
+ui      canvas      070D14
+ui      panel       101A26
+ui      border      2E4A64
+ui      title       BEE4FF
+ui      text        DDE9F2
+ui      muted       7C93A6
+ui      accent      7FD8F0
+ui      selection   1C3854  D8
+
+# --- the thirty-two game colours -------------------------------------------
+map     DARK        070D14
+map     WHITE       F5F5F5
+map     SLATE       9CA3A8
+map     ORANGE      90DA6A
+map     RED         BB4FCD
+map     GREEN       43AD86
+map     BLUE        6D9AC6
+map     UMBER       609144
+map     L_DARK      50595E
+map     L_WHITE     D9D9D9
+map     VIOLET      9A93CC
+map     YELLOW      95E189
+map     L_RED       E190EA
+map     L_GREEN     94D6B1
+map     L_BLUE      ACCDDF
+map     L_UMBER     A0C98B
+map     I_GREEN     65C377
+map     PINK        CBACDF
+map     I_BLUE      7CB0C7
+map     PURPLE      7B76B2
+map     TEAL        5BAFB2
+map     SKY_BLUE    A0CDDA
+map     MUD         679765
+map     D_YELLOW    7BC271
+map     TURQUOISE   97D3D1
+map     L_ORANGE    A3E486
+map     LILAC       D9D9E9
+map     D_PURPLE    635B95
+map     SKY_DARK    769DB2
+map     PALE_BLUE   E2E8EB
+map     D_PINK      A27DB6
+map     CHESTNUT    BE96BE

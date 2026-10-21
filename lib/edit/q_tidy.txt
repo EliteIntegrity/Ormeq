@@ -1,0 +1,74 @@
+# Designed by Gwarl for ComPosband
+# Simplified for FrogComposband 7.0.mango
+
+?:[EQU $QUEST65 Taken InProgress]
+D:Some students have left the laboratory in a thoroughly dangerous state.
+D:Clear every enemy from it, then return to me. This is a practical
+D:examination, not an instruction to collect or destroy the laboratory's
+D:loose equipment.
+?:1
+
+?:[EQU $QUEST65 Completed]
+D:The laboratory is clear. Next time, remember to wear proper gloves. Here
+D:is a pair for your trouble.
+?:1
+
+?:[EQU $QUEST65 Failed]
+D:Then somebody else will have to clean up after you as well as the
+D:students.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:<:UP_STAIR
+L:^:TRAP(*, 25%)
+L:T:TRAP(*, 40%)
+L:p:OBJ(POTION)
+L:w:OBJ(WAND_BOLT_FIRE)
+L:x:OBJ(WAND_BOLT_COLD)
+L:y:OBJ(WAND_BOLT_ACID)
+L:z:OBJ(WAND_BOLT_ELEC)
+L:e:MON(ooze elemental)
+L:f:MON(smoke elemental)
+L:g:MON(air elemental)
+L:h:MON(beer elemental)
+L:i:MON(spite imp)
+L:s:OBJ(SCROLL, DEPTH+5)
+L:t:OBJ(JUNK)
+L:r:OBJ(JUNK)
+L:u:OBJ(STAFF_LITE_AREA)
+L:v:OBJ(STAFF_DARKNESS)
+L:a:OBJ(RING, DEPTH+10):EGO(wizardry)
+L:b:OBJ(BOOK)
+L:c:OBJ(ROD_CLARITY)
+L:d:MON(disenchanter mold)
+L:j:MON(ochre solvent)
+L:k:MON(silver jelly)
+!:SCRAMBLE(s,t,r,T,^,b)
+!:SCRAMBLE(j,p)
+!:SCRAMBLE(w,x,y,z)
+!:SCRAMBLE(f,h)
+!:SCRAMBLE(u,v)
+
+M:##########################################
+M:#<...........#t^.........#.y....#......r.#
+M:#.......r....#p.t........#......+.T......#
+M:#............#p..k...jb..#......#..th....#
+M:#.......T..g.#####+#######......#........#
+M:#...r........#..................#.i......#
+M:#.......b....+................h.#...s....#
+M:#............#..k...............#p...t.uv#
+M:##############^........s.......b##########
+M:#.....#..w.....t.....e......^r..#........#
+M:#.b...#.........................#.......b#
+M:#...g^+...^...#.T...#...T.#.....#.^sf...s#
+M:#.cdk.#...j...#...T.#.T...#.....+..k...js#
+M:#.dat.#.p...z.#x..b.#...r.#.r...#.......s#
+M:##########################################
+
+
+R:OBJ(leather gloves):EGO(wizard)
+
+# vim: filetype=q :

@@ -1,0 +1,292 @@
+Quest Journal
+
+Press Ctrl+Q to open the journal. It is also available
+from the knowledge menu. Reading cards and browsing the journal costs 
+no
+turns. It does not change quest progress, roll rewards or identify 
+items.
+
+Active, Completed and Failed
+
+Active contains accepted quests, including those whose
+objectives are complete but whose rewards still await collection. Those
+entries are labelled Ready to return and appear first.
+
+Completed contains finished quests. A quest closed
+without a recorded completion is labelled Closed. Failed quests have 
+their
+own tab when there are any. Unaccepted and concealed quests are not 
+listed.
+
+On a wide screen, select a quest on the left to read its details on the
+right. On a small screen, select a row and press Enter (or tap it) to 
+open
+its details. Escape returns to the list; from the list it closes the 
+journal.
+
+Use Up/Down or P/N to select quests. Tab changes lists; A, C and F 
+select
+Active, Completed and Failed directly. On a wide screen, [ and ] scroll
+the details and PgUp/PgDn scroll a page. On a small details page, 
+Up/Down
+also scroll. X closes the journal from either view. The labelled 
+controls
+and quest rows can be clicked or tapped. ? opens this help.
+When details extend beyond the page, clickable scroll controls remain 
+at
+the bottom of the screen.
+
+The journal remembers the last tab, selected quest in each list and 
+each
+quest's detail scroll position, including after saving and loading.
+Selection follows the quest when the list reorders. If the detail width 
+changes,
+the text rewraps and starts at the top; otherwise your place is 
+retained.
+If that quest leaves its list, the first entry is selected. If the 
+Failed tab
+no longer exists, the journal opens Active. Each character has their 
+own memory.
+
+Quest conversations
+
+Requesting work opens an offer card with the questgiver, briefing, 
+objective
+and danger level. A accepts; Escape leaves the offer for later. Reading 
+or
+declining the offer does not accept the quest or roll its reward.
+
+Completing an objective announces the next step in the message area 
+without
+opening a page over the fight. Ctrl+Q shows the complete record. Town 
+quests
+normally require you to return to the questgiver's building and request 
+the
+quest service again. The receipt shows their response and the item 
+actually
+awarded. Dungeon quests that award rewards immediately need no town 
+turn-in.
+
+All town questgivers have portraits in the playable artwork pack, 
+including
+the small-town contacts. Missing portraits use a glyph. Artwork is 
+optional;
+it does not affect quests and is not included in the public source 
+download.
+The next step, objective, directions and leave warning come before a 
+small
+questgiver panel on every screen. Records without a questgiver need no 
+portrait
+space. The full briefing remains available by scrolling; no text is 
+removed.
+
+What the journal knows
+
+The objective uses the existing quest rules. Named kill missions can 
+show
+their recorded count, for example 5/8 defeated. Clear-site
+quests do not list all remaining enemies: doing so would reveal 
+creatures
+you have not found. The briefing retains any information the questgiver
+already supplies, but the journal does not add monster statistics, map
+layouts, undiscovered entrances or unidentified artifact details.
+
+Danger level is the existing quest difficulty indication, not a promise
+that a character of that level can win. Read the warning before 
+accepting:
+many quests fail if you leave their site before completing the 
+objective.
+Accepting work does not itself put you inside that site.
+
+Completed town quests retain a receipt from turn-in: the actual reward,
+the questgiver's closing response and when you collected it. This 
+record
+survives saving and loading, using or losing the item, and later 
+dialogue
+updates. It is a historical description, not another copy of the item.
+Reopening the journal never rolls, awards or identifies anything.
+
+Existing saves remain supported. Quests turned in before receipts were
+recorded say "Reward not recorded"; their old rewards cannot be 
+recovered
+from the quest record. A recorded "No item was awarded" is different: 
+that
+turn-in really did award no item.
+
+Dungeon quests now save a separate reward record. Items are dropped on 
+the
+floor, not automatically put in your pack. The record describes only 
+the
+reward drops visible when the quest finished, with their knowledge at 
+that
+moment. It does not identify them, reveal unseen drops or track 
+collection.
+Blindness and hallucination prevent item recording. A later 
+identification
+does not rewrite the earlier observation. Known stat increases awarded 
+at
+completion are also recorded. Earlier saves cannot supply missing 
+records.
+
+For example, "2 Blue Potions" means two potions were observed being 
+added to
+the floor, not that you collected two or learned their effects. A 
+merged stack
+records the new amount only. "No floor rewards were visible" does not 
+mean
+no reward was generated: you may have been blind or unable to see its 
+location.
+
+Karrot and Troika assignments join Completed and Failed using their 
+existing
+patron histories. Each has a permanent assignment number, target, kill 
+count,
+location and date. The current assignment remains in Active. Their 
+individual
+rewards, punishments and closing speeches in earlier saves were not 
+stored
+and are not reconstructed. New assignments preserve the actual patron 
+reply,
+messages describing witnessed effects, visible reward drops and known 
+failure
+reason. Unseen drops and hidden item properties remain concealed. A 
+transcript
+records what you heard and experienced, not a list of secret mechanical 
+effects.
+Very long transcripts are capped and marked when further messages are 
+omitted.
+Troika gifts are recorded on the assignment that earned them; other 
+successes
+can correctly say "No new patron gift on this assignment". Current 
+earned gifts
+are also shown separately, so later rewards do not rewrite older 
+assignments.
+Every new assignment starts at the top of its details page.
+
+Failed quests retain their known failure reason and the existing 
+failure date
+and character level. Leaving before completion and explicitly choosing 
+to
+abandon a repeatable quest are recorded separately. This adds no new 
+way to
+abandon a quest and changes no penalties or quest rules.
+On compact screens the failure summary appears before the portrait.
+
+A town quest's closing response is recorded only when you report back. 
+Until
+then the journal says "Not yet reported to the questgiver"; it never 
+previews
+their response. After reporting, the actual response and reporting date 
+remain
+available even if the dialogue is updated later. A recorded empty 
+response says
+"No closing response was given". Dungeon and patron failures have no 
+town reply.
+
+Old failures retain their existing date but say "Failure reason not 
+recorded".
+Earlier closing responses also say "not recorded". If an old failure 
+still
+awaits reporting, that new response can be saved, but its cause is not 
+invented.
+
+All towns' quest guidance summarises the
+briefing, including alternate quests. They do not reveal map 
+coordinates or
+undiscovered entrances. Where a briefing gives no precise directions, 
+the journal says
+so. Recorded kill counts remain visible; clear-site quests do not count
+unseen enemies.
+
+Bulin's castle quests distinguish recovery from clearing a site. For
+"I Hate Snakes!", picking up the lost whip completes the objective; 
+killing
+every snake is not required. The other castle commissions require 
+defeating
+every enemy at their site. Most pay through whatever you recover there 
+and
+give no separate item at turn-in. The Underground City has a separate 
+reward.
+The cards do not preview hidden loot or item properties. These are 
+explanations
+of the existing quest rules, not changes to them. Bulin uses a glyph 
+when no
+portrait is installed.
+
+Hjolgar's Fighters' Hall commissions are dungeon hunts. The objective 
+gives
+the target and required count, and Location gives the dungeon and quest 
+level
+for your world, including replacement dungeons. Only eligible target 
+kills on
+the active quest floor count, not kills elsewhere. The displayed 
+progress is
+the game's actual quest count. Troll Slayer requires day-trolls. 
+Complete the
+hunt before leaving its floor, then return to the Hall for your trophy.
+
+Paliro's Thieves' Guild commissions require clearing every enemy at the 
+named
+site. Items do not need to be destroyed. You may keep what you find; 
+the guild's
+payment is separate and requires returning after completing the 
+objective.
+The journal does not enumerate undiscovered enemies, disguises, secret 
+doors
+or hidden loot. Both guild leaders use glyphs when their portraits are 
+absent.
+
+Colmanwen's Manor commissions in Angwil distinguish clearing a site 
+from
+destroying one particular source of danger. The Concern and the book 
+warehouse
+require the latter; defeating every other enemy is not necessary. The 
+journal
+does not identify the hidden target for you. The other Manor 
+commissions
+require clearing every enemy from their site. Dragon Quest also 
+distinguishes
+the loot you keep from the separate reward collected at turn-in.
+
+Alternate quests keep their own briefing and objective. In small-town 
+modes,
+these commissions can belong to Odwin, Uldrik or Kimuk instead. 
+Directions
+follow that mode too: the quarry is south of Angwil in the normal 
+world, but
+in the forest northwest of Outpost in the small-town version. No 
+undiscovered
+entrance is marked on the map. Colmanwen uses a glyph if no portrait is 
+installed.
+
+Town modes can assign work to different people. Return details follow 
+the
+current town mode. Quests without contact metadata retain a general 
+return
+instruction rather than inventing a person or a location.
+
+Anambar, Thalos and Zul commissions have explicit objectives, 
+directions and
+closing replies, including alternate quests and the Angwilian Stables 
+in
+Instant mode. Some story requests are not inventory tasks: the 
+crystal-drake
+and mushroom commissions count kills, and the wreck commission requires 
+site
+clearance. Staff Recovery completes when you pick up the requested 
+staff.
+The objective explains the existing rule; it adds no new collection 
+requirement.
+
+Finished entries explain existing non-item outcomes: the Howes service
+discounts, the Cop Quest home and Zul's restored teleport service. They 
+do not
+promise undisclosed future quests. Main-story entries explain the next 
+step
+without revealing a concealed quest. Killing Fields is retained for 
+older
+characters, but clearly marked as a legacy commission whose former 
+entrance
+and quest service are no longer offered. This does not restore that 
+quest.
+

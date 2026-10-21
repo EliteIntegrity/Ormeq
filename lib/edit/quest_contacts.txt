@@ -1,0 +1,94 @@
+# Quest contacts, presentation only. Q lists quest ids; C is name|building|town.
+# Kept separate from maps and rewards. Only accepted/explicitly offered quests
+# are shown. Alternate quest ids share the original building.
+# Optional P: is a stable portrait name; otherwise C's name is used.
+
+# t_outp.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:20,27,31,50,62,84
+C:Goodman Odwin|The White Horse Inn|Outpost
+Q:1,2,14,25,28,87
+C:Uldrik II|Count|Outpost
+?:1
+
+# t_telmo.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:3,4,5,6,15,16,34,78,88,94,96
+C:Denegor III|Castle|Telmora
+?:1
+
+# t_mori.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:51,52,53,54,55,92,93,95
+C:Bulin|Castle|Morivant
+Q:56,57,58,59,79,80,81
+C:Hjolgar|Fighters' Hall|Morivant
+Q:29,30,32
+C:Paliro|Thieves' Guild|Morivant
+?:1
+
+# t_angwil.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:19,21,23,24,35,36,85,86,91
+C:Colmanwen|Manor|Angwil
+?:1
+
+# t_ana.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:22,60,67,68,75,83,99
+C:Zircon Jim|Mayor's Office|Anambar
+Q:72,73,74
+C:Watts|Police Station|Anambar
+?:1
+
+# t_thalos.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:33,61,69,70,71,89
+C:Sultan Idris|Palace|Thalos
+Q:63,64,65,66,76,90
+C:Lord Itsukama|Royal Lyceum|Thalos
+?:1
+
+# t_zul.txt
+?:[EQU $WILDERNESS NORMAL]
+Q:10,77
+C:Tanistil|Tower of Sorcery|Zul
+Q:11
+C:Xeno|Chaos Tower|Zul
+Q:12
+C:Josh|Nature Tower|Zul
+?:1
+
+# t_lite.txt
+?:[AND [EQU $WILDERNESS NONE] [LEQ $SPEED 1] ]
+Q:19,21,27,28,31,62,84,85
+C:Odwin|The White Horse Inn|Outpost
+P:Goodman Odwin
+Q:1,4,5,14,20,22,23,33,55
+C:Uldrik|Count|Outpost
+P:Uldrik II
+Q:11
+C:Xeno|Chaos Tower|Outpost
+Q:12
+C:Josh|Nature Tower|Outpost
+Q:10
+C:Tanistil|Tower of Sorcery|Outpost
+Q:29,30,32,73
+C:Lardbottom|Thieves' Guild|Outpost
+Q:25,34,35,36,69,91,94
+C:Kimuk|Crossing Tower|Outpost
+?:1
+
+# t_ulite.txt
+?:[AND [EQU $WILDERNESS NONE] [EQU $SPEED 2] ]
+Q:14,19,21,85
+C:Odwin|The White Horse Inn|Outpost
+P:Goodman Odwin
+Q:1,20,27
+C:Uldrik|Count|Outpost
+P:Uldrik II
+Q:30,98
+C:Lardbottom|Thieves' Guild|Outpost
+Q:35,69
+C:Kimuk|Crossing Tower|Outpost
+?:1

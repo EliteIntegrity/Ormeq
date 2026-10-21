@@ -1,0 +1,39 @@
+Subwindows
+
+Some builds of this game can open up to seven extra terminals beside 
+the main one -- subwindows, numbered Term-1 to Term-7 -- and keep a 
+monster list, an object list, your pack or your recent messages 
+permanently on screen in them.
+
+This build does not. It opens one window and draws everything in it. 
+There is nothing to configure, and the screen that used to configure it 
+has been removed rather than left sitting there doing nothing.
+
+What to use instead
+
+Everything a subwindow could show is a keypress away, and the commands 
+do more than a subwindow ever did -- you can inspect an item from the 
+list, travel to one, or search the messages.
+  
+  i        your pack
+  e        what you are wearing and wielding
+  Y or [   the monster list -- everything you can see
+  O or ]   the object list, and every stairway and entrance --
+           which is how you find a quest door
+  ^P       the messages you have just had
+    
+
+The monster list is the one worth the habit. A common way to die is not 
+noticing something dangerous nearby, and Y costs one keypress.
+
+Why it works this way
+
+A subwindow is space taken from the main display. You pay for it in 
+rows, columns, font size, or all three, and then you have to keep 
+glancing away from the map to read it.
+
+This build spends that space on the map instead, and puts the same 
+information one key away. If you would rather have a permanent panel 
+down the side, the character panel and the status bar are exactly that, 
+and both can be turned on and off -- see [a].
+

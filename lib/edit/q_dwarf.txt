@@ -1,0 +1,98 @@
+# New quest for FrogComposband 7.1.chocolate
+
+?:[EQU $QUEST53 Taken InProgress]
+D:Dangerous creatures have taken over the old Dwarven Embassy. Clear them
+D:out and search the ruins. There may still be valuables from its better
+D:days, but the work is to make the whole site safe.
+?:1
+
+?:[EQU $QUEST53 Completed]
+D:The embassy is cleared. Keep everything you recovered there as your
+D:payment. There is no separate reward to collect for this job.
+?:1
+
+?:[EQU $QUEST53 Failed]
+D:The embassy will have to stay as it is. We cannot send others into
+D:an uncleared ruin, however much treasure might be left inside.
+?:1
+
+T:QUEST:NORMAL
+L:#:PERMANENT
+L:+:CLOSED_DOOR
+L:.:FLOOR
+L:<:UP_STAIR
+L:n:OBJ(small iron chest)
+L:':BROKEN_DOOR
+L:::RUBBLE
+L:,:FLOOR(ICKY)
+L:$:FLOOR(ICKY):OBJ(^gold$)
+L:S:FLOOR(ICKY):OBJ(^silver$)
+L:d:FLOOR(ICKY):OBJ(^gold$):MON(mature gold dragon)
+L:D:FLOOR(ICKY):OBJ(^silver$):MON(mature silver dragon)
+L:%:MON(roper)
+L:e:FLOOR(ICKY):MON(^gazer$)
+L:g:MON(threshold idol, NO_SLEEP)
+L:c:MON(offal crawler)
+L:z:MON(^ghast$)
+L:Z:MON(^ghoul$)
+
+#?:[EQU [MOD $RANDOM53 3] 0]
+L:[:FLOOR(ICKY):OBJ(starmetal chain mail):EGO(dwarven)
+?:[EQU [MOD $RANDOM53 3] 1]
+L:[:FLOOR(ICKY):OBJ(starmetal helm):EGO(dwarven)
+?:[EQU [MOD $RANDOM53 3] 2]
+L:[:FLOOR(ICKY):OBJ(starmetal shod boots):EGO(dwarven)
+?:1
+
+#?:[EQU [MOD $RANDOM53 3] 0]
+L:]:FLOOR(ICKY):OBJ(starmetal shield):EGO(dwarven)
+?:[EQU [MOD $RANDOM53 3] 1]
+L:]:FLOOR(ICKY):OBJ(starmetal plate mail):EGO(dwarven)
+?:[EQU [MOD $RANDOM53 3] 2]
+L:]:FLOOR(ICKY):OBJ(starmetal gauntlets, DEPTH+15)
+?:1
+
+L:R:FLOOR(ICKY):MON(basilisk)
+L:m:FLOOR(ICKY):MON(starmetal golem)
+L:/:FLOOR(ICKY):OBJ(battle axe, DEPTH+15)
+L:s:MON(twin troll skeleton)
+L:T:MON(cave troll)
+L:H:MON(shadow hound)
+L:b:MON(doombat)
+L:o:MON(doom drake)
+L:G:MON(ash basin bat)
+L:p:FLOOR(ICKY)
+L:C:MON(creeping starmetal coins)
+L:r:MON(giant grey rat)
+L:~:OBJ(dwarf skeleton, 15%)
+L:u:FLOOR
+L:U:MON(nightgaunt)
+L:N:FLOOR(ICKY)
+!:SCRAMBLE(z,Z)
+!:SCRAMBLE(e,R)
+!:SCRAMBLE(n,N)
+!:SCRAMBLE(p,C)
+!:SCRAMBLE(u,U)
+!:SCRAMBLE(b,o,T,H)
+
+M:###################################################
+M:#~.........~#~.......u#N#<#~..........#..........~#
+M:#...........#....G....#C#.#....c......#....s......#
+M:#....b......'.........#:#:#...........'.......s...#
+M:#...........#~........':#'#~..........#.....s.s...#
+M:#...........#####'#####:#.#######..c..#...s.......#
+M:#.Z.........#~.......~#p#.............#~.........U#
+M:#~.........~#.........#.#.#######.....######'######
+M:######'######.........#n#.#........c..#...........#
+M:#SSSS#.#$$$$#.........###.#....z......#.........r.#
+M:#SDSS#.#$$d$#....g........#...........#...........#
+M:#SSSS#.#$$$$#.........#########'#######...........#
+M:####:#.#:####.........#]........#~...o.........T..#
+M:#,,,,#.#,,,,#.........'...%.....#.................#
+M:#,,,,#.#,,,,#~........#.........#~................#
+M:#'####.####'#######################'###...........#
+M:#...~#.#~...#,,,,,,,,,#[,,,,,,,,#,,,,,#...........#
+M:#...........#,,,,m,,,,#,,,,R,,,,#,,m,,#...........#
+M:#.....e.....',,,,,,,,,#,,,,,,,,,',,,,,#...H.......#
+M:#~.........~#,,,,,,,,/#/,,,,,,,,#,,,,,#...........#
+M:###################################################

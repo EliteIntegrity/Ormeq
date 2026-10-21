@@ -1,0 +1,58 @@
+?:[EQU $QUEST59 Taken InProgress]
+D:One last test: ten lesser emberlords in The Sink. Defeat them
+D:on the quest floor listed in your journal, then return to the
+D:Hall. We will have a trophy worthy of the deed.
+?:1
+
+?:[EQU $QUEST59 Completed]
+D:Ten lesser emberlords, and you have returned. You have met the
+D:Hall's final test. Take this trophy with our respect.
+?:1
+
+?:[EQU $QUEST59 Failed]
+D:The final hunt is closed, unfinished. That does not erase the
+D:fights you won before it. Remember where this one went wrong.
+?:1
+
+R:OBJ(broad sword):EGO(daemon)
+
+?:[EQU $RACE Dragon Hound Spider Ring Gazer Vortex]
+R:OBJ(^ring$):EGO(combat)
+
+?:[EQU $RACE Centipede]
+R:OBJ(metal shod boots)
+
+?:[EQU $RACE Hydra Quylthulg]
+R:OBJ(^cloak$)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Axes] ]
+R:OBJ(broad axe):EGO(daemon)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Clubs] ]
+R:OBJ(war hammer):EGO(daemon)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Daggers] ]
+R:OBJ(^dagger$):EGO(daemon)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Diggers] ]
+R:OBJ(^pick$):EGO(disruption)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Polearms] ]
+R:OBJ(^glaive$):EGO(daemon)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Staves] ]
+R:OBJ(quarterstaff):EGO(daemon)
+
+?:[AND [EQU $CLASS Weaponmaster] [EQU $SPECIALITY Swords] ]
+R:OBJ(long sword):EGO(daemon)
+
+?:[EQU $CLASS Cavalry]
+R:OBJ(lance):EGO(daemon)
+
+?:[EQU $CLASS Ninja Ninja-Lawyer]
+R:OBJ(tanto):EGO(daemon)
+
+?:[EQU $CLASS Mauler]
+R:OBJ(two-handed flail):EGO(daemon)
+
+# vim: filetype=q :
