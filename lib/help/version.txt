@@ -1,4 +1,4 @@
-<topic:ormeq>Ormeq <color:keyword>0.1.0</color>
+<topic:ormeq>Ormeq <color:keyword>0.1.1</color>
 
 A fork of <color:keyword>FrogComposband 7.1.salmiak</color>, taken on 23 August 2026. Ormeq retains its inherited game systems in a setting shared with Ammerow: Lands Beyond. Its SDL3 presentation adds themes, optional portraits and tiles, creature cards, health warnings and The Reckoner's calculation explanations.
 

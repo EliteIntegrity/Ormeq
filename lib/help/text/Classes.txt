@@ -1522,5 +1522,5 @@ Wild-Talent   Fair          Poor          Good          Excellent
 
 
 
-Automatically generated for Ormeq 0.1.0.
+Automatically generated for Ormeq 0.1.1.
 

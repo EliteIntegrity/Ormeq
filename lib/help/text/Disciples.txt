@@ -233,5 +233,5 @@ which gifts to choose for your character.
 
 
 
-Automatically generated for Ormeq 0.1.0.
+Automatically generated for Ormeq 0.1.1.
 

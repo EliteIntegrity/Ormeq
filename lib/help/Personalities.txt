@@ -357,4 +357,4 @@ Split        <color:o>Fair         </color> <color:o>Fair         </color> <colo
 </style>
 
 
-<color:s>Automatically generated for Ormeq 0.1.0.</color>
+<color:s>Automatically generated for Ormeq 0.1.1.</color>

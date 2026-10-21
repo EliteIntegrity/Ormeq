@@ -88,7 +88,7 @@ static int _menu_inkey(doc_ptr doc, bool claim_return)
 
         case '\r':
         case '\n':
-            sound(SOUND_UI_ACCEPT);
+            /* The page plays accept only if it acts on Return. */
             return cmd;
         }
     }
@@ -162,10 +162,9 @@ int ui_menu_inkey(doc_ptr doc)
 /*
  * Birth pages: the bar walks, and Return belongs to the page.
  *
- * Every birth screen advances on Return and says so in its own footer. The
- * arrows are an addition to that, not a claim on it -- so up and down move the
- * bar, **right presses it**, left backs out, and Return goes on to the next
- * screen exactly as it always has.
+ * Up and down move the bar, right presses it, and left backs out. Return
+ * passes through silently: the caller decides whether it advances, accepts a
+ * choice or does nothing, and plays the accept sound only when appropriate.
  */
 int ui_menu_inkey_nav(doc_ptr doc)
 {

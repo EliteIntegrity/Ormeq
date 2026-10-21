@@ -62,6 +62,17 @@ extern void py_birth_spellbooks(void);
 
 /* I prefer to render menus to a document rather than directly to the terminal */
 static doc_ptr _doc = NULL;
+static cptr _page = NULL;
+
+static void _clear_page(cptr page)
+{
+    /* doc_clear preserves a menu's cursor across its own redraws. The birth
+     * document is shared: reset that cursor whenever another page takes over,
+     * including when returning from a child. Race/class then set their own. */
+    if (!_page || !streq(_page, page)) doc_select(_doc, -1);
+    _page = page;
+    doc_clear(_doc);
+}
 
 /*
  * The line at the foot of a chooser.
@@ -131,6 +142,7 @@ int py_birth(void)
 
     doc_free(_doc);
     _doc = NULL;
+    _page = NULL;
 
     return result;
 }
@@ -467,7 +479,7 @@ static int _welcome_ui(void)
     {
         int cmd;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
 
         /* A name on the first row, because doc_sync_menu() draws the first
          * row as the heading. Without one the opening sentence was styled as
@@ -500,8 +512,10 @@ static int _welcome_ui(void)
         _hot('m');
         doc_newline(_doc);
         if (previous_char.quick_ok)
+        {
             doc_insert(_doc, "  <color:y>q</color>) Quick Start\n");
             _hot('q');
+        }
         doc_insert(_doc, "  <color:y>?</color>) Help\n");
         _hot('?');
 
@@ -701,7 +715,7 @@ static int _race_class_ui(void)
     {
         int cmd;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         /*
@@ -754,6 +768,7 @@ static int _race_class_ui(void)
         switch (cmd)
         {
         case '\r':
+            sound(SOUND_UI_ACCEPT);
             if ((p_ptr->pclass == CLASS_CHAOS_WARRIOR) || ((personality_includes_(PERS_CHAOTIC)) && (p_ptr->pclass != CLASS_DISCIPLE)))
             {
                 if (_patron_ui() != UI_OK) break;
@@ -894,7 +909,7 @@ static void _split_pers_ui(byte _old)
     {
         int cmd, i, split = vec_length(v) + 1;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Toggle Two or More Personalities</color>\n");
@@ -935,6 +950,7 @@ static void _split_pers_ui(byte _old)
             if (laskuri == 1)
             {
                 p_ptr->personality = testi;
+                if (cmd == '\r') sound(SOUND_UI_ACCEPT);
                 break;
             }
             else if (laskuri == 0)
@@ -945,7 +961,11 @@ static void _split_pers_ui(byte _old)
                     break;
                 }
             }
-            else break;
+            else
+            {
+                if (cmd == '\r') sound(SOUND_UI_ACCEPT);
+                break;
+            }
         }
         else if (cmd == '\t') _inc_rcp_state();
         else if (cmd == '=') _birth_options();
@@ -993,7 +1013,7 @@ static void _pers_ui(void)
     {
         int cmd, i, split = vec_length(v) + 1;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Your Personality</color>\n");
@@ -1155,7 +1175,7 @@ static void _race_group_ui(void)
     {
         int cmd;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose a Type of Race to Play</color>\n");
@@ -1326,7 +1346,7 @@ static int _race_ui(int ids[])
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
         _choice_page(_doc, v, cur, "Choose Your Race",
                      _race_name_of, _race_desc_of, _race_sub_of);
@@ -1366,6 +1386,8 @@ static int _race_ui(int ids[])
             int     old_id = p_ptr->prace;
             race_t *race_ptr = vec_get(v, i);
 
+            if (cmd == '\r' || cmd == '\n' || cmd == SKEY_RIGHT)
+                sound(SOUND_UI_ACCEPT);
             cur = i;
             if (p_ptr->prace != race_ptr->id)
             {
@@ -1446,7 +1468,7 @@ static int _subrace_ui_aux(int ct, cptr desc, cptr help, cptr topic)
         cols[0] = doc_alloc(30);
         cols[1] = doc_alloc(30);
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         if (split > 7)
@@ -1581,7 +1603,7 @@ static void _class_group_ui(void)
         cols[0] = doc_alloc(30);
         cols[1] = doc_alloc(30);
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose a Type of Class to Play</color>\n");
@@ -1629,7 +1651,7 @@ static int _class_ui(int ids[])
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
         _choice_page(_doc, v, cur, "Choose Your Class",
                      _class_name_of, _class_desc_of, _class_sub_of);
@@ -1669,6 +1691,8 @@ static int _class_ui(int ids[])
             class_t *class_ptr = vec_get(v, i);
             int      old_id = p_ptr->pclass;
 
+            if (cmd == '\r' || cmd == '\n' || cmd == SKEY_RIGHT)
+                sound(SOUND_UI_ACCEPT);
             cur = i;
             p_ptr->pclass = class_ptr->id;
             result = _subclass_ui();
@@ -1728,7 +1752,7 @@ static int _warlock_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Warlock Pact</color>\n");
@@ -1783,7 +1807,7 @@ static int _weaponmaster_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Speciality</color>\n");
@@ -1838,7 +1862,7 @@ static int _devicemaster_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Speciality</color>\n");
@@ -1882,7 +1906,7 @@ static int _gray_mage_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Bias</color>\n");
@@ -1945,13 +1969,15 @@ static int _patron_ui(void)
             p_ptr->realm2 = REALM_NONE;
         }
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Patron</color>\n");
         if (p_ptr->pclass != CLASS_DISCIPLE)
+        {
             doc_insert(_doc, "  <color:y>*</color>) Random\n");
             _hot('*');
+        }
         for (i = alku; i < loppu; i++)
         {
             cptr patron_name = chaos_patrons[i];
@@ -1959,8 +1985,10 @@ static int _patron_ui(void)
             _hot(I2A(i - alku));
         }
         if (p_ptr->pclass == CLASS_DISCIPLE)
+        {
             doc_insert(_doc, "  <color:y>*</color>) Random\n");
             _hot('*');
+        }
 
         _sync_menu(_doc);
         cmd = _inkey();
@@ -1983,6 +2011,7 @@ static int _patron_ui(void)
             else i = A2I(cmd) + alku;
             if ((alku <= i && i < loppu) || (i == RANDOM_PATRON))
             {
+                if (cmd == '\r') sound(SOUND_UI_ACCEPT);
                 if (i == RANDOM_PATRON)
                 {
                     if (p_ptr->pclass == CLASS_DISCIPLE) p_ptr->psubclass = MAX_PURPLE_PATRON + 1;
@@ -2007,7 +2036,7 @@ static int _speed_ui(void)
     for (;;)
     {
         int i, cmd;
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Game Speed</color>\n");
@@ -2073,7 +2102,7 @@ static int _realm1_ui(void)
     {
         int cmd;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Your Primary Magic Realm</color>\n");
@@ -2162,7 +2191,7 @@ static int _realm2_ui(void)
     {
         int cmd;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Your Secondary Magic Realm</color>\n");
@@ -2222,7 +2251,7 @@ static void _mon_race_group_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose a Type of Monster to Play</color>\n");
@@ -2292,7 +2321,7 @@ static int _mon_race_ui(int ids[])
     {
         int cmd, i, ct = 0;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Your Monster Race</color>\n");
@@ -2443,7 +2472,7 @@ static int _dragon_realm_ui(void)
     {
         int cmd, i;
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         doc_insert(_doc, "<color:G>Choose Your Realm</color>\n");
@@ -2573,7 +2602,7 @@ static int _stats_ui(void)
         cols[0] = doc_alloc(32);
         cols[1] = doc_alloc(30);
 
-        doc_clear(_doc);
+        _clear_page(__func__);
         _race_class_top(_doc);
 
         score = _stats_score();
@@ -2644,6 +2673,7 @@ static int _stats_ui(void)
                 if (!_fresh_name()) msg_print("That name is unavailable. Please choose another.");
                 continue;
             }
+            sound(SOUND_UI_ACCEPT);
             _birth_finalize();
             return UI_OK;
         }
@@ -3373,8 +3403,8 @@ static void _change_name(void)
  * Twenty-one pages asked for a key and only two of them did anything with an
  * arrow, which is why most of character creation could not be arrowed at all.
  *
- * **The _nav variant, not the plain one.** Every birth screen advances on
- * Return and says so in its own footer, so the bar must not take that key.
+ * **The _nav variant, not the plain one.** Return belongs to the page: some
+ * pages advance, others ignore it. Only the page knows when to play accept.
  * The first attempt used ui_menu_inkey(), which does take it, and the result
  * was a game you could not get out of character creation in: arrow once and
  * Return stopped advancing and started editing whatever the bar was sitting

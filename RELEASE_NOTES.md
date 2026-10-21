@@ -1,4 +1,19 @@
-# Ormeq 0.1.0
+# Ormeq 0.1.1
+
+Character-creation fixes for keyboard navigation:
+
+- Selection bars no longer carry between pages or reappear on unrelated choices.
+  Race and class lists still highlight the current choice; arrows and Right work
+  as before within each page.
+- Quick Start and Random patron choices now have hotspots only when displayed.
+- Return plays an acceptance sound only when the page accepts it.
+
+Includes regression checks for desktop and compact layouts, nested pages and
+sound feedback. Android-facing footer text is unchanged for the next source sync.
+Gameplay and save compatibility are unchanged. Extract into a new folder; copy
+your existing lib/save and lib/user folders if you want to keep saves and settings.
+
+## Ormeq 0.1.0
 
 First Windows x64 release.
 

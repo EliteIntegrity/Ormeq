@@ -158,6 +158,79 @@ def check_reckoner(runner, mode, width, height):
     print('PASS:', label, 'steady Details pixels, input guard, history and optional display', flush=True)
 
 
+def check_birth_navigation(runner, mode, width, height):
+    """Exercise page changes through real birth input, including nested returns."""
+    prefix = f'birth-navigation-{mode}-{width}'
+
+    def capture(label, route, cancel):
+        return runner.capture(prefix + '-' + label, route + '%!%p' + cancel,
+                              width, height, mode)
+
+    # No cursor leaks from an arrowed parent or a race/class preview. Re-entering
+    # a parent after cancelling a child must reset too, not just function entry.
+    for label, route, cancel in (
+        ('welcome-return', 'nn}^', '^q'),
+        ('summary-race', 'nnrc~', '^^q'),
+        ('personality', 'nnrc~p', '^^^q'),
+        ('split-personality', 'nnp}t', '^^^q'),
+        ('speed', 'nnrc~g', '^^^q'),
+        ('stats', 'nnrc~~', '^^^q'),
+        ('race-groups', 'nn}r', '^^^q'),
+        ('race-groups-return', 'nnr}a^', '^^^q'),
+        ('class-groups', 'nn}c', '^^^q'),
+        ('class-groups-return', 'nnc}a^', '^^^q'),
+        ('subrace', 'nnrac', '^^^^^q'),
+        ('weaponmaster', 'nncah', '^^^^^q'),
+        ('warlock', 'nncje', '^^^^^q'),
+        ('devicemaster', 'nnceb', '^^^^^q'),
+        ('gray-mage', 'nncdc', '^^^^^q'),
+        ('realm-one', 'nncde', '^^^^^q'),
+        ('realm-two', 'nncdea', '^^^^^^q'),
+        ('monster-groups', 'nm}r', '^^^q'),
+        ('monster-races', 'nmra', '^^^^q'),
+        ('dragon-realm', 'nmrda', '^^^^^q'),
+    ):
+        page = capture(label, route, cancel)
+        assert page['menu'][2] == -1, (label, 'inherited selection', page['menu'])
+
+    welcome = capture('welcome', 'n', '^q')
+    assert {r[0] for r in welcome['rows']} == set(map(ord, 'bnm?')), 'Invisible Quick Start hotspot'
+    quick = capture('quick-start', '~%!%xn', '^q')
+    assert [r[0] for r in quick['rows']].count(ord('q')) == 1, 'Quick Start missing when available'
+    assert len({r[2] for r in quick['rows']}) == len(quick['rows']), 'Quick Start shares a row'
+    for label, route, expected in (('race-current', 'nnrc', 2),
+                                  ('class-current', 'nncg', 1)):
+        page = capture(label, route, '^^^^q')
+        assert page['menu'][2] == page['rows'][expected][2], (label, 'current choice not lit')
+        moved = capture(label + '-down', route + '}', '^^^^q')
+        assert moved['menu'][2] == moved['rows'][expected + 1][2], (label, 'arrow did not persist')
+
+    page = capture('personality-down', 'nnp}', '^^^q')
+    assert page['menu'][2] == page['rows'][0][2], 'First arrow did not select first row'
+    redrawn = capture('personality-redraw', 'nnp}%i', '^^^q')
+    assert redrawn['menu'][2] == redrawn['rows'][0][2], 'Same-page redraw lost the bar'
+    assert capture('personality-right', 'nnp}]', '^^q')['menu'][2] == -1
+    for label, route, cancel in (('personality', 'nnp', '^^^q'), ('speed', 'nng', '^^^q')):
+        before = capture(label + '-idle', route, cancel)
+        after = capture(label + '-right-unselected', route + ']', cancel)
+        assert before['visual'] == after['visual'], (label, 'Right acted without a selection')
+
+    for label, route, cancel, random_first in (
+        ('chaos-patron', 'nnchaa~', '^^^q', True),
+        ('disciple-patron', 'nnchb', '^^^^^q', False),
+    ):
+        page = capture(label, route, cancel)
+        keys = [r[0] for r in page['rows']]
+        ys = [r[2] for r in page['rows']]
+        assert keys.count(ord('*')) == 1 and len(ys) == len(set(ys)), (label, 'duplicate hotspot')
+        assert keys[0 if random_first else -1] == ord('*'), (label, 'Random on wrong row')
+        assert page['menu'][2] == -1, (label, 'inherited selection')
+        # The number of arrows must wrap exactly once through actual choices.
+        wrapped = capture(label + '-wrap', route + '}' * (len(keys) + 1), cancel)
+        assert wrapped['menu'][2] == page['rows'][0][2], (label, 'arrow cycle contains phantom row')
+    print('PASS:', prefix, 'page-local bars, current choices, Right and conditional hotspots', flush=True)
+
+
 def check_specialists(keep, configurations):
     # Create these through normal character creation, not edited saves. These
     # classes have separate legacy chooser implementations, not book casting.
@@ -230,6 +303,8 @@ def run(keep=None, probe=False, names=None, configurations=None):
                 except (AssertionError, IndexError) as exc:
                     failures.append((f'reckoner-{mode}-{width}', str(exc)))
                     print('FAIL: reckoner', mode, width, str(exc), flush=True)
+            if not probe and (not names or 'birth-navigation' in names):
+                check_birth_navigation(runner, mode, width, height)
             for name, route, key, finish, cancel in CASES:
                 if names and name not in names: continue
                 label = f'{name}-{mode}-{width}'
@@ -293,7 +368,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--keep', type=Path)
     parser.add_argument('--probe', action='store_true')
-    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages'] + [case[0] for case in CASES])
+    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages', 'birth-navigation'] + [case[0] for case in CASES])
     parser.add_argument('--mode', type=int, choices=(0, 1, 2))
     parser.add_argument('--small', action='store_true')
     args = parser.parse_args()

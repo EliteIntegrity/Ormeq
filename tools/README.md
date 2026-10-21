@@ -37,6 +37,10 @@ Item, spell and power choices must cover the map and HUD completely. The
 Reckoner checks compare actual Details-button pixels between command and
 direction prompts, exercise its input guard and compare movement/RNG with the
 live display off, static and animated.
+`--case birth-navigation` checks selection resets across birth pages and nested
+returns, race/class previews, arrow/Right input, and conditional Quick Start
+and patron hotspots. `test_game.py` also checks that Return sounds occur only
+when birth accepts the key, including blocked stats and split personalities.
 Five specialist casting implementations are also exercised using characters
 made through normal birth, checking cancellation and a clean map return.
 The default matrix uses ASCII, Hybrid and compact Full Tile displays. Use

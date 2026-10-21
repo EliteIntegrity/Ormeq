@@ -75,6 +75,26 @@ def check_reckoner_arithmetic(output):
 
 
 class RuntimeTests(unittest.TestCase):
+    def test_birth_return_sounds_only_when_accepted(self):
+        with GameRuntime() as game:
+            def accepts(route):
+                game.reset()
+                _, output, code = game.run(['-n', '-Q', '-uBIRTH', '-s123',
+                                            '-A1', '-x' + route])
+                self.assertEqual(code, 0, output)
+                found = re.search(r'^audio-event ui_accept (\d+)$', output, re.M)
+                return int(found[1]) if found else 0
+
+            # None of these pages acts on Return (including over-budget stats).
+            for route in ('~', '~np', '~ng', '~nr', '~nc', '~nrac', '~ncde', '~npt',
+                          '~n~S'):
+                with self.subTest(ignored=route):
+                    self.assertEqual(accepts(route + '~'), accepts(route))
+            # Summary, current race/class and patron all act on Return.
+            for route in ('~n', '~nrc', '~ncg', '~nchb', '~nchaa~', '~npta', '~nptab', '~n~'):
+                with self.subTest(accepted=route):
+                    self.assertEqual(accepts(route + '~'), accepts(route) + 1)
+
     def test_patron_observations_preserve_gameplay_and_rng(self):
         with GameRuntime() as game:
             for seed in (123, 42, 2026):

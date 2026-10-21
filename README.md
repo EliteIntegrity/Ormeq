@@ -12,11 +12,11 @@ get out alive. Ormeq combines FrogComposband's deep character and combat
 systems with a modern SDL3 interface and its own setting, shared with
 **Ammerow: Lands Beyond**.
 
-**[Download Ormeq for Windows x64](https://github.com/EliteIntegrity/Ormeq/releases/download/v0.1.0/Ormeq-0.1.0-windows-x64.zip)**
+**[Download Ormeq for Windows x64](https://github.com/EliteIntegrity/Ormeq/releases/download/v0.1.1/Ormeq-0.1.1-windows-x64.zip)**
 &nbsp; · &nbsp; [Release notes](RELEASE_NOTES.md)
 &nbsp; · &nbsp; [Playing guide](PLAYING.md)
 
-**Version 0.1.0 is the first Windows x64 release.** Free to play, offline,
+**Version 0.1.1 is the latest Windows x64 release.** Free to play, offline,
 with no installer. Extract the whole ZIP to a writable folder and run
 `ormeq-sdl3.exe`.
 
@@ -78,7 +78,7 @@ Click any screenshot to see it at full size.*
 
 ## Start playing
 
-1. [Download the Windows ZIP](https://github.com/EliteIntegrity/Ormeq/releases/download/v0.1.0/Ormeq-0.1.0-windows-x64.zip)
+1. [Download the Windows ZIP](https://github.com/EliteIntegrity/Ormeq/releases/download/v0.1.1/Ormeq-0.1.1-windows-x64.zip)
    and extract everything to a writable folder, outside Program Files.
 2. Run `ormeq-sdl3.exe` and choose **New Game**. Nothing extra needs installing.
 3. Use the arrow keys or numeric keypad to move, **?** for help, and **Esc**
