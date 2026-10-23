@@ -158,6 +158,36 @@ def check_reckoner(runner, mode, width, height):
     print('PASS:', label, 'steady Details pixels, input guard, history and optional display', flush=True)
 
 
+def check_birth_options(runner, mode, width, height):
+    """Birth stays editable after play; actual play stays read-only."""
+    prefix = f'birth-options-{mode}-{width}'
+
+    def capture(label, route, finish='^^^q'):
+        return runner.capture(prefix + '-' + label, route + '%!%p' + finish,
+                              width, height, mode)
+
+    off = capture('fresh-off', 'nn=')
+    on = capture('fresh-on', 'nn=t')
+    assert off['cells'] != on['cells'], 'Birth toggle did not change the displayed option'
+    for label, route in (('fresh', 'nn='), ('after-play', '~%!%xnn=')):
+        assert capture(label + '-editable', route)['cells'] == off['cells'], 'New birth has a read-only footer'
+        assert capture(label + '-toggle', route + 't')['cells'] == on['cells'], 'Birth toggle ignored'
+        # Right/Left advance the selected row; Up returns to Easy Identify.
+        assert capture(label + '-right', route + ']{')['cells'] == on['cells'], 'Birth Right ignored'
+        assert capture(label + '-left', route + ']{[{')['cells'] == off['cells'], 'Birth Left ignored'
+
+    locked = capture('loaded', '~%!=b', '^^%xq')
+    for label, key in (('right', ']'), ('left', '['), ('toggle', 't')):
+        attempted = capture('loaded-' + label, '~%!=b' + key, '^^%xq')
+        assert attempted['cells'] == locked['cells'], 'Existing character options changed'
+        assert attempted['state'] == locked['state'], 'Locked options changed gameplay/RNG'
+
+    # Beginner's preset rules still suppress this page entirely.
+    beginner = capture('beginner', 'nb', '^^q')
+    assert capture('beginner-options', 'nb=', '^^q')['cells'] == beginner['cells']
+    print('PASS:', prefix, 'birth editing, arrows, existing-character lock and Beginner rules', flush=True)
+
+
 def check_birth_navigation(runner, mode, width, height):
     """Exercise page changes through real birth input, including nested returns."""
     prefix = f'birth-navigation-{mode}-{width}'
@@ -305,6 +335,8 @@ def run(keep=None, probe=False, names=None, configurations=None):
                     print('FAIL: reckoner', mode, width, str(exc), flush=True)
             if not probe and (not names or 'birth-navigation' in names):
                 check_birth_navigation(runner, mode, width, height)
+            if not probe and (not names or 'birth-options' in names):
+                check_birth_options(runner, mode, width, height)
             for name, route, key, finish, cancel in CASES:
                 if names and name not in names: continue
                 label = f'{name}-{mode}-{width}'
@@ -368,7 +400,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--keep', type=Path)
     parser.add_argument('--probe', action='store_true')
-    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages', 'birth-navigation'] + [case[0] for case in CASES])
+    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages', 'birth-navigation', 'birth-options'] + [case[0] for case in CASES])
     parser.add_argument('--mode', type=int, choices=(0, 1, 2))
     parser.add_argument('--small', action='store_true')
     args = parser.parse_args()

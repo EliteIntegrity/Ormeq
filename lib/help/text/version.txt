@@ -1,4 +1,4 @@
-Ormeq 0.1.1
+Ormeq 0.1.2
 
 A fork of FrogComposband 7.1.salmiak, taken on 23 August 2026. Ormeq 
 retains its inherited game systems in a setting shared with Ammerow: 

@@ -39,7 +39,7 @@
 
 /* The name of the game, and its own version. See above. */
 #define ORMEQ_NAME  "Ormeq"
-#define ORMEQ_VER   "0.1.1"
+#define ORMEQ_VER   "0.1.2"
 #define VER_EXTRA 10 /* 7.1.4.10: witnessed patron quest outcomes */
 #define VERSION_IS_DEVELOPMENT (FALSE)
 

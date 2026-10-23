@@ -26,6 +26,16 @@ def decode_save(data):
     return bytes(a ^ b for a, b in zip(data[5:], data[4:-1]))[:-8]
 
 
+def saved_option_flags(path):
+    """Read actual persisted options independently of the menu's display.
+
+    The current save header is 12 bytes, followed by a 16-bit RNG position,
+    63 RNG words, then 15 bytes of scalar/cheat/autosave options.
+    """
+    body = decode_save(path.read_bytes())
+    return struct.unpack_from('<8I', body, 12 + 2 + 63 * 4 + 15)
+
+
 def encode_save(original, body, version=None):
     """Independent encoding of the XOR stream and both save checksums."""
     data = bytearray(version or original[:4]) + original[4:5]
@@ -527,6 +537,61 @@ class RuntimeTests(unittest.TestCase):
 
 
 class GameplayTests(unittest.TestCase):
+    def test_birth_options_editable_before_and_after_play(self):
+        for previous in (False, True):
+            # The no-display frontend uses keypad digits, not SDL arrow escapes.
+            for keys, enabled in (('6', True), ('t', True), ('684', False)):
+                with self.subTest(previous_character=previous, keys=keys):
+                    self.game.reset()
+                    prefix = 'nn~~^%x' if previous else ''
+                    fields = self.play(['-H', '-Q', '-uREGRESSION', '-s42',
+                        '-x' + prefix + 'nn=' + keys + '^~~^%xq'])
+                    self.assertEqual(fields['sessions'], '2' if previous else '1')
+                    name = 'REGRESSION II' if previous else 'REGRESSION'
+                    flags = saved_option_flags(self.game.root / 'lib/save' / name)
+                    self.assertEqual(bool(flags[6] & (1 << 31)), enabled,
+                                     'Easy Identify did not retain the birth choice')
+                    if previous:
+                        self.assertFalse(saved_option_flags(self.assert_saved())[6] & (1 << 31),
+                                         'New birth changed the older character')
+
+    def test_birth_options_lock_after_creation_and_loading(self):
+        for enabled in (False, True):
+            for keys in ('6', '4', 't'):
+                with self.subTest(easy_identify=enabled, keys=keys):
+                    self.game.reset()
+                    birth = '~n=' + ('t' if enabled else '') + '^~~^'
+                    before = self.play(['-n', '-Q', '-uREGRESSION', '-s42',
+                                        '-x' + birth + '%s'])
+                    expected = saved_option_flags(self.assert_saved())
+                    self.assertEqual(bool(expected[6] & (1 << 31)), enabled)
+                    self.game.reset()
+                    after = self.play(['-n', '-Q', '-uREGRESSION', '-s42',
+                                       '-x' + birth + '=b' + keys + '^^%s'])
+                    self.assertEqual(saved_option_flags(self.assert_saved()), expected,
+                                     'Birth options unlocked after completing birth')
+                    self.assertEqual(self.state(before), self.state(after))
+                    self.assertEqual(before['randomness'], after['randomness'])
+                    loaded = self.play(['-Q', '-uREGRESSION',
+                                        '-x~=b' + keys + '^^%s'])
+                    self.assertEqual(saved_option_flags(self.assert_saved()), expected,
+                                     'Birth options unlocked for a loaded character')
+                    self.assertEqual(self.state(after), self.state(loaded))
+
+    def test_cancelled_birth_does_not_unlock_existing_character(self):
+        for enabled in (False, True):
+            with self.subTest(easy_identify=enabled):
+                self.game.reset()
+                before = self.play(['-n', '-Q', '-uREGRESSION', '-s42',
+                    '-x~n=' + ('t' if enabled else '') + '^~~^%s'])
+                expected = saved_option_flags(self.assert_saved())
+                # Cancel a second birth after opening its options, then load
+                # the original character through the title's Load menu.
+                after = self.play(['-H', '-Q', '-uREGRESSION',
+                                   '-xnn=^^^la=bt^^%xq'])
+                self.assertEqual(saved_option_flags(self.assert_saved()), expected)
+                self.assertEqual(self.state(before), self.state(after))
+
     def test_audio_action_hooks_and_mute_preserve_gameplay(self):
         for seed in (42, 7, 2026):
             baseline = None

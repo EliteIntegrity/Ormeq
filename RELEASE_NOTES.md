@@ -1,4 +1,18 @@
-# Ormeq 0.1.1
+# Ormeq 0.1.2
+
+Fixes birth options becoming read-only when starting another character after
+playing and returning to the title screen.
+
+- New characters can change birth options without restarting Ormeq.
+- Birth options remain locked for existing characters, including after loading
+  a save or cancelling character creation. Beginner presets are unchanged.
+- Added regressions for saved option values, keyboard controls and compact menus.
+
+This shared-code fix is available for Android's next source sync. Android-facing
+birth text and save compatibility are unchanged. Extract into a new folder; copy
+your existing lib/save and lib/user folders to keep saves and settings.
+
+## Ormeq 0.1.1
 
 Character-creation fixes for keyboard navigation:
 

@@ -959,7 +959,9 @@ void do_cmd_options_aux(int page, cptr info)
     int     ch;
     int     i, k = 0, n = 0, top = 0;
     int     opt[40];
-    bool    browse_only = (page == OPT_PAGE_BIRTH) && character_generated &&
+    /* Returning to the title leaves character_generated set. A new birth is
+     * editable until it finishes or is cancelled; existing games stay locked. */
+    bool    browse_only = (page == OPT_PAGE_BIRTH) && character_generated && !birth_hack &&
                           (!p_ptr->wizard || !allow_debug_opts);
     doc_ptr list_doc, help_doc;
     rect_t  pg = ui_page_rect();
