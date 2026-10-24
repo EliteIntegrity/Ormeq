@@ -12,6 +12,11 @@ from test_quest_ui import town_fixture
 # name, route, first action, route back after that action, route back unchanged.
 CASES = [
     ('pause', '~%!^', 's', 'xc%xq', 'c%xq'),
+    ('pause-options', '~%!^', 'o', '^c%xq', 'c%xq'),
+    ('pause-help', '~%!^', 'h', '^c%xq', 'c%xq'),
+    ('pause-options-return', '~%!^o%!^', 'h', '^c%xq', 'c%xq'),
+    ('pause-help-return', '~%!^h%!^', 'o', '^c%xq', 'c%xq'),
+    ('pause-resized-return', '~%!^o2}6^^', 'h', '^c%xq', 'c%xq'),
     ('settings', '~%!^%!s', 'u', 'xxc%xq', 'xc%xq'),
     ('sound', '~%!^%!s%!u', 'f', 'xxc%xq', 'xxc%xq'),
     ('ambience', '~%!^%!s%!u%!a', 'a', 'xxxc%xq', 'xxxc%xq'),
@@ -188,6 +193,53 @@ def check_birth_options(runner, mode, width, height):
     print('PASS:', prefix, 'birth editing, arrows, existing-character lock and Beginner rules', flush=True)
 
 
+def check_pause_navigation(runner, mode, width, height):
+    label = f'pause-navigation-{mode}-{width}'
+
+    def capture(suffix, route, finish='c%xq'):
+        return runner.capture(label + '-' + suffix, '~%!' + route + '%!%!%p' + finish,
+                              width, height, mode)
+
+    paused = capture('paused', '^')
+    assert [r[0] for r in paused['rows']] == list(map(ord, 'csoheqa'))
+    for key, direct in (('o', '='), ('O', '='), ('h', '?'), ('H', '?'), ('?', '?')):
+        opened = capture('open-' + str(ord(key)), '^' + key, '^c%xq')
+        reference = capture('direct-' + str(ord(key)), direct, '^%xq')
+        # The command prompt and Paused leave the terminal cursor visible or
+        # hidden respectively. Compare the page's cells, frame and controls.
+        for field in ('cells', 'panel', 'rows'):
+            assert opened[field] == reference[field], (key, field, 'Wrong destination')
+        returned = capture('back-' + str(ord(key)), '^' + key + '^')
+        assert returned['visual'] == paused['visual'], (key, 'Paused not restored')
+        assert returned['rows'] == paused['rows'], (key, 'Paused lost hotspots')
+        assert opened['state'] == returned['state'] == paused['state']
+
+    baseline = capture('map', '', '%xq')
+    for label_key, route in (('continue', '^c'), ('escape', '^^'),
+                             ('effects', '^e^c'), ('settings', '^sxc'),
+                             ('options', '^o^c'), ('help', '^h^c'),
+                             ('abandon-cancel', '^an')):
+        returned = capture('map-' + label_key, route, '%xq')
+        assert returned['visual'] == baseline['visual'], (label_key, 'Map not restored')
+        assert returned['menu'][0] == 1 and not returned['rows']
+        assert returned['state'] == baseline['state'], (label_key, 'Changed gameplay/RNG')
+    saved = capture('save-quit', '^q', 'q')
+    direct_save = capture('save-direct', '%x', 'q')
+    assert saved['visual'] == direct_save['visual'] and saved['state'] == baseline['state']
+
+    # Change density through Map screen options; compare the returning menu
+    # with a freshly opened one at that density, then its map with direct '='.
+    resized = capture('resized', '^o2}6^^')
+    reopened = capture('resized-reopened', '^o2}6^^c^')
+    assert resized['grid'] != paused['grid'], 'Fixture did not change interface size'
+    assert resized['visual'] == reopened['visual'] and resized['rows'] == reopened['rows']
+    resized_map = capture('resized-map', '^o2}6^^c', '%xq')
+    direct_map = capture('resized-direct', '=2}6^^', '%xq')
+    assert resized_map['visual'] == direct_map['visual'], 'Layout change left a stale map'
+    assert resized_map['state'] == direct_map['state'] == baseline['state']
+    print('PASS:', label, 'shortcuts, nesting, existing actions, resize and unchanged state/RNG', flush=True)
+
+
 def check_birth_navigation(runner, mode, width, height):
     """Exercise page changes through real birth input, including nested returns."""
     prefix = f'birth-navigation-{mode}-{width}'
@@ -327,6 +379,8 @@ def run(keep=None, probe=False, names=None, configurations=None):
         shutil.copytree(ROOT / 'font', game.root / 'font')
         runner = MenuRun(game, keep)
         for mode, width, height in configurations:
+            if not probe and (not names or 'pause-navigation' in names):
+                check_pause_navigation(runner, mode, width, height)
             if not probe and (not names or 'reckoner' in names):
                 try:
                     check_reckoner(runner, mode, width, height)
@@ -362,8 +416,8 @@ def run(keep=None, probe=False, names=None, configurations=None):
                     if key is not None:
                         assert first['visual'] == idle['visual'], 'First wait changed the display'
                     assert idle['menu'][0] == int(on_map), 'Wrong map visibility'
-                    if name in ('pause', 'pause-return'):
-                        assert {row[0] for row in idle['rows']} == set(map(ord, 'cseqa')), 'Unexpected pause entries'
+                    if name.startswith('pause'):
+                        assert [row[0] for row in idle['rows']] == list(map(ord, 'csoheqa')), 'Unexpected pause entries'
                     if name.startswith(('wield', 'spell', 'power-choice')):
                         cols, rows, _, _ = idle['grid']
                         assert idle['panel'] == (1, 0, 0, cols, rows, 0), 'Chooser left map/HUD cells behind'
@@ -400,7 +454,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--keep', type=Path)
     parser.add_argument('--probe', action='store_true')
-    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages', 'birth-navigation', 'birth-options'] + [case[0] for case in CASES])
+    parser.add_argument('--case', action='append', choices=['reckoner', 'specialist-pages', 'birth-navigation', 'birth-options', 'pause-navigation'] + [case[0] for case in CASES])
     parser.add_argument('--mode', type=int, choices=(0, 1, 2))
     parser.add_argument('--small', action='store_true')
     args = parser.parse_args()

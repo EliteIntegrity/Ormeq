@@ -1,4 +1,18 @@
-# Ormeq 0.1.2
+# Ormeq 0.1.3
+
+- Options and Help are now on the Escape menu.
+- Both return to Paused, with keyboard and mouse support; existing pause
+  shortcuts are unchanged. `?` also opens Help from Paused.
+- Hosts can append their own Settings section using shared row helpers and
+  optional callbacks. Desktop Settings is unchanged; Android can use the hooks
+  for its Touch settings at its next source sync.
+- Added regression checks for nested menus, layout changes, first clicks and
+  host callbacks in addition to the existing gameplay checks.
+
+Gameplay and save compatibility are unchanged. Extract into a new folder; copy
+your existing lib/save and lib/user folders to keep saves and settings.
+
+## Ormeq 0.1.2
 
 Fixes birth options becoming read-only when starting another character after
 playing and returning to the title screen.

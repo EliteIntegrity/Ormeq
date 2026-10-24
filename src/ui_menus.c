@@ -19,6 +19,11 @@
 #include "ui_music.h"
 #endif
 
+/* A host's own settings, appended using the shared row/section helpers.
+ * Desktop leaves both hooks NULL. The key hook returns TRUE if it handled it. */
+void (*ui_settings_host_rows)(doc_ptr doc) = NULL;
+bool (*ui_settings_host_key)(int key) = NULL;
+
 /*
  * A letter menu you can also walk with the arrows.
  *
@@ -172,7 +177,7 @@ int ui_menu_inkey_nav(doc_ptr doc)
 }
 
 
-static void _row(doc_ptr doc, char key, cptr label, cptr value)
+void ui_settings_row(doc_ptr doc, char key, cptr label, cptr value)
 {
     doc_printf(doc, "    <color:y>%c</color><color:D>)</color> %-*s",
         key, MAX(22, (int)strlen(label) + 1), label);
@@ -192,7 +197,7 @@ static void _row(doc_ptr doc, char key, cptr label, cptr value)
  * screen, and how the world in it is dressed -- so they are separated. The
  * heading is quiet on purpose: it is there to be skimmed past, not read.
  */
-static void _section(doc_ptr doc, cptr name)
+void ui_settings_section(doc_ptr doc, cptr name)
 {
     doc_printf(doc, "  <color:s>%s</color>\n", name);
 }
@@ -210,12 +215,12 @@ static void _music_settings(void)
         char volume[20];
         doc_clear(doc);
         doc_insert(doc, "<style:table><color:U>Title music</color>\n\n");
-        _row(doc, 'm', "Music", display_music_get() ? "on" : "off");
+        ui_settings_row(doc, 'm', "Music", display_music_get() ? "on" : "off");
         sprintf(volume, "%d%%", display_music_volume_get());
-        _row(doc, '-', "Quieter", volume);
-        _row(doc, '+', "Louder", NULL);
+        ui_settings_row(doc, '-', "Quieter", volume);
+        ui_settings_row(doc, '+', "Louder", NULL);
         doc_printf(doc, "\n%s\nPlays on the title screen only.\n\n", ui_music_status());
-        _row(doc, 'x', "Back", NULL);
+        ui_settings_row(doc, 'x', "Back", NULL);
         doc_insert(doc, "</style>");
         doc_sync_menu(doc);
         cmd = ui_menu_inkey(doc);
@@ -240,12 +245,12 @@ static void _ambient_settings(void)
         char volume[20];
         doc_clear(doc);
         doc_insert(doc, "<style:table><color:U>Ambience</color>\n\n");
-        _row(doc, 'a', "Background ambience", display_ambient_get() ? "on" : "off");
+        ui_settings_row(doc, 'a', "Background ambience", display_ambient_get() ? "on" : "off");
         sprintf(volume, "%d%%", display_ambient_volume_get());
-        _row(doc, '-', "Quieter", volume);
-        _row(doc, '+', "Louder", NULL);
+        ui_settings_row(doc, '-', "Quieter", volume);
+        ui_settings_row(doc, '+', "Louder", NULL);
         doc_insert(doc, "\nSurface day/night and five dungeon depths.\nQuieter in menus; pauses when unfocused.\nUses the selected sound source.\n\n");
-        _row(doc, 'x', "Back", NULL);
+        ui_settings_row(doc, 'x', "Back", NULL);
         doc_insert(doc, "</style>");
         doc_sync_menu(doc);
         cmd = ui_menu_inkey(doc);
@@ -270,18 +275,18 @@ static void _sound_settings(void)
         char volume[20];
         doc_clear(doc);
         doc_insert(doc, "<style:table><color:U>Sound</color>\n\n");
-        _row(doc, 's', "Effects", display_sound_get() ? "on" : "off");
-        _row(doc, 'p', "Sound source", display_sound_pack_get() ? "sound pack + synth fallback" : "original synth");
+        ui_settings_row(doc, 's', "Effects", display_sound_get() ? "on" : "off");
+        ui_settings_row(doc, 'p', "Sound source", display_sound_pack_get() ? "sound pack + synth fallback" : "original synth");
         sprintf(volume, "%d%%", display_sound_volume_get());
-        _row(doc, '-', "Quieter", volume);
-        _row(doc, '+', "Louder", NULL);
-        _row(doc, 't', "Preview effect", NULL);
-        _row(doc, 'f', "Footsteps (quiet)", display_footsteps_get() ? "on" : "off");
-        _row(doc, 'n', "Menu sounds", display_menu_sounds_get() ? "on" : "off");
-        _row(doc, 'a', "Ambience", "Open settings >");
-        _row(doc, 'm', "Title music", "Open settings >");
+        ui_settings_row(doc, '-', "Quieter", volume);
+        ui_settings_row(doc, '+', "Louder", NULL);
+        ui_settings_row(doc, 't', "Preview effect", NULL);
+        ui_settings_row(doc, 'f', "Footsteps (quiet)", display_footsteps_get() ? "on" : "off");
+        ui_settings_row(doc, 'n', "Menu sounds", display_menu_sounds_get() ? "on" : "off");
+        ui_settings_row(doc, 'a', "Ambience", "Open settings >");
+        ui_settings_row(doc, 'm', "Title music", "Open settings >");
         doc_insert(doc, "\nMissing pack effects use the original synth.\n\n");
-        _row(doc, 'x', "Back", NULL);
+        ui_settings_row(doc, 'x', "Back", NULL);
         doc_insert(doc, "</style>");
         doc_sync_menu(doc);
         cmd = ui_menu_inkey(doc);
@@ -341,55 +346,59 @@ void ui_settings_menu(void)
         doc_add_rule(doc);
         doc_newline(doc);
 
-        _section(doc, "Display");
-        _row(doc, 't', "Colour theme", theme_name(theme_current()));
+        ui_settings_section(doc, "Display");
+        ui_settings_row(doc, 't', "Colour theme", theme_name(theme_current()));
         doc_printf(doc, "       <color:D>%s</color>\n",
                    theme_blurb(theme_current()));
-        _row(doc, 'o', "Typeface", display_font_name(display_font_get()));
-        _row(doc, 'd', "Interface size",
+        ui_settings_row(doc, 'o', "Typeface", display_font_name(display_font_get()));
+        ui_settings_row(doc, 'd', "Interface size",
              display_density_name(display_density_get()));
-        _row(doc, 'f', "Fullscreen",
+        ui_settings_row(doc, 'f', "Fullscreen",
              display_fullscreen_get() ? "yes" : "no");
 
         doc_newline(doc);
 
-        _section(doc, "Presentation");
-        _row(doc, 'v', "Terrain variation",
+        ui_settings_section(doc, "Presentation");
+        ui_settings_row(doc, 'v', "Terrain variation",
              ui_terrain_style_name(display_terrain_get()));
-        _row(doc, 'l', "Light of day",
+        ui_settings_row(doc, 'l', "Light of day",
              display_daylight_get() ? "yes" : "no");
-        _row(doc, 'w', "Weather",
+        ui_settings_row(doc, 'w', "Weather",
              display_weather_name(display_weather_get()));
 #ifdef USE_SDL3
-        _row(doc, 'u', "Sound", "Open settings >");
+        ui_settings_row(doc, 'u', "Sound", "Open settings >");
 #else
-        _row(doc, 'u', "Sound effects", display_sound_get() ? "on" : "off");
+        ui_settings_row(doc, 'u', "Sound effects", display_sound_get() ? "on" : "off");
 #endif
-        _row(doc, 'i', "Map presentation", display_map_mode_name(display_map_mode_get()));
+        ui_settings_row(doc, 'i', "Map presentation", display_map_mode_name(display_map_mode_get()));
         if (display_map_mode_get() == DISPLAY_MAP_FULL)
-            _row(doc, 'a', "  Keep ASCII floors only", display_ascii_floors_get() ? "[x]" : "[ ]");
+            ui_settings_row(doc, 'a', "  Keep ASCII floors only", display_ascii_floors_get() ? "[x]" : "[ ]");
         if (display_tiles_get())
-            _row(doc, 'r', "Tile detail", display_tile_detail_get() == 32 ? "32 x 32" : "64 x 64");
+            ui_settings_row(doc, 'r', "Tile detail", display_tile_detail_get() == 32 ? "32 x 32" : "64 x 64");
         else
         {
-            _row(doc, 'q', "ASCII grid", display_square_get() ? "Square" : "Classic");
+            ui_settings_row(doc, 'q', "ASCII grid", display_square_get() ? "Square" : "Classic");
             if (display_square_get())
-                _row(doc, 'e', "  Enhanced Square", display_enhanced_square_get() ? "[x]" : "[ ]");
+                ui_settings_row(doc, 'e', "  Enhanced Square", display_enhanced_square_get() ? "[x]" : "[ ]");
         }
-        _row(doc, 'b', "Warning border",
+        ui_settings_row(doc, 'b', "Warning border",
              display_edge_warnings_get() ? "subtle (static)" : "off");
-        _row(doc, 'c', "The Reckoner",
+        ui_settings_row(doc, 'c', "The Reckoner",
              display_calculations_name(display_calculations_get()));
+
+        if (ui_settings_host_rows) ui_settings_host_rows(doc);
 
         doc_newline(doc);
 
-        _row(doc, 'x', "Back", NULL);
+        ui_settings_row(doc, 'x', "Back", NULL);
 
         doc_insert(doc, "</style>");
         doc_sync_menu(doc);
 
         cmd = ui_menu_inkey(doc);
 
+        /* Host keys: g, h, j, k, m, n, p, s, y, z are unused here.
+         * Keep p/P reserved for Android's Touch settings. */
         switch (cmd)
         {
         case 't': case 'T': theme_cycle(1);                                  break;
@@ -441,6 +450,10 @@ void ui_settings_menu(void)
             doc_free(doc);
             screen_load();
             return;
+
+        default:
+            if (cmd && ui_settings_host_key) ui_settings_host_key(cmd);
+            break;
         }
     }
 }
@@ -465,6 +478,16 @@ void ui_escape_menu(void)
     {
         int cmd;
 
+        /* Options and Settings can change the terminal's size. Recreate the
+         * document at the new width, retaining this menu's keyboard cursor. */
+        int width = MIN(64, ui_doc_menu_rect().cx);
+        if (doc_width(doc) != width)
+        {
+            int selected = doc_selected(doc);
+            doc_free(doc);
+            doc = doc_alloc(width);
+            doc_select(doc, selected);
+        }
         doc_clear(doc);
         doc_insert(doc, "<style:table>");
 
@@ -472,12 +495,14 @@ void ui_escape_menu(void)
         doc_add_rule(doc);
         doc_newline(doc);
 
-        _row(doc, 'c', "Continue", NULL);
-        _row(doc, 's', "Settings", NULL);
-        _row(doc, 'e', "Current effects", NULL);
+        ui_settings_row(doc, 'c', "Continue", NULL);
+        ui_settings_row(doc, 's', "Settings", NULL);
+        ui_settings_row(doc, 'o', "Options", NULL);
+        ui_settings_row(doc, 'h', "Help", NULL);
+        ui_settings_row(doc, 'e', "Current effects", NULL);
         doc_newline(doc);
-        _row(doc, 'q', "Save and quit", NULL);
-        _row(doc, 'a', "Abandon character", NULL);
+        ui_settings_row(doc, 'q', "Save and quit", NULL);
+        ui_settings_row(doc, 'a', "Abandon character", NULL);
 
         doc_insert(doc, "</style>");
         doc_sync_menu(doc);
@@ -489,6 +514,7 @@ void ui_escape_menu(void)
         case 'c': case 'C':
         case ESCAPE:
             doc_free(doc);
+            ui_event_menu_clear();
             screen_load();
             return;
 
@@ -500,8 +526,19 @@ void ui_escape_menu(void)
             ui_settings_menu();
             break;
 
+        /* Each command balances its own screen_save()/screen_load(). The
+         * outer saved map stays intact; the next loop repaints Paused. */
+        case 'o': case 'O':
+            do_cmd_options();
+            break;
+
+        case 'h': case 'H': case '?':
+            do_cmd_help();
+            break;
+
         case 'q': case 'Q':
             doc_free(doc);
+            ui_event_menu_clear();
             screen_load();
             do_cmd_save_and_exit();
             return;
@@ -510,6 +547,7 @@ void ui_escape_menu(void)
             /* Deliberately the game's own suicide command rather than a
              * shortcut to it: it asks for confirmation, and asks properly. */
             doc_free(doc);
+            ui_event_menu_clear();
             screen_load();
             do_cmd_suicide();
             return;

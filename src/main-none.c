@@ -67,6 +67,8 @@ static bool none_strict = FALSE;    /* -Q: no guessed keys or Escape unwind */
 static bool none_identities = FALSE; /* -I: list live race/class identities */
 static cptr none_expressions = NULL; /* -E<file>: exercise both rule readers */
 static bool none_home = FALSE;      /* -H: exercise the start-screen loop */
+static int none_host_settings = 0;  /* -U1/2/3: rows/key/both host callbacks */
+static int none_host_shape = 0;
 static int none_sessions = 0;
 static bool none_quiet = FALSE;
 static bool none_verbose = FALSE;   /* -v: say every key as it goes in */
@@ -139,6 +141,27 @@ static void none_screen(cptr why)
         if (last >= 0) printf("%2d| %s\n", y, line);
     }
     printf("--- end screen ---\n");
+}
+
+/* A simulated embedding host, used only by the headless regression frontend.
+ * The playable desktop executables leave the public hooks NULL. */
+static void none_settings_rows(doc_ptr doc)
+{
+    int before = doc_hotspot_count(doc);
+    printf("settings-host-after %c\n", doc_hotspot_key(doc, before - 1));
+    doc_newline(doc);
+    ui_settings_section(doc, "Touch");
+    ui_settings_row(doc, 'p', "D-pad shape", none_host_shape ? "cross" : "square");
+    printf("settings-host-row %c %d\n", doc_hotspot_key(doc, before),
+        doc_hotspot_count(doc) - before);
+}
+
+static bool none_settings_key(int key)
+{
+    bool handled = key == 'p' || key == 'P';
+    if (handled) none_host_shape = !none_host_shape;
+    printf("settings-host-key %d %d\n", key, handled);
+    return handled;
 }
 
 static bool none_map_test;
@@ -694,6 +717,7 @@ static void none_usage(cptr name)
     printf("  -q         say nothing; the exit code is the answer\n");
     printf("  -Q         stop when the exact script ends; never guess prompt answers\n");
     printf("  -H         use the start screen and allow multiple play sessions\n");
+    printf("  -U1/2/3    simulate Settings host rows/key/both callbacks\n");
     printf("  -K0/1      quest lifecycle fixture, without/with journal browsing\n");
     printf("  -K2/3      disposable journal/receipt save fixtures\n");
     printf("  -K7        disposable Telmora quest-card save fixture\n");
@@ -870,6 +894,10 @@ int main(int argc, char *argv[])
             none_home = TRUE;
             break;
 
+        case 'U':
+            none_host_settings = atoi(&argv[i][2]);
+            break;
+
         case 'q':
             none_quiet = TRUE;
             break;
@@ -937,6 +965,9 @@ int main(int argc, char *argv[])
 
     none_term_init();
     init_ormeq();
+
+    if (none_host_settings & 1) ui_settings_host_rows = none_settings_rows;
+    if (none_host_settings & 2) ui_settings_host_key = none_settings_key;
 
     if (none_identities || none_expressions)
         return none_identity_checks();

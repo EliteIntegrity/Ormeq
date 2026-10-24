@@ -85,6 +85,36 @@ def check_reckoner_arithmetic(output):
 
 
 class RuntimeTests(unittest.TestCase):
+    def test_settings_host_hooks(self):
+        with GameRuntime() as game:
+            # Start-screen and in-play Settings share the same extension.
+            for route in ('s', 'nn~~^;2^s'):
+                for mode in (0, 1, 2, 3):
+                    with self.subTest(route=route, hooks=mode):
+                        game.reset()
+                        _, output, code = game.run(['-H', '-Q', '-v', '-uHOST', '-s123',
+                            f'-U{mode}', '-x' + route + 'pzt'])
+                        self.assertEqual(code, 0, output)
+                        page = output.split('--- screen (end of script) ---')[-1]
+                        self.assertIn('Settings', page)
+                        self.assertIn('Back', page)
+                        if mode & 1:
+                            self.assertIn('settings-host-after c', output)
+                            self.assertIn('settings-host-row p 1', output)
+                            self.assertLess(page.index('The Reckoner'), page.index('Touch'))
+                            self.assertLess(page.index('D-pad shape'), page.index('Back'))
+                            self.assertRegex(page, r'D-pad shape\s+' + ('cross' if mode & 2 else 'square'))
+                        else:
+                            self.assertNotIn('Touch', page)
+                        keys = re.findall(r'^settings-host-key (\d+) (\d+)$', output, re.M)
+                        self.assertEqual(keys, [('112', '1'), ('122', '0')] if mode & 2 else [])
+            # Uppercase keys work too; Back/Escape belong to the core menu.
+            game.reset()
+            _, output, code = game.run(['-H', '-Q', '-U3', '-xsPxq'])
+            self.assertEqual(code, 0, output)
+            self.assertEqual(re.findall(r'^settings-host-key (\d+) (\d+)$', output, re.M),
+                             [('80', '1')])
+
     def test_birth_return_sounds_only_when_accepted(self):
         with GameRuntime() as game:
             def accepts(route):

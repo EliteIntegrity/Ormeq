@@ -1676,6 +1676,8 @@ void do_cmd_options(void)
     /* Big fat hack */
     if (easy_mimics || old_easy_mimics) toggle_easy_mimics(easy_mimics);
 
+    doc_free(doc);
+
     /* Restore the screen */
     screen_load();
 
